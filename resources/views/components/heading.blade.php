@@ -14,7 +14,7 @@
 
 <{{ $headingTag }} 
     @class([
-        'w-fit text-center tracking-tight leading-tight text-',
+        'w-fit text-center tracking-tight leading-14',
 
         'text-5xl md:text-6xl lg:text-7xl font-bold' => $headingTag == 'h1', // Aplica os estilos caso a tag for 'h1'
         'text-4xl md:text-5xl lg:text-[3.5rem] font-semibold' => $headingTag == 'h2', // Aplica os estilos caso a tag for 'h1'

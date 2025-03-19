@@ -19,7 +19,7 @@
     @class([
         'block w-fit rounded-md cursor-pointer font-medium transition duration-200',
 
-        'px-15 py-3' => $size === 'm', // Aplica os estilos se o size for 'm'
+        'px-12 py-3' => $size === 'm', // Aplica os estilos se o size for 'm'
         'px-7 py-1.5' => $size === 's', // Aplica os estilos se o size for 's'
 
         'bg-gray-800 text-gray-100 border border-transparent hover:bg-sky-500' => $variant === 'solid', // Aplica os estilos se a variant for 'solid'

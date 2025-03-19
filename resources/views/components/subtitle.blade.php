@@ -1,5 +1,5 @@
 @props([
-    'align' => null,
+    'align' => 'center',
 ])
 
 @php
