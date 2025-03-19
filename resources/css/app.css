@@ -1,2 +1,20 @@
 @import "tailwindcss";
 @source "../views";
+
+@layer base {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body,
+    input,
+    textarea,
+    button {
+        font-size: 1rem;
+        font-weight: normal;
+        -wekbit-font-smoothing: antialiased;
+        font-family: "Roboto", sans serif;
+    }
+}
