@@ -77,4 +77,42 @@
             </x-action>
         </div>
     </x-section>
+
+    <x-section class="bg-white flex flex-col gap-8 lg:gap-12">
+        
+        <div class="flex flex-col items-center gap-2">
+            <x-subtitle>Nosso propósito</x-subtitle>
+            <x-heading>Facilitar processos por meio da tecnologia.</x-heading>
+        </div>
+
+        <div>
+            <img src="{{ asset('assets/diagram-facilita.svg') }}" alt="" class="w-full max-w-[545px]">
+        </div>
+
+    </x-section>
+
+    <x-section class="max-md:!p-0">
+        <x-container width="1180">
+            <div 
+                style="background-image: url('{{ asset('assets/background-drawing.png') }}');" 
+                class="bg-no-repeat bg-cover relative md:rounded-md overflow-hidden px-4 py-12 lg:p-20 flex justify-end"
+            >
+            
+                <div class="w-full h-full absolute left-0 top-0 bg-black/40"></div>
+                
+                <div class="relative w-full max-w-[600px] flex flex-col gap-4">
+
+                    <x-heading color="gray-100" alignment="left">Faça valer cada minuto.</x-heading>
+
+                    <x-text-content color="gray-100" alignment="left">
+                        Simplifique a gestão de saúde e segurança no trabalho. Oferecemos ferramentas para um ambiente seguro, produtivo e dentro das regulamentações.
+                    </x-text-content>
+
+                    <x-action variant="simple" color="gray-100">Solicite uma demonstração</x-action>
+
+                </div>
+
+            </div>
+        </x-container>
+    </x-section>
 </x-layouts.app>

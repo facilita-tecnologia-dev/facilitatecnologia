@@ -10,6 +10,7 @@
     @class([
         "w-full mx-auto",
         'max-w-[1440px]' => $containerWidth === '1440',
+        'max-w-[1180px]' => $containerWidth === '1180',
     ])
 >
 

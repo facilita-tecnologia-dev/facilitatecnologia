@@ -1,9 +1,9 @@
 @props([
-    'align' => 'center',
+    'alignment' => 'center',
 ])
 
 @php
-    $textAlign = $align === 'center' ? 'center' : $align;
+    $textAlign = $alignment === 'center' ? 'center' : $alignment;
 @endphp
 
 <span 
