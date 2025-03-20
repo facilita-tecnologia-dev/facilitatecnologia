@@ -8,10 +8,13 @@
     'size' => 'm',
 
     'color' => 'gray-800',
+    'alignment' => 'center',
 ])
 
 @php
     $elementTag = $tag === 'button' ? 'button' : 'a';
+
+    $textAlign = $alignment === 'center' ? 'center' : $alignment;
 @endphp
 
 <{{ $elementTag }} 
@@ -30,6 +33,11 @@
 
         'text-gray-800' => $variant === 'simple' && $color === "gray-800",
         'text-gray-100' => $variant === 'simple' && $color === "gray-100",
+
+        'text-left' => $textAlign === 'left', // Aplica os estilos caso o alinhamento for 'left'
+        'text-center' => $textAlign === 'center', // Aplica os estilos caso o alinhamento for 'center'
+        'text-right' => $textAlign === 'right', // Aplica os estilos caso o alinhamento for 'right'
+        'text-justify' => $textAlign === 'justify', // Aplica os estilos caso o alinhamento for 'right'
     ])
 >
 
