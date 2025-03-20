@@ -148,6 +148,37 @@
 
     </x-section>
 
+    <x-section class="gap-8 md:gap-10">
+        <x-heading>Nossa equipe</x-heading>
+
+        <div class="flex flex-col sm:flex-row sm:flex-wrap items-center gap-6 sm:gap-x-20 sm:gap-y-10 sm:justify-center">
+            <div class="flex flex-col items-center gap-3">
+                <div class="bg-red-400 rounded-full w-44 h-44" style="background-image: url('{{ asset('assets/testimonials.png') }}')"></div>
+
+                <div class="flex flex-col items-center gap-1">
+                    <x-subtitle alignment="center">Nome</x-subtitle>
+                    <x-text-content alignment="center">CEO Facilita Tecnologia</x-text-content>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+                <div class="bg-red-400 rounded-full w-44 h-44" style="background-image: url('{{ asset('assets/testimonials.png') }}')"></div>
+
+                <div class="flex flex-col items-center gap-1">
+                    <x-subtitle alignment="center">Nome</x-subtitle>
+                    <x-text-content alignment="center">CEO Facilita Tecnologia</x-text-content>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+                <div class="bg-red-400 rounded-full w-44 h-44" style="background-image: url('{{ asset('assets/testimonials.png') }}')"></div>
+
+                <div class="flex flex-col items-center gap-1">
+                    <x-subtitle alignment="center">Nome</x-subtitle>
+                    <x-text-content alignment="center">CEO Facilita Tecnologia</x-text-content>
+                </div>
+            </div>
+        </div>
+    </x-section>
+
     <x-section class="space-y-8">
         <x-subtitle>Grandes empresas escolhem a Facilita</x-subtitle>
 
