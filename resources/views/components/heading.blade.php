@@ -13,6 +13,9 @@
 @endphp
 
 <{{ $headingTag }} 
+
+    {{ $attributes }}
+    
     @class([
         'w-fit text-center tracking-tight',
 

@@ -1,29 +1,4 @@
 <x-layouts.app>
-    <x-container>
-
-        <header class="flex items-center justify-between p-4">
-            <div>
-                <img src="{{ asset('assets/logo-facilita.svg') }}" alt="" class="h-[45px] lg:h-[55px]">
-            </div>
-            
-            <nav class="hidden lg:flex items-center gap-6">
-                <x-action href="#" variant="simple">Home</x-action>
-                <x-action href="#" variant="simple">Sobre nós</x-action>
-                <x-action href="#" variant="simple">Serviços</x-action>
-                <x-action href="#" variant="simple">Contato</x-action>
-                <x-action href="#" variant="simple">Contato</x-action>
-
-                <div class="h-9 w-0.5 bg-gray-800"></div>
-
-                <x-action href="#" variant="solid" size="s">Login</x-action>
-            </nav>
-            
-            <div class="block lg:hidden">
-                <img src="{{ asset('assets/icons/menu-hamburguer.svg') }}" alt="" class="h-[45px]">
-            </div>{{-- Icone Menu Mobile --}}
-        </header>
-        {{-- TODO: Menu mobile --}}
-    </x-container>
 
     <x-section class="space-y-12">
         
@@ -33,7 +8,9 @@
             
                 <x-subtitle>Menos desafios, mais resultados</x-subtitle>
             
-                <x-heading tag="h1">Tecnologia que <span class="text-sky-500">serve</span> você.</x-heading>
+                <x-heading tag="h1">
+                    <span id="teste"> </span>
+                </x-heading>
             
             </div>
             
@@ -49,9 +26,66 @@
         
         </div>
 
-        <div>
-            <img src="{{ asset('assets/hero-illustration.svg') }}" alt="" class="hidden md:block w-full max-w-[545px]">
-            <img src="{{ asset('assets/hero-illustration-mobile.svg') }}" alt="" class="block md:hidden w-full">
+        <div class="relative group">
+
+            <x-illustrations.hero-illustration-desktop class="hidden md:block w-full max-w-[545px] group-hover:scale-105 transition duration-100" />
+            <x-illustrations.hero-illustration-mobile class="block md:hidden w-full" />
+            
+
+            <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute left-0 top-2.5 -translate-x-[40%] xl:-translate-x-[110%] pointer-events-none">
+            
+                <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                    Aumento de produtividade
+                    <i class="fa-solid fa-chart-line"></i>
+                </span>
+            
+            </div>
+
+            <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute -left-8 top-1/2 -translate-y-1/2 -translate-x-[40%] xl:-translate-x-[110%] pointer-events-none">
+            
+                <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                    Redução de custos
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </span>
+            
+            </div>
+
+            <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute left-0 bottom-2.5 -translate-x-[40%] xl:-translate-x-[110%] pointer-events-none">
+            
+                <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                    Padronização de processos
+                    <i class="fa-solid fa-list-check"></i>
+                </span>
+            
+            </div>
+
+            <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute right-0 top-2.5 translate-x-[40%] xl:translate-x-[110%] pointer-events-none">
+            
+                <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                    <i class="fa-solid fa-folder-closed"></i>
+                    Centralização das informações
+                </span>
+            
+            </div>
+
+            <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute -right-8 top-1/2 -translate-y-1/2 translate-x-[40%] xl:translate-x-[110%] pointer-events-none">
+            
+                <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                    <i class="fa-solid fa-lock"></i>
+                    Segurança jurídica
+                </span>
+            
+            </div>
+
+            <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute right-0 bottom-2.5 translate-x-[40%] xl:translate-x-[110%] pointer-events-none">
+            
+                <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                    <i class="fa-solid fa-users-gear"></i>
+                    Facilidade no controle
+                </span>
+            
+            </div>
+
         </div>
 
     </x-section>
@@ -187,86 +221,8 @@
 
     </x-section>
 
-
-    <footer class="border-t border-gray-500">
-
-        <x-section>
-
-            <x-container width="1180">
-
-                <div class="flex flex-col gap-8 lg:gap-16 items-center lg:flex-row lg:items-start">
-
-                    <img src="{{ asset('assets/icon-facilita.svg') }}" alt="">
-                    
-                    <div class="grid grid-cols-1 gap-8 items-center sm:grid-cols-2 lg:grid-cols-4 lg:flex-1">
-
-                        <nav class="flex flex-col items-center lg:items-start gap-4">
-                            <x-text-content>
-                                <span class="uppercase text-gray-400 font-medium tracking-wider">Empresa</span>
-                            </x-text-content>
-                            <x-action variant="simple" alignment="left">Home</x-action>
-                            <x-action variant="simple" alignment="left">Sobre nós</x-action>
-                        </nav>
-
-                        <nav class="flex flex-col items-center lg:items-start gap-4">
-                            <x-text-content>
-                                <span class="uppercase text-gray-400 font-medium tracking-wider">Serviços</span>
-                            </x-text-content>
-                            <x-action variant="simple" alignment="left">Serviços</x-action>
-                            <x-action variant="simple" alignment="left">Planos</x-action>
-                        </nav>
-
-                        <nav class="flex flex-col items-center lg:items-start gap-4">
-                            <x-text-content>
-                                <span class="uppercase text-gray-400 font-medium tracking-wider">Suporte</span>
-                            </x-text-content>
-                            <x-action variant="simple" alignment="left">Entrar em contato</x-action>
-                            <x-action variant="simple" alignment="left">Centro de ajuda</x-action>
-                        </nav>
-
-                        <nav class="flex flex-col items-center lg:items-start gap-4">
-                            <x-text-content>
-                                <span class="uppercase text-gray-400 font-medium tracking-wider">Políticas</span>
-                            </x-text-content>
-                            <x-action variant="simple" alignment="left">Política de Privacidade</x-action>
-                            <x-action variant="simple" alignment="left">Termos de uso</x-action>
-                        </nav>
-
-                    </div>
-
-                </div>
-
-            </x-container>
-        
-        </x-section>
-
-        <x-container width="1180">
-
-            <div class="px-4 py-8 space-y-4 border-t border-gray-500">
-
-                <x-text-content alignment="center">
-                    © 2025 Facilita Tecnologia. Todos os direitos reservados.
-                </x-text-content>
-
-                <div class="w-full flex justify-center gap-4">
-
-                    <x-action variant="simple">
-                        <i class="fa-brands fa-instagram text-2xl text-gray-800"></i>
-                    </x-action>
-
-                    <x-action variant="simple">
-                        <i class="fa-brands fa-linkedin text-2xl text-gray-800"></i>
-                    </x-action>
-
-                </div>
-
-            </div>
-        </x-container>
-
-    </footer>
-
-
-
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="{{ asset('js/global.js') }}"></script>
     <script src="{{ asset('js/home.js') }}" type="module"></script>
 
 </x-layouts.app>

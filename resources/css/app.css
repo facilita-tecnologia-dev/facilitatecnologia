@@ -19,12 +19,7 @@
     }
 
     .swiper-pagination {
-        /* position: relative !important; */
-        /* top: unset !important; */
         bottom: 0 !important;
-        /* left: unset !important; */
-        /* right: unset !important; */
-        /* transform: unset !important; */
     }
 
     .swiper-pagination-bullet {
@@ -34,5 +29,99 @@
     .swiper-pagination-bullet-active {
         width: 32px !important;
         border-radius: 6px !important;
+    }
+
+    .menumobile {
+        right: -100%;
+        top: 0;
+
+        transition: all 0.3s;
+    }
+
+    .menumobile.active {
+        right: 0;
+    }
+}
+
+@theme {
+    --animate-movement: movement 3s ease-in-out infinite;
+    --animate-movement-2: movement2 4s ease-in-out infinite;
+    --animate-movement-3: movement3 5s ease-in-out infinite;
+
+    --animate-leaf: leaf 4s ease-in-out infinite;
+    --animate-leaf-2: leaf2 4s ease-in-out infinite;
+
+    @keyframes leaf {
+        0%,
+        100% {
+            transform: rotate3d(0, 0, 0, 0deg);
+            transform-origin: center;
+        }
+        50% {
+            transform: rotate3d(0, 1, 0, 15deg);
+            transform-origin: center;
+            filter: brightness(0.95);
+        }
+    }
+
+    @keyframes leaf2 {
+        0%,
+        100% {
+            transform: rotate3d(0, 0, 0, 0deg);
+            transform-origin: center;
+        }
+        50% {
+            transform: rotate3d(0, 1, 0, -15deg);
+            transform-origin: center;
+            filter: brightness(0.95);
+        }
+    }
+
+    @keyframes movement {
+        0%,
+        100% {
+            transform: translate(0px, 0px);
+        }
+        35% {
+            transform: translate(-10px, 10px);
+        }
+        55% {
+            transform: translate(0px, 20px);
+        }
+        85% {
+            transform: translate(10px, 10px);
+        }
+    }
+
+    @keyframes movement2 {
+        0%,
+        100% {
+            transform: translate(0px, 0px);
+        }
+        25% {
+            transform: translate(15px, 15px);
+        }
+        50% {
+            transform: translate(-15px, 15px);
+        }
+        75% {
+            transform: translate(-15px, 0px);
+        }
+    }
+
+    @keyframes movement3 {
+        0%,
+        100% {
+            transform: translate(0px, 0px);
+        }
+        25% {
+            transform: translate(0px, 10px);
+        }
+        50% {
+            transform: translate(10px, 10px);
+        }
+        75% {
+            transform: translate(10px, 0px);
+        }
     }
 }
