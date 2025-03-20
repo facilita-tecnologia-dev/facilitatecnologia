@@ -166,7 +166,7 @@
             
                         <div class="swiper-wrapper">
                         
-                            <div class="swiper-slide w-screen">
+                            <div class="swiper-slide w-screen cursor-grab active:cursor-grabbing">
                                 <div class="w-full h-full flex flex-col gap-6 items-center">
                                     
                                     <div class="flex-1 overflow-auto max-h-[200px] md:max-h-[150px]">
@@ -180,7 +180,7 @@
                                 </div>
                             </div>
 
-                            <div class="swiper-slide w-screen">
+                            <div class="swiper-slide w-screen cursor-grab active:cursor-grabbing">
 
                                 <div class="w-full h-full flex flex-col gap-6 items-center">
                                     
@@ -195,7 +195,7 @@
                                 </div>
                             </div>
 
-                            <div class="swiper-slide w-screen">
+                            <div class="swiper-slide w-screen cursor-grab active:cursor-grabbing">
                                 <div class="w-full h-full flex flex-col gap-6 items-center">
                                     
                                      <div class="flex-1 overflow-auto max-h-[200px] md:max-h-[150px]">

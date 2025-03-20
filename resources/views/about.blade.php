@@ -11,7 +11,7 @@
 
                     <div class="swiper-wrapper">
                     
-                        <div class="swiper-slide w-screen h-full">
+                        <div class="swiper-slide w-screen h-full cursor-grab active:cursor-grabbing">
                             <div class="flex flex-col items-center gap-3">
 
                                 <x-text-content>2020</x-text-content>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         
-                        <div class="swiper-slide w-screen h-full space-y-3">
+                        <div class="swiper-slide w-screen h-full cursor-grab active:cursor-grabbing">
                             <div class="flex flex-col items-center gap-3">
 
                                 <x-text-content>2021</x-text-content>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         
-                        <div class="swiper-slide w-screen h-full space-y-3">
+                        <div class="swiper-slide w-screen h-full cursor-grab active:cursor-grabbing">
                             <div class="flex flex-col items-center gap-3">
 
                                 <x-text-content>2022</x-text-content>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         
-                        <div class="swiper-slide w-screen h-full">
+                        <div class="swiper-slide w-screen h-full cursor-grab active:cursor-grabbing">
                             <div class="flex flex-col items-center gap-3">
 
                                 <x-text-content>2020</x-text-content>
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         
-                        <div class="swiper-slide w-screen h-full space-y-3">
+                        <div class="swiper-slide w-screen h-full cursor-grab active:cursor-grabbing">
                             <div class="flex flex-col items-center gap-3">
 
                                 <x-text-content>2021</x-text-content>
@@ -103,7 +103,7 @@
                             </div>
                         </div>
                         
-                        <div class="swiper-slide w-screen h-full space-y-3">
+                        <div class="swiper-slide w-screen h-full cursor-grab active:cursor-grabbing">
                             <div class="flex flex-col items-center gap-3">
 
                                 <x-text-content>2022</x-text-content>
@@ -151,9 +151,9 @@
     <x-section class="gap-8 md:gap-10">
         <x-heading>Nossa equipe</x-heading>
 
-        <div class="flex flex-col sm:flex-row sm:flex-wrap items-center gap-6 sm:gap-x-20 sm:gap-y-10 sm:justify-center">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap items-center gap-6 sm:gap-x-20 sm:gap-y-10x sm:justify-center">
             <div class="flex flex-col items-center gap-3">
-                <div class="bg-red-400 rounded-full w-44 h-44" style="background-image: url('{{ asset('assets/testimonials.png') }}')"></div>
+                <div class="bg-gray-400 grayscale-100 hover:grayscale-0 transition duration-100 bg-center rounded-full w-44 h-44" style="background-image: url('{{ asset('assets/testimonials.png') }}')"></div>
 
                 <div class="flex flex-col items-center gap-1">
                     <x-subtitle alignment="center">Nome</x-subtitle>
@@ -161,7 +161,7 @@
                 </div>
             </div>
             <div class="flex flex-col items-center gap-3">
-                <div class="bg-red-400 rounded-full w-44 h-44" style="background-image: url('{{ asset('assets/testimonials.png') }}')"></div>
+                <div class="bg-gray-400 grayscale-100 hover:grayscale-0 transition duration-100 bg-center rounded-full w-44 h-44" style="background-image: url('{{ asset('assets/testimonials.png') }}')"></div>
 
                 <div class="flex flex-col items-center gap-1">
                     <x-subtitle alignment="center">Nome</x-subtitle>
@@ -169,7 +169,7 @@
                 </div>
             </div>
             <div class="flex flex-col items-center gap-3">
-                <div class="bg-red-400 rounded-full w-44 h-44" style="background-image: url('{{ asset('assets/testimonials.png') }}')"></div>
+                <div class="bg-gray-400 grayscale-100 hover:grayscale-0 transition duration-100 bg-center rounded-full w-44 h-44" style="background-image: url('{{ asset('assets/testimonials.png') }}')"></div>
 
                 <div class="flex flex-col items-center gap-1">
                     <x-subtitle alignment="center">Nome</x-subtitle>
