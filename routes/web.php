@@ -22,6 +22,10 @@ Route::get('/modulo/nr-20', function () {
     return view('module-detail');
 });
 
+Route::get('/{something}', function () {
+    return view('404');
+});
+
 Route::get('/contato', function () {
     return view('contact');
 });
