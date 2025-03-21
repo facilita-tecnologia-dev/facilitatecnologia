@@ -1,3 +1,5 @@
+// FAQ
+
 const FAQSection = document.querySelector("#faq");
 
 const FAQQuestions = FAQSection.querySelectorAll(".faq-question");

@@ -20,7 +20,7 @@
 
                 </div>
                 
-                <x-form action="" method="POST" class="w-full grid grid-cols-8 gap-y-6 gap-x-2">
+                <x-form action="{{ route('contact') }}" method="POST" class="w-full flex flex-col gap-y-6 gap-x-2">
                     {{-- <x-form.input-text name="name" placeholder="Nome" class="col-span-8" />
 
                     <x-form.input-text name="email" placeholder="E-mail" class="col-span-8" />

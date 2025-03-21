@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,9 +23,8 @@ Route::get('/modulo/nr-20', function () {
     return view('module-detail');
 })->name('module-detail');
 
-Route::get('/contato', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/contato', ContactController::class)->name('contact');
+Route::post('/contato', [ContactController::class, 'handleContactSubmit']);
 
 Route::get('/components', function () {
     return view('dev.components');
