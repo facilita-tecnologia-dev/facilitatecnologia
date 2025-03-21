@@ -1,0 +1,187 @@
+<x-layouts.app>
+    
+    <x-section>
+
+        <x-container width="1180">
+        
+            <div class="flex flex-col gap-8 items-center">
+
+                <x-heading>O que é oferecemos?</x-heading>
+
+                <x-text-content>
+                    Nosso sistema é a solução completa para simplificar e integrar a gestão de RH e a segurança e saúde do trabalho (SST) dentro da sua empresa. Com ferramentas intuitivas e automatizadas, você pode gerenciar desde o controle de documentos e treinamentos até o cumprimento das normas regulatórias, garantindo um ambiente de trabalho seguro e produtivo. Tudo isso em uma única plataforma, que facilita a comunicação entre equipes, reduz burocracias e aumenta a eficiência operacional.
+                    <br/>
+                    <br/>
+                    Seja para otimizar processos de RH, prevenir acidentes ou garantir a conformidade com as leis trabalhistas, nosso sistema é o parceiro ideal para transformar a gestão da sua empresa em algo simples, ágil e eficaz.
+                </x-text-content>
+
+            </div>
+
+        </x-container>
+
+    </x-section>
+
+    <x-section id="our-plans">
+
+        <x-container width="1180">
+        
+            <div class="flex flex-col gap-8 md:gap-12 items-center">
+
+                <div class="flex flex-col gap-3 items-center">
+
+                    <x-heading>Nossos planos</x-heading>
+
+                    <x-text-content>Conheça os nossos planos e escolha o mais apropriado para o seu negócio.</x-text-content>
+
+                </div>
+
+                <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-3">
+                    <div class="plan relative h-fit bg-emerald-300 rounded-md p-4 cursor-pointer">
+                        <img src="{{ asset('assets/wave-plan.svg') }}" class="absolute left-0 top-0 w-full" />
+
+                        <div class="flex items-center justify-between">
+                            <x-subtitle>
+                                <span class="text-gray-800">Básico</span>
+                            </x-subtitle>
+
+                            <x-action variant="simple">Ver mais</x-action>
+                        </div>
+
+                        <div class="dropdown border-t border-gray-600 max-h-[300px] mt-4 pl-4 pt-4 overflow-hidden">
+                            <ul class="list-disc space-y-2">
+                                <li>
+                                    <x-text-content alignment="left">
+                                        Gestão de RH
+                                    </x-text-content>
+                                </li>
+                            </ul>
+                        </div>
+                       {{-- <div class="border-gray-600 mt-0 border-t-0 max-h-0 overflow-hidden"></div> --}}
+                    </div>
+
+                    <div class="plan relative h-fit bg-sky-300 rounded-md p-4 cursor-pointer">
+                        <img src="{{ asset('assets/wave-plan.svg') }}" class="absolute left-0 top-0 w-full" />
+
+                        <div class="absolute bottom-full left-4 flex items-center gap-2 bg-gray-800 text-gray-100 w-fit rounded-t-md px-3">
+                            <x-text-content color="gray-100" alignment="left">
+                                <span class="text-sm">Mais escolhido</span> 
+                            </x-text-content>
+                            <i class="fa-solid fa-medal text-sm"></i>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <x-subtitle>
+                                <span class="text-gray-800">Profissional</span>
+                            </x-subtitle>
+
+                            <x-action variant="simple">Ver mais</x-action>
+                        </div>
+
+                        <div class="dropdown border-t border-gray-600 max-h-[300px] mt-4 pl-4 pt-4 overflow-hidden">
+                            <ul class="list-disc space-y-2">
+                                <li>
+                                    <x-text-content alignment="left">
+                                        Plano Básico
+                                    </x-text-content>
+                                </li>
+                                <li>
+                                    <x-text-content alignment="left">
+                                        Gestão de EPI
+                                    </x-text-content>
+                                </li>
+                                <li>
+                                    <x-text-content alignment="left">
+                                        Ordens de serviço (OS)
+                                    </x-text-content>
+                                </li>
+                                <li>
+                                    <x-text-content alignment="left">
+                                        Treinamentos e Capacitação
+                                    </x-text-content>
+                                </li>
+                                <li>
+                                    <x-text-content alignment="left">
+                                        Segurança do Trabalho
+                                    </x-text-content>
+                                </li>
+                            </ul>
+                        </div>
+                       {{-- <div class="border-gray-600 mt-0 border-t-0 max-h-0 overflow-hidden"></div> --}}
+                    </div>
+
+                    <div class="plan relative h-fit bg-purple-300 rounded-md p-4 cursor-pointer">
+                        <img src="{{ asset('assets/wave-plan.svg') }}" class="absolute left-0 top-0 w-full" />
+
+                        <div class="flex items-center justify-between">
+                            <x-subtitle>
+                                <span class="text-gray-800">Pro +</span>
+                            </x-subtitle>
+
+                            <x-action variant="simple">Ver mais</x-action>
+                        </div>
+
+                        <div class="dropdown border-t border-gray-600 max-h-[300px] mt-4 pl-4 pt-4 overflow-hidden">
+                            <ul class="list-disc space-y-2">
+                                <li>
+                                    <x-text-content alignment="left">
+                                        Plano Profissional
+                                    </x-text-content>
+                                </li>
+                                <x-text-content alignment="left">
+                                    <strong>Escolha entre os módulos:</strong>
+                                </x-text-content>
+                                <li>
+                                    <x-text-content alignment="left">
+                                        NR 18
+                                    </x-text-content>
+                                </li>
+                                <li>
+                                    <x-text-content alignment="left">
+                                        NR 20
+                                    </x-text-content>
+                                </li>
+                                <li>
+                                    <x-text-content alignment="left">
+                                        Gestão de Terceiros
+                                    </x-text-content>
+                                </li>
+                            </ul>
+                        </div>
+                        {{-- <div class="border-gray-600 mt-0 border-t-0 max-h-0 overflow-hidden"></div> --}}
+                    </div>
+                </div>
+                
+            </div>
+
+        </x-container>
+
+    </x-section>
+
+    <x-section class="max-md:!p-0">
+        <x-container width="1180">
+            <div 
+                style="background-image: url('{{ asset('assets/background-drawing.png') }}');" 
+                class="bg-no-repeat bg-cover relative md:rounded-md overflow-hidden px-4 py-12 lg:p-20 flex justify-end"
+            >
+            
+                <div class="w-full h-full absolute left-0 top-0 bg-black/40"></div>
+                
+                <div class="relative w-full max-w-[600px] flex flex-col gap-4">
+
+                    <x-heading color="gray-100" alignment="left">Faça valer cada minuto.</x-heading>
+
+                    <x-text-content color="gray-100" alignment="left">
+                        Simplifique a gestão de saúde e segurança no trabalho. Oferecemos ferramentas para um ambiente seguro, produtivo e dentro das regulamentações.
+                    </x-text-content>
+
+                    <x-action variant="simple" color="gray-100">Solicite uma demonstração</x-action>
+
+                </div>
+
+            </div>
+        </x-container>
+    </x-section>
+
+    <script src="{{ asset('js/global.js') }}"></script>
+    <script src="{{ asset('js/services.js') }}" type="module"></script>
+</x-layouts.app>

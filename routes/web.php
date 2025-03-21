@@ -10,6 +10,14 @@ Route::get('/sobre-nos', function () {
     return view('about');
 });
 
+Route::get('/servicos', function () {
+    return view('services');
+});
+
+Route::get('/plano', function () {
+    return view('plan');
+});
+
 Route::get('/contato', function () {
     return view('contact');
 });

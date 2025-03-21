@@ -7,7 +7,6 @@ FAQQuestions.forEach((question) => {
     question.addEventListener("click", () => {
         const dropdown = question.querySelector(".dropdown");
 
-        console.log(dropdown);
         if (dropdown.classList.contains("max-h-0")) {
             dropdown.classList.replace("max-h-0", "max-h-[200px]");
             dropdown.classList.replace("mt-0", "mt-2");

@@ -49,9 +49,13 @@
                 </x-heading>
 
                 <div class="w-full flex items-center justify-between gap-4 bg-gray-200 rounded-md p-4 shadow-md shadow-green-400/30">
+                    
+
                     <x-text-content alignment="left">O sistema está operando normalmente</x-text-content>
 
-                    <div class="w-4 h-4 rounded-full bg-green-400"></div>
+                    <div class="relative w-4 h-4 rounded-full bg-green-400">
+                        <div class="absolute left-0 top-0 w-full h-full rounded-full bg-green-400/30 animate-ping"></div>
+                    </div>
                 </div>
 
                 {{-- <div class="w-full flex items-center justify-between gap-4 bg-gray-200 rounded-md p-4 shadow-md shadow-yellow-400/30">
@@ -80,6 +84,12 @@
                         <x-form.input-text name="nome" placeholder="Como podemos ajudar você?" icon="search" />
 
                     </x-form>
+
+                    <x-text-content>
+                        <span class="text-sm">
+                            Você pesquisou por <strong>'Como entrar no sistema'</strong>
+                        </span>
+                    </x-text-content>
 
                 </div>
 
