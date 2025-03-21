@@ -18,9 +18,9 @@
             
             <div class="flex gap-4 items-center flex-col sm:flex-row">
             
-                <x-action href="#" variant="outline">Conheça-nos</x-action>
+                <x-action href="{{ route('about') }}" variant="outline">Conheça-nos</x-action>
             
-                <x-action href="#" variant="solid">Nossos serviços</x-action>
+                <x-action href="{{ route('services') }}" variant="solid">Nossos serviços</x-action>
             
             </div>
         
@@ -143,6 +143,7 @@
                     </x-text-content>
 
                     <x-action variant="simple" color="gray-100">Solicite uma demonstração</x-action>
+                    {{-- TODO: Link para whatsapp com mensagem pedindo demosntração --}}
 
                 </div>
 

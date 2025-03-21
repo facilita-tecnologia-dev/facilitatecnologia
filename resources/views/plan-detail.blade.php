@@ -29,7 +29,7 @@
                             <span class="text-sm font-normal">
                                 Clique para ver mais
                             </span>
-                        </x-action>
+                        </x-text-content>
                     </a>
                     <a href="" class="w-full bg-gray-400 rounded-md p-3 sm:p-4 space-y-1 md:grayscale-100 md:hover:grayscale-0 transition duration-100 bg-center bg-cover bg-blend-multiply" style="background-image: url('{{ asset('assets/testimonials.png') }}');">
                         <x-subtitle>
@@ -40,7 +40,7 @@
                             <span class="text-sm font-normal">
                                 Clique para ver mais
                             </span>
-                        </x-action>
+                        </x-text-content>
                     </a>
                     <a href="" class="w-full bg-gray-400 rounded-md p-3 sm:p-4 space-y-1 md:grayscale-100 md:hover:grayscale-0 transition duration-100 bg-center bg-cover bg-blend-multiply" style="background-image: url('{{ asset('assets/testimonials.png') }}');">
                         <x-subtitle>

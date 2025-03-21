@@ -21,7 +21,7 @@
                     </x-text-content>
                 </div>
 
-                <x-action>Voltar para a Home</x-action>
+                <x-action href="{{ route('home') }}">Voltar para a Home</x-action>
             </div>
 
         </x-container>

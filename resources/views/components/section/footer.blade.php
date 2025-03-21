@@ -14,32 +14,32 @@
                         <x-text-content>
                             <span class="uppercase text-gray-400 font-medium tracking-wider">Empresa</span>
                         </x-text-content>
-                        <x-action variant="simple" alignment="left">Home</x-action>
-                        <x-action variant="simple" alignment="left">Sobre nós</x-action>
+                        <x-action href="{{ route('home') }}" variant="simple" alignment="left">Home</x-action>
+                        <x-action href="{{ route('about') }}" variant="simple" alignment="left">Sobre nós</x-action>
                     </nav>
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
                         <x-text-content>
                             <span class="uppercase text-gray-400 font-medium tracking-wider">Serviços</span>
                         </x-text-content>
-                        <x-action variant="simple" alignment="left">Serviços</x-action>
-                        <x-action variant="simple" alignment="left">Planos</x-action>
+                        <x-action href="{{ route('services') }}" variant="simple" alignment="left">Serviços</x-action>
+                        <x-action href="{{ route('services') }}" variant="simple" alignment="left">Planos</x-action>
                     </nav>
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
                         <x-text-content>
                             <span class="uppercase text-gray-400 font-medium tracking-wider">Suporte</span>
                         </x-text-content>
-                        <x-action variant="simple" alignment="left">Entrar em contato</x-action>
-                        <x-action variant="simple" alignment="left">Centro de ajuda</x-action>
+                        <x-action href="{{ route('contact') }}" variant="simple" alignment="left">Entrar em contato</x-action>
+                        <x-action href="{{ route('contact') }}" variant="simple" alignment="left">FAQ</x-action>
                     </nav>
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
                         <x-text-content>
                             <span class="uppercase text-gray-400 font-medium tracking-wider">Políticas</span>
                         </x-text-content>
-                        <x-action variant="simple" alignment="left">Política de Privacidade</x-action>
-                        <x-action variant="simple" alignment="left">Termos de uso</x-action>
+                        <x-action href="#" variant="simple" alignment="left">Política de Privacidade</x-action>
+                        <x-action href="#" variant="simple" alignment="left">Termos de uso</x-action>
                     </nav>
 
                 </div>
