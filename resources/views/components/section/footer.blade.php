@@ -52,13 +52,13 @@
 
     <x-container width="1180">
 
-        <div class="px-4 py-8 space-y-4 border-t border-gray-500">
+        <div class="px-4 py-8 flex flex-col items-center gap-4 lg:flex-row lg:justify-between border-t border-gray-500">
 
             <x-text-content alignment="center">
                 © 2025 Facilita Tecnologia. Todos os direitos reservados.
             </x-text-content>
 
-            <div class="w-full flex justify-center gap-4">
+            <div class="flex justify-center gap-4">
 
                 <x-action variant="simple">
                     <i class="fa-brands fa-instagram text-2xl text-gray-800"></i>

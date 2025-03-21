@@ -15,7 +15,11 @@ Route::get('/servicos', function () {
 });
 
 Route::get('/plano', function () {
-    return view('plan');
+    return view('plan-detail');
+});
+
+Route::get('/modulo/nr-20', function () {
+    return view('module-detail');
 });
 
 Route::get('/contato', function () {
