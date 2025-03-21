@@ -1,4 +1,4 @@
-<footer class="border-t border-gray-500">
+<footer class="border-t border-gray-500 mt-5">
 
     <x-section>
 

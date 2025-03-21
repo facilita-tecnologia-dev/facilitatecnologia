@@ -1,6 +1,8 @@
 @props([
     'tag' => 'a',
 
+    'form' => ($tag ?? 'a') === 'button' ? '' : null, // Se for um botão, coloca o form pardrão como null
+
     'type' => ($tag ?? 'a') === 'button' ? 'submit' : null, // Se for um botão, coloca o type pardrão como submit
     'href' => ($tag ?? 'a') === 'a' ? '#' : null, // Se for um link, coloca o href pardrão como todo
 
@@ -19,10 +21,11 @@
 
 <{{ $elementTag }} 
 
+    {{ $form ? "form=$form" : '' /* Se houver form (se for botão) coloca o atributo form */}}
     {{ $type ? "type=$type" : '' /* Se houver type (se for botão) coloca o atributo type */}}
     {{ $href ? "href=$href" : '' /* Se houver href (se for link) coloca o atributo href */}}
     @class([
-        'block w-fit rounded-md cursor-pointer font-medium transition duration-200',
+        'block w-fit rounded-md cursor-pointer font-medium transition duration-200 whitespace-nowrap',
 
         'px-12 py-3' => $size === 'm', // Aplica os estilos se o size for 'm'
         'px-7 py-1.5' => $size === 's', // Aplica os estilos se o size for 's'

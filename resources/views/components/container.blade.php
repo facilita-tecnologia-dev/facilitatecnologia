@@ -12,6 +12,7 @@
         'max-w-[1440px]' => $containerWidth === '1440',
         'max-w-[1180px]' => $containerWidth === '1180',
         'max-w-[900px]' => $containerWidth === '900',
+        'max-w-[700px]' => $containerWidth === '700',
     ])
 >
 

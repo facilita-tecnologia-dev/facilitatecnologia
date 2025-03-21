@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d6c8bd95ac.js" crossorigin="anonymous"></script>
     
     <title>Components</title>
 
@@ -47,6 +48,42 @@
 
         <x-text-content>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque ipsa ratione alias, vitae ad modi molestias perspiciatis, ea dignissimos corrupti consectetur delectus eius minus aspernatur, recusandae sed. Velit, quos possimus!</x-text-content>
     </x-section>
+
+
+    <x-section class="space-y-5 bg-gray-100">
+        <h2 class="text-2xl font-bold">Text Inputs</h2>
+
+        <x-form.input-text name="nome" />
+
+        <x-form.input-text name="nome" placeholder="Digite algo..." />
+        
+        <x-form.input-text type="tel" name="telefone" placeholder="Digite algo..." />
+
+        <x-form.input-text type="tel" name="outro" placeholder="Digite algo..." />
+        
+        <x-form.input-text name="nome" placeholder="Digite algo..." icon="search" />
+    
+    </x-section>
+
+    <x-section class="space-y-5 bg-gray-100">
+        <h2 class="text-2xl font-bold">Textareas</h2>
+
+        <x-form.textarea name="nome" />
+
+        <x-form.textarea name="nome" placeholder="Digite algo..." />
+        
+        <x-form.textarea name="nome" placeholder="Digite algo..." />
+    
+    </x-section>
+
+    <x-section class="space-y-5 bg-gray-100">
+        <h2 class="text-2xl font-bold">Textareas</h2>
+
+        <x-form.select name="ddd" :options="[['option' => '+54', 'value' => 1], ['option' => '+22', 'value' => 2], ['option' => '+33', 'value' => 3], ['option' => '+44', 'value' => 4]]" label="DDD" />
+
+    </x-section>
+
+    <x-section></x-section>
     
 </body>
 </html>

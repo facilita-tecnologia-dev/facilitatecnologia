@@ -10,6 +10,10 @@ Route::get('/sobre-nos', function () {
     return view('about');
 });
 
+Route::get('/contato', function () {
+    return view('contact');
+});
+
 Route::get('/components', function () {
     return view('dev.components');
 });
