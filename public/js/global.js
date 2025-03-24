@@ -1,6 +1,3 @@
-// ES6 modules
-import sal from "sal.js";
-
 const body = document.querySelector("body");
 
 const menuMobileTrigger = document.querySelector("#menumobile-trigger");
@@ -45,5 +42,3 @@ phoneInputs.forEach(function (phoneInput) {
             : "(" + x[1] + ") " + x[2] + (x[3] ? "-" + x[3] : "");
     });
 });
-
-sal();
