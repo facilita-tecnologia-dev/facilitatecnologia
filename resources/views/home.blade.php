@@ -5,11 +5,11 @@
         <div class="flex flex-col items-center gap-6">
             
             <div class="flex flex-col items-center gap-2">
-            
-                <x-subtitle>Menos desafios, mais resultados</x-subtitle>
+
+                <x-subtitle>{{ $heroSection['subtitle'][0]->value }}</x-subtitle>
             
                 <x-heading tag="h1">
-                    <span id="teste"> </span>
+                    <span id="teste"></span>
                 </x-heading>
             
             </div>

@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Section::class);
+            $table->foreignIdFor(Section::class);
             $table->integer('order');
             $table->timestamps();
         });

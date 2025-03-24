@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Section::class);
-            $table->foreignId(Item::class);
+            $table->foreignIdFor(Section::class);
+            $table->foreignIdFor(Item::class)->nullable();
             $table->string('type');
             $table->string('value');
             $table->integer('order');

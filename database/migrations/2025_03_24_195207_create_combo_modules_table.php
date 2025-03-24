@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('combo_modules', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Combo::class);
-            $table->foreignId(Module::class);
+            $table->foreignIdFor(Combo::class);
+            $table->foreignIdFor(Module::class);
             $table->timestamps();
         });
     }

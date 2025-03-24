@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('plan_modules', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Plan::class);
-            $table->foreignId(Module::class);
+            $table->foreignIdFor(Plan::class);
+            $table->foreignIdFor(Module::class);
             $table->timestamps();
         });
     }
