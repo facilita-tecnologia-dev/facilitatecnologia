@@ -1,5 +1,6 @@
 @props([
     'name',
+    'id' => null,
     'placeholder' => '',
     'type' => 'text',
     
@@ -15,6 +16,7 @@
     <input type="{{ $type }}" 
         class="w-full h-[45px] focus:outline-0"
         name="{{ $name }}"
+        id="{{ $id ? $id : $name }}"
         placeholder="{{ $placeholder }}"
     >
 

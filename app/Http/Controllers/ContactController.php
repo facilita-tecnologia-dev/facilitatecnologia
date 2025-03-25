@@ -2,13 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Section;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class ContactController extends Controller
+class ContactController extends GeneralController
 {
-    public function __invoke()
+    public function __invoke(Request $request)
     {
-        return view('contact');   
+        $pageSections = $this->getPageSectionsWithContents('contato');        
+        
+        $FAQSearch = $request->search ?? null;
+        
+        $contactForm = $pageSections['contact-form'];
+        $systemStatus = $pageSections['system-status'];
+        $FAQContent = $pageSections['FAQ'];
+        $FAQList = $this->getFrequentlyAskedQuestions($FAQSearch);
+        
+        return view('contact', [
+            'contactForm' => $contactForm,
+            'systemStatus' => $systemStatus,
+            'FAQSearch' => $FAQSearch,
+            'FAQContent' => $FAQContent,
+            'FAQList' => $FAQList,
+        ]);  
     }
 
     public function handleContactSubmit(Request $request){
@@ -34,4 +51,14 @@ class ContactController extends Controller
         // Faz o redirect
         return redirect()->away($url);
     }
+
+    private function getFrequentlyAskedQuestions($search = null){
+        $FAQ = DB::table('FAQ')
+        ->when($search, function($query) use($search) {
+            return $query->where('question', 'like', "%$search%");
+        })->paginate(5)->appends(['search' => $search]);;
+
+        return $FAQ;
+    }
+    
 }

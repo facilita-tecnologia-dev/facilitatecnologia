@@ -1,9 +1,16 @@
 // FAQ
-
 const FAQSection = document.querySelector("#faq");
-
+const FAQSearchInput = FAQSection.querySelector("#faq-search");
 const FAQQuestions = FAQSection.querySelectorAll(".faq-question");
-console.log(FAQQuestions);
+
+const urlParams = new URLSearchParams(window.location.search);
+const scrollTo = urlParams.get("search") || urlParams.get("page");
+
+if (scrollTo) {
+    FAQSection.scrollIntoView({
+        behavior: "smooth",
+    });
+}
 
 FAQQuestions.forEach((question) => {
     question.addEventListener("click", () => {

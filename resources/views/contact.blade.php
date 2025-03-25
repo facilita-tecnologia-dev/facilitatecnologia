@@ -7,14 +7,11 @@
                 
                 <div class="flex flex-col gap-3 items-center">    
         
-                    <x-heading>Contate-nos</x-heading>
+                    <x-heading>{{ $contactForm['title']->value }}</x-heading>
                     
                     <div class="flex flex-col items-center">
                         <x-text-content>
-                            Seu feedback é <strong>valioso</strong>! Preencha o formulário e retornaremos seu contato em breve.
-                        </x-text-content>
-                        <x-text-content>
-                            Sua mensagem será encaminhada para nosso whatsapp.
+                            {!! $contactForm['description']->value !!}
                         </x-text-content>
                     </div>
 
@@ -45,7 +42,7 @@
         
             <div class="flex flex-col gap-8 items-center">
                 <x-heading>
-                    Status do sistema
+                    {{ $systemStatus['title']->value }}
                 </x-heading>
 
                 <div class="w-full flex items-center justify-between gap-4 bg-gray-200 rounded-md p-4 shadow-md shadow-green-400/30">
@@ -75,129 +72,50 @@
 
                 <div class="w-full flex flex-col items-center gap-3">
 
-                    <x-heading>FAQ</x-heading>
+                    <x-heading>{{ $FAQContent['title']->value }}</x-heading>
                     
-                    <x-subtitle>Respostas para as suas perguntas mais frequentes.</x-subtitle>
+                    <x-text-content>{{ $FAQContent['description']->value }}</x-text-content>
 
-                    <x-form action="" method="POST" class="w-full">
+                    <x-form action="" method="GET" class="w-full">
 
-                        <x-form.input-text name="nome" placeholder="Como podemos ajudar você?" icon="search" />
+                        <x-form.input-text id="faq-search" name="search" placeholder="Como podemos ajudar você?" icon="search" />
 
                     </x-form>
 
-                    <x-text-content>
-                        <span class="text-sm">
-                            Você pesquisou por <strong>'Como entrar no sistema'</strong>
-                        </span>
-                    </x-text-content>
+                    @if($FAQSearch)
+                        <x-text-content>
+                            <span class="text-sm">
+                                Você pesquisou por <strong>'{{ $FAQSearch }}'</strong>
+                            </span>
+                        </x-text-content>
+                    @endif
 
                 </div>
 
-                <div class="w-full flex flex-col gap-4">
-                    <div class="faq-question cursor-pointer h-fit bg-gray-200 rounded-md px-3 py-2">
-                        
-                        <div class="">
-                            <x-text-content alignment="left">
-                                <strong>Pergunta 1</strong>
-                            </x-text-content>
-                        </div>
+                <div id="faq-container" class="w-full flex flex-col gap-4">
+                    @foreach ($FAQList as $item)
+                        <div class="faq-question cursor-pointer h-fit bg-gray-200 rounded-md px-3 py-2">  
+                            <div class="">
+                                <x-text-content alignment="left">
+                                    <strong>{{ $item->question }}</strong>
+                                </x-text-content>
+                            </div>
 
-                        {{-- <div class="h-fit overflow-hidden pt-2"> --}}
-                        <div class="dropdown max-h-0 overflow-auto mt-0 transition duration-100">
-                            <x-text-content alignment="left">
-                                <span class="text-sm leading-tighter">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                </span>
-                            </x-text-content>
-                        </div>
+                            <div class="dropdown max-h-0 overflow-auto mt-0 transition duration-100">
+                                <x-text-content alignment="left">
+                                    <span class="text-sm leading-tighter">
+                                        {{ $item->answer }}
+                                    </span>
+                                </x-text-content>
+                            </div>
 
-                    </div>
-
-                    <div class="faq-question cursor-pointer h-fit bg-gray-200 rounded-md px-3 py-2">
-                        
-                        <div class="">
-                            <x-text-content alignment="left">
-                                <strong>Pergunta 2</strong>
-                            </x-text-content>
-                        </div>
-
-                        {{-- <div class="h-fit overflow-hidden pt-2"> --}}
-                        <div class="dropdown max-h-0 overflow-auto mt-0 transition duration-100">
-                            <x-text-content alignment="left">
-                                <span class="text-sm leading-tighter">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                </span>
-                            </x-text-content>
-                        </div>
-
-                    </div>
-
-                    <div class="faq-question cursor-pointer h-fit bg-gray-200 rounded-md px-3 py-2">
-                        
-                        <div class="">
-                            <x-text-content alignment="left">
-                                <strong>Pergunta 3</strong>
-                            </x-text-content>
-                        </div>
-
-                        {{-- <div class="h-fit overflow-hidden pt-2"> --}}
-                        <div class="dropdown max-h-0 overflow-auto mt-0 transition duration-100">
-                            <x-text-content alignment="left">
-                                <span class="text-sm leading-tighter">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                </span>
-                            </x-text-content>
-                        </div>
-
-                    </div>
-
-                    <div class="faq-question cursor-pointer h-fit bg-gray-200 rounded-md px-3 py-2">
-                        
-                        <div class="">
-                            <x-text-content alignment="left">
-                                <strong>Pergunta 4</strong>
-                            </x-text-content>
-                        </div>
-
-                        {{-- <div class="h-fit overflow-hidden pt-2"> --}}
-                        <div class="dropdown max-h-0 overflow-auto mt-0 transition duration-100">
-                            <x-text-content alignment="left">
-                                <span class="text-sm leading-tighter">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                </span>
-                            </x-text-content>
-                        </div>
-
-                    </div>
-
-                    <div class="faq-question cursor-pointer h-fit bg-gray-200 rounded-md px-3 py-2">
-                        
-                        <div class="">
-                            <x-text-content alignment="left">
-                                <strong>Pergunta 5</strong>
-                            </x-text-content>
-                        </div>
-
-                        {{-- <div class="h-fit overflow-hidden pt-2"> --}}
-                        <div class="dropdown max-h-0 overflow-auto mt-0 transition duration-100">
-                            <x-text-content alignment="left">
-                                <span class="text-sm leading-tighter">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus vitae mi laoreet faucibus. Curabitur lobortis nibh sem, id blandit orci mollis vel.
-                                </span>
-                            </x-text-content>
-                        </div>
-
-                    </div>
+                        </div>    
+                    @endforeach
                 </div>
-
+                
+                <div class="w-full">
+                    {{ $FAQList->links() }}
+                </div>
             </div>
 
         </x-container>
