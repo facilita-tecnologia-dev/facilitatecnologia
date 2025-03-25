@@ -3,15 +3,14 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServicesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 
 Route::get('/sobre-nos', AboutController::class)->name('about');
 
-Route::get('/servicos', function () {
-    return view('services');
-})->name('services');
+Route::get('/servicos', ServicesController::class)->name('services');
 
 Route::get('/plano', function () {
     return view('plan-detail');

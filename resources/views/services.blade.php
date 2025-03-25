@@ -1,38 +1,22 @@
 <x-layouts.app>
     
     <x-section>
-
         <x-container width="1180">
-        
             <div class="flex flex-col gap-8 items-center">
-
-                <x-heading>O que é oferecemos?</x-heading>
-
+                <x-heading>{{ $introduction['title']->value }}</x-heading>
                 <x-text-content>
-                    Nosso sistema é a solução completa para simplificar e integrar a gestão de RH e a segurança e saúde do trabalho (SST) dentro da sua empresa. Com ferramentas intuitivas e automatizadas, você pode gerenciar desde o controle de documentos e treinamentos até o cumprimento das normas regulatórias, garantindo um ambiente de trabalho seguro e produtivo. Tudo isso em uma única plataforma, que facilita a comunicação entre equipes, reduz burocracias e aumenta a eficiência operacional.
-                    <br/>
-                    <br/>
-                    Seja para otimizar processos de RH, prevenir acidentes ou garantir a conformidade com as leis trabalhistas, nosso sistema é o parceiro ideal para transformar a gestão da sua empresa em algo simples, ágil e eficaz.
+                    {!! $introduction['text']->value !!}
                 </x-text-content>
-
             </div>
-
         </x-container>
-
     </x-section>
 
     <x-section id="our-plans">
-
         <x-container width="1180">
-        
             <div class="flex flex-col gap-8 md:gap-12 items-center">
-
                 <div class="flex flex-col gap-3 items-center">
-
-                    <x-heading>Nossos planos</x-heading>
-
-                    <x-text-content>Conheça os nossos planos e escolha o mais apropriado para o seu negócio.</x-text-content>
-
+                    <x-heading>{{ $ourPlans['title']->value }}</x-heading>
+                    <x-text-content>{{ $ourPlans['description']->value }}</x-text-content>
                 </div>
 
                 <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-3">
@@ -160,24 +144,18 @@
     <x-section class="max-md:!p-0">
         <x-container width="1180">
             <div 
-                style="background-image: url('{{ asset('assets/background-drawing.png') }}');" 
+                style="background-image: url('{{ asset($CTABanner['background-image']->value) }}');" 
                 class="bg-no-repeat bg-cover relative md:rounded-md overflow-hidden px-4 py-12 lg:p-20 flex justify-end"
             >
-            
                 <div class="w-full h-full absolute left-0 top-0 bg-black/40"></div>
-                
                 <div class="relative w-full max-w-[600px] flex flex-col gap-4">
-
-                    <x-heading color="gray-100" alignment="left">Faça valer cada minuto.</x-heading>
-
+                    <x-heading color="gray-100" alignment="left">{{ $CTABanner['title']->value }}</x-heading>
                     <x-text-content color="gray-100" alignment="left">
-                        Simplifique a gestão de saúde e segurança no trabalho. Oferecemos ferramentas para um ambiente seguro, produtivo e dentro das regulamentações.
+                        {{ $CTABanner['text']->value }}
                     </x-text-content>
-
                     <x-action variant="simple" color="gray-100">Solicite uma demonstração</x-action>
-
+                    {{-- TODO: Link para whatsapp com mensagem pedindo demosntração --}}
                 </div>
-
             </div>
         </x-container>
     </x-section>

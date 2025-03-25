@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PageSeeder::class,
             HomeSeeder::class,
             AboutSeeder::class,
+            ServicesSeeder::class,
         ]);
     }
 }
