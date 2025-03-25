@@ -6,7 +6,15 @@
 
             <div class="flex flex-col gap-8 lg:gap-16 items-center lg:flex-row lg:items-start">
 
-                <img src="{{ asset('assets/icon-facilita.svg') }}" alt="">
+                <a href="{{ route('home') }}">
+                    @if($companyInfos['logo-small'][0]->value)
+                        <img src="{{ asset($companyInfos['logo-small'][0]->value) }}" alt="" class="h-[65px]">
+                    @elseif($companyInfos['logo-big'][0]->value)
+                        <img src="{{ asset($companyInfos['logo-big'][0]->value) }}" alt="" class="h-[65px]">
+                    @else
+                        <img src="{{ asset('assets/icon-facilita.svg') }}" alt="" class="h-[65px]">
+                    @endif
+                </a>
                 
                 <div class="grid grid-cols-1 gap-8 items-center sm:grid-cols-2 lg:grid-cols-4 lg:flex-1">
 
@@ -60,13 +68,17 @@
 
             <div class="flex justify-center gap-4">
 
-                <x-action variant="simple">
-                    <i class="fa-brands fa-instagram text-2xl text-gray-800"></i>
-                </x-action>
+                    @if($companyInfos['facebook'][0]->value)
+                        <x-action variant="simple" href="{{ $companyInfos['facebook'][0]->value }}">
+                            <i class="fa-brands fa-square-facebook text-2xl text-gray-800"></i>
+                        </x-action>
+                    @endif
 
-                <x-action variant="simple">
-                    <i class="fa-brands fa-linkedin text-2xl text-gray-800"></i>
-                </x-action>
+                    @if($companyInfos['linkedin'][0]->value)
+                        <x-action variant="simple" href="{{ $companyInfos['linkedin'][0]->value }}">
+                            <i class="fa-brands fa-linkedin text-2xl text-gray-800"></i>
+                        </x-action>
+                    @endif
 
             </div>
 

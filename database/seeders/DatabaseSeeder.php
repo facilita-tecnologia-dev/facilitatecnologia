@@ -14,11 +14,33 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
         DB::table('system_status')->insert([
             'system_status_code' => 1
         ]);
 
+        DB::table('company_infos')->insert([
+            'type' => 'logo-big',
+            'value' => 'assets/logo-facilita.svg',
+            'order' => 1,
+        ]);
+
+        DB::table('company_infos')->insert([
+            'type' => 'logo-small',
+            'value' => 'assets/icon-facilita.svg',
+            'order' => 1,
+        ]);
+
+        DB::table('company_infos')->insert([
+            'type' => 'linkedin',
+            'value' => 'https://www.linkedin.com/company/facilitatecnologia/',
+            'order' => 1,
+        ]);
+
+        DB::table('company_infos')->insert([
+            'type' => 'facebook',
+            'value' => 'https://www.facebook.com/share/1PNarmUqaw/',
+            'order' => 1,
+        ]);
 
         $this->call([
             PageSeeder::class,

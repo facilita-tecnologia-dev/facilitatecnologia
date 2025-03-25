@@ -3,7 +3,13 @@
     <header class="flex items-center justify-between p-4">
         
         <a href="{{ route('home') }}">
-            <img src="{{ asset('assets/logo-facilita.svg') }}" alt="" class="h-[45px] lg:h-[55px] hover:scale-105 transition duration-100">
+            @if($companyInfos['logo-big'][0]->value)
+                <img src="{{ asset($companyInfos['logo-big'][0]->value) }}" alt="" class="h-[45px] lg:h-[55px] hover:scale-105 transition duration-100">
+            @elseif($companyInfos['logo-small'][0]->value)
+                <img src="{{ asset($companyInfos['logo-small'][0]->value) }}" alt="" class="h-[45px] lg:h-[55px] hover:scale-105 transition duration-100">
+            @else
+                <img src="{{ asset('assets/logo-facilita.svg') }}" alt="" class="h-[45px] lg:h-[55px] hover:scale-105 transition duration-100">
+            @endif
         </a>
         
         <nav class="hidden lg:flex items-center gap-6">
@@ -28,9 +34,15 @@
                 <img src="{{ asset('assets/icons/menu-hamburguer-close.svg') }}" alt="" class="h-[45px]">
             </div>
             
-            <div>
-                <img src="{{ asset('assets/logo-facilita.svg') }}" alt="" class="h-[45px] lg:h-[55px]">
-            </div>
+            <a href="{{ route('home') }}">
+                @if($companyInfos['logo-big'][0]->value)
+                    <img src="{{ asset($companyInfos['logo-big'][0]->value) }}" alt="" class="h-[45px] lg:h-[55px]">
+                @elseif($companyInfos['logo-small'][0]->value)
+                    <img src="{{ asset($companyInfos['logo-small'][0]->value) }}" alt="" class="h-[45px] lg:h-[55px]">
+                @else
+                    <img src="{{ asset('assets/logo-facilita.svg') }}" alt="" class="h-[45px] lg:h-[55px]">
+                @endif
+            </a>
 
             <nav class="flex flex-col items-center gap-5 py-12 flex-1">
                 <x-action href="{{ route('home') }}" variant="simple">Home</x-action>
@@ -47,15 +59,17 @@
                 </x-text-content>
 
                 <div class="w-full flex justify-center gap-4">
+                    @if($companyInfos['facebook'][0]->value)
+                        <x-action variant="simple" href="{{ $companyInfos['facebook'][0]->value }}">
+                            <i class="fa-brands fa-square-facebook text-2xl text-gray-800"></i>
+                        </x-action>
+                    @endif
 
-                    <x-action variant="simple">
-                        <i class="fa-brands fa-instagram text-2xl text-gray-800"></i>
-                    </x-action>
-
-                    <x-action variant="simple">
-                        <i class="fa-brands fa-linkedin text-2xl text-gray-800"></i>
-                    </x-action>
-
+                    @if($companyInfos['linkedin'][0]->value)
+                        <x-action variant="simple" href="{{ $companyInfos['linkedin'][0]->value }}">
+                            <i class="fa-brands fa-linkedin text-2xl text-gray-800"></i>
+                        </x-action>
+                    @endif
                 </div>
 
             </div>

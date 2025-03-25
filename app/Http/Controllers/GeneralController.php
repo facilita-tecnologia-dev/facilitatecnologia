@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use Illuminate\Support\Facades\DB;
 
 class GeneralController extends Controller
 {
+    protected $companyInfos;
+
+    public function __construct()
+    {
+        $this->companyInfos = DB::table('company_infos')->get()->groupBy('type')->toArray();
+    }
+
     protected function getPageSectionsWithContents(string $slug): array{
         $page = Page::with([
             'sections' => function($query) {

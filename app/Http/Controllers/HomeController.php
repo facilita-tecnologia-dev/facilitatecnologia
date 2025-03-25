@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends GeneralController
 {
     public function __invoke(){
+        dump($this->companyInfos);
         $pageSections = $this->getPageSectionsWithContents('home');
 
         $heroSection = $pageSections['hero-section'];
@@ -16,6 +17,7 @@ class HomeController extends GeneralController
         $testimonials = $pageSections['testimonials'];
 
         return view('home', [
+            'companyInfos' => $this->companyInfos,
             'heroSection' => $heroSection,
             'ourPartners' => $ourPartners,
             'ourPurpose' => $ourPurpose,

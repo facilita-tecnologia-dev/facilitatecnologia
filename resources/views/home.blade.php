@@ -1,5 +1,7 @@
 <x-layouts.app>
 
+    <x-section.header :companyInfos="$companyInfos" />
+
     @if($heroSection)
         <x-section class="space-y-12">
             <div class="flex flex-col items-center gap-6">
@@ -163,6 +165,8 @@
 
         </x-section>
     @endif
+
+    <x-section.footer :companyInfos="$companyInfos"  />
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="{{ asset('js/global.js') }}"></script>
