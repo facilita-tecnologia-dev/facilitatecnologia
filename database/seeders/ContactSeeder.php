@@ -71,8 +71,6 @@ class ContactSeeder extends Seeder
             'order' => 1, 
         ]);
 
-
-
         DB::table('faq')->insert([
             'question' => 'Pergunta 1',
             'answer' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, saepe. Quisquam quia voluptas, a provident vero, ut fugit itaque autem nemo ipsum vitae fugiat. Modi possimus corporis recusandae explicabo voluptate.',

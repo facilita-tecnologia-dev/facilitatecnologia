@@ -36,91 +36,97 @@
         
         </x-container>
     </x-section>
-    
-    <x-section>
-        <x-container width="700">
-        
-            <div class="flex flex-col gap-8 items-center">
-                <x-heading>
-                    {{ $systemStatus['title']->value }}
-                </x-heading>
 
-                <div class="w-full flex items-center justify-between gap-4 bg-gray-200 rounded-md p-4 shadow-md shadow-green-400/30">
-                    
+    @if($systemStatusCode)
+        <x-section>
+            <x-container width="700">
+            
+                <div class="flex flex-col gap-8 items-center">
+                    <x-heading>
+                        {{ $systemStatusContent['title']->value }}
+                    </x-heading>
+                    @if($systemStatusCode === 1)
+                        <div class="w-full flex items-center justify-between gap-4 bg-gray-200 rounded-md p-4 shadow-md shadow-green-400/30">
+                            <x-text-content alignment="left">O sistema está operando normalmente</x-text-content>
 
-                    <x-text-content alignment="left">O sistema está operando normalmente</x-text-content>
+                            <div class="relative w-4 h-4 rounded-full bg-green-400">
+                                <div class="absolute left-0 top-0 w-full h-full rounded-full bg-green-400/30 animate-ping"></div>
+                            </div>
+                        </div>
+                    @elseif($systemStatusCode === 2)
+                        <div class="w-full flex items-center justify-between gap-4 bg-gray-200 rounded-md p-4 shadow-md shadow-yellow-400/30">
+                            <x-text-content alignment="left">O sistema está passando por manutenção</x-text-content>
 
-                    <div class="relative w-4 h-4 rounded-full bg-green-400">
-                        <div class="absolute left-0 top-0 w-full h-full rounded-full bg-green-400/30 animate-ping"></div>
-                    </div>
-                </div>
-
-                {{-- <div class="w-full flex items-center justify-between gap-4 bg-gray-200 rounded-md p-4 shadow-md shadow-yellow-400/30">
-                    <x-text-content alignment="left">O sistema está passando por manutenção</x-text-content>
-
-                    <div class="w-4 h-4 rounded-full bg-yellow-400"></div>
-                </div> --}}
-            </div>
-        
-        </x-container>
-    </x-section>
-
-    <x-section id="faq">
-        <x-container width="700">
-        
-            <div class="flex flex-col gap-8 items-center">
-
-                <div class="w-full flex flex-col items-center gap-3">
-
-                    <x-heading>{{ $FAQContent['title']->value }}</x-heading>
-                    
-                    <x-text-content>{{ $FAQContent['description']->value }}</x-text-content>
-
-                    <x-form action="" method="GET" class="w-full">
-
-                        <x-form.input-text id="faq-search" name="search" placeholder="Como podemos ajudar você?" icon="search" />
-
-                    </x-form>
-
-                    @if($FAQSearch)
-                        <x-text-content>
-                            <span class="text-sm">
-                                Você pesquisou por <strong>'{{ $FAQSearch }}'</strong>
-                            </span>
-                        </x-text-content>
+                            <div class="w-4 h-4 rounded-full bg-yellow-400"></div>
+                        </div>
                     @endif
 
                 </div>
+            
+            </x-container>
+        </x-section>
+    @endif
 
-                <div id="faq-container" class="w-full flex flex-col gap-4">
-                    @foreach ($FAQList as $item)
-                        <div class="faq-question cursor-pointer h-fit bg-gray-200 rounded-md px-3 py-2">  
-                            <div class="">
-                                <x-text-content alignment="left">
-                                    <strong>{{ $item->question }}</strong>
-                                </x-text-content>
+    @if($FAQContent && $FAQList)
+        <x-section id="faq">
+            <x-container width="700">
+            
+                <div class="flex flex-col gap-8 items-center">
+
+                    <div class="w-full flex flex-col items-center gap-3">
+
+                        <x-heading>{{ $FAQContent['title']->value }}</x-heading>
+                        
+                        <x-text-content>{{ $FAQContent['description']->value }}</x-text-content>
+
+                        <x-form action="" method="GET" class="w-full">
+
+                            <x-form.input-text id="faq-search" name="search" placeholder="Como podemos ajudar você?" icon="search" />
+
+                        </x-form>
+
+                        @if($FAQSearch)
+                            <x-text-content>
+                                <span class="text-sm">
+                                    Você pesquisou por <strong>'{{ $FAQSearch }}'</strong>
+                                </span>
+                            </x-text-content>
+                        @endif
+
+                    </div>
+
+                    <div id="faq-container" class="w-full flex flex-col items-center gap-4">
+                        @forelse ($FAQList as $item)
+                            <div class="faq-question cursor-pointer h-fit bg-gray-200 rounded-md px-3 py-2">  
+                                <div class="">
+                                    <x-text-content alignment="left">
+                                        <strong>{{ $item->question }}</strong>
+                                    </x-text-content>
+                                </div>
+
+                                <div class="dropdown max-h-0 overflow-auto mt-0 transition duration-100">
+                                    <x-text-content alignment="left">
+                                        <span class="text-sm leading-tighter">
+                                            {{ $item->answer }}
+                                        </span>
+                                    </x-text-content>
+                                </div>
+
                             </div>
-
-                            <div class="dropdown max-h-0 overflow-auto mt-0 transition duration-100">
-                                <x-text-content alignment="left">
-                                    <span class="text-sm leading-tighter">
-                                        {{ $item->answer }}
-                                    </span>
-                                </x-text-content>
-                            </div>
-
-                        </div>    
-                    @endforeach
+                        @empty
+                            <x-text-content>Não existem perguntas relacionadas a esse assunto.</x-text-content>
+                        @endforelse
+                    </div>
+                    
+                    <div class="w-full">
+                        {{ $FAQList->links() }}
+                    </div>
                 </div>
-                
-                <div class="w-full">
-                    {{ $FAQList->links() }}
-                </div>
-            </div>
 
-        </x-container>
-    </x-section>
-
+            </x-container>
+        </x-section>
+    @endif
+    
     <script src="{{ asset('js/global.js') }}"></script>
     <script src="{{ asset('js/contact.js') }}" type="module"></script>
 </x-layouts.app>

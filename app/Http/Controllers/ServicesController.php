@@ -12,7 +12,6 @@ class ServicesController extends GeneralController
         $introduction = $pageSections['introduction'];
         $ourPlans = $pageSections['our-plans'];
         $CTABanner = $pageSections['cta-banner'];
-        dump($pageSections);
 
         return view('services', [
             'introduction' => $introduction,

@@ -12,16 +12,20 @@ class ContactController extends GeneralController
     {
         $pageSections = $this->getPageSectionsWithContents('contato');        
         
-        $FAQSearch = $request->search ?? null;
         
         $contactForm = $pageSections['contact-form'];
-        $systemStatus = $pageSections['system-status'];
+        $systemStatusContent = $pageSections['system-status'];
+        $systemStatusCode = $this->getSystemStatusCode();
+
+        // FAQ
+        $FAQSearch = $request->search ?? null;
         $FAQContent = $pageSections['FAQ'];
         $FAQList = $this->getFrequentlyAskedQuestions($FAQSearch);
         
         return view('contact', [
             'contactForm' => $contactForm,
-            'systemStatus' => $systemStatus,
+            'systemStatusContent' => $systemStatusContent,
+            'systemStatusCode' => $systemStatusCode,
             'FAQSearch' => $FAQSearch,
             'FAQContent' => $FAQContent,
             'FAQList' => $FAQList,
@@ -59,6 +63,12 @@ class ContactController extends GeneralController
         })->paginate(5)->appends(['search' => $search]);;
 
         return $FAQ;
+    }
+
+    private function getSystemStatusCode(){
+        $systemStatus = DB::table('system_status')->first();
+
+        return $systemStatus->system_status_code;
     }
     
 }
