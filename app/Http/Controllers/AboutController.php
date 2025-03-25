@@ -15,6 +15,7 @@ class AboutController extends GeneralController
         $ourPurpose = $pageSections['our-purpose'];
 
         return view('about', [
+            'companyInfos' => $this->companyInfos,
             'timeline' => $timeline,
             'ourPartners' => $ourPartners,
             'ourTeam' => $ourTeam,

@@ -23,6 +23,7 @@ class ContactController extends GeneralController
         $FAQList = $this->getFrequentlyAskedQuestions($FAQSearch);
         
         return view('contact', [
+            'companyInfos' => $this->companyInfos,
             'contactForm' => $contactForm,
             'systemStatusContent' => $systemStatusContent,
             'systemStatusCode' => $systemStatusCode,

@@ -1,5 +1,7 @@
 <x-layouts.app>
 
+    <x-section.header :companyInfos="$companyInfos" />
+
     @if($timeline)
         <x-section class="!px-0">
             <x-container>
@@ -92,6 +94,8 @@
             </div>
         </x-section>
     @endif
+
+    <x-section.footer :companyInfos="$companyInfos"  />
     
     <script src="{{ asset('js/global.js') }}"></script>
     <script src="{{ asset('js/about.js') }}" type="module"></script>

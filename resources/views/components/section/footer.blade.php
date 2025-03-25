@@ -31,7 +31,7 @@
                             <span class="uppercase text-gray-400 font-medium tracking-wider">Serviços</span>
                         </x-text-content>
                         <x-action href="{{ route('services') }}" variant="simple" alignment="left">Serviços</x-action>
-                        <x-action href="{{ route('services') }}" variant="simple" alignment="left">Planos</x-action>
+                        <x-action href="{{ route('services') }}?secao=planos" variant="simple" alignment="left">Planos</x-action>
                     </nav>
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
@@ -39,7 +39,7 @@
                             <span class="uppercase text-gray-400 font-medium tracking-wider">Suporte</span>
                         </x-text-content>
                         <x-action href="{{ route('contact') }}" variant="simple" alignment="left">Entrar em contato</x-action>
-                        <x-action href="{{ route('contact') }}" variant="simple" alignment="left">FAQ</x-action>
+                        <x-action href="{{ route('contact') }}?secao=faq" variant="simple" alignment="left">FAQ</x-action>
                     </nav>
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">

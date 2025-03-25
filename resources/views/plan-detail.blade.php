@@ -1,5 +1,7 @@
 <x-layouts.app>
     
+    <x-section.header :companyInfos="$companyInfos" />
+
     <x-section>
 
         <x-container width="1180">
@@ -70,6 +72,8 @@
         </x-container>
 
     </x-section>
+
+    <x-section.footer :companyInfos="$companyInfos"  />
 
     <script src="{{ asset('js/global.js') }}"></script>
 </x-layouts.app>

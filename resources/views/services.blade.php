@@ -1,5 +1,7 @@
 <x-layouts.app>
     
+    <x-section.header :companyInfos="$companyInfos" />
+
     @if($introduction)
         <x-section>
             <x-container width="1180">
@@ -165,6 +167,8 @@
             </x-container>
         </x-section>
     @endif
+
+    <x-section.footer :companyInfos="$companyInfos"  />
 
     <script src="{{ asset('js/global.js') }}"></script>
     <script src="{{ asset('js/services.js') }}" type="module"></script>
