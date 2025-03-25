@@ -7,13 +7,23 @@ use Illuminate\Http\Request;
 class HomeController extends GeneralController
 {
     public function __invoke(){
-        $pageWithSections = $this->getPageSections('home');
+        $pageSections = $this->getPageSectionsWithContents('home');
 
-        
-        $heroSection = $pageWithSections->sections()->where('type', '=', 'hero-section')->with('contents')->first();
-        
+
+        $heroSection = $pageSections['hero-section'];
+        $ourPartners = $pageSections['our-partners'];
+        $ourPurpose = $pageSections['our-purpose'];
+        $CTABanner = $pageSections['cta-banner'];
+        $testimonials = $pageSections['testimonials'];
+
+        dump($pageSections);
+
         return view('home', [
-            'heroSection' => $heroSection->contents->groupBy('type'),
+            'heroSection' => $heroSection,
+            'ourPartners' => $ourPartners,
+            'ourPurpose' => $ourPurpose,
+            'CTABanner' => $CTABanner,
+            'testimonials' => $testimonials,
         ]);
     }
 }

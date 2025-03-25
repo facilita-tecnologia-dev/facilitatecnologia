@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignIdFor(Section::class);
             $table->foreignIdFor(Item::class)->nullable();
             $table->string('type');
-            $table->string('value');
+            $table->text('value');
             $table->integer('order');
             $table->timestamps();
         });
