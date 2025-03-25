@@ -6,8 +6,7 @@ use App\Models\Page;
 
 class GeneralController extends Controller
 {
-    protected function getPageSectionsWithContents(string $slug): array
-    {
+    protected function getPageSectionsWithContents(string $slug): array{
         $page = Page::with([
             'sections' => function($query) {
                 $query->orderBy('order', 'asc');
