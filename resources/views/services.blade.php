@@ -2,19 +2,6 @@
     
     <x-section.header :companyInfos="$companyInfos" />
 
-    @if($introduction)
-        <x-section>
-            <x-container width="1180">
-                <div class="flex flex-col gap-8 items-center">
-                    <x-heading>{{ $introduction['title']->value }}</x-heading>
-                    <x-text-content>
-                        {!! $introduction['text']->value !!}
-                    </x-text-content>
-                </div>
-            </x-container>
-        </x-section>
-    @endif
-
     @if($ourPlans)
         <x-section id="our-plans">
             <x-container width="1180">

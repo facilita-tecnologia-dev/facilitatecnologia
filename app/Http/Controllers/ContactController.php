@@ -12,24 +12,24 @@ class ContactController extends GeneralController
     {
         $pageSections = $this->getPageSectionsWithContents('contato');        
         
-        
+        // dd($pageSections);
         $contactForm = $pageSections['contact-form'];
         $systemStatusContent = $pageSections['system-status'];
         $systemStatusCode = $this->getSystemStatusCode();
 
         // FAQ
-        $FAQSearch = $request->search ?? null;
-        $FAQContent = $pageSections['FAQ'];
-        $FAQList = $this->getFrequentlyAskedQuestions($FAQSearch);
+        // $FAQSearch = $request->search ?? null;
+        // $FAQContent = $pageSections['FAQ'];
+        // $FAQList = $this->getFrequentlyAskedQuestions($FAQSearch);
         
         return view('contact', [
             'companyInfos' => $this->companyInfos,
             'contactForm' => $contactForm,
             'systemStatusContent' => $systemStatusContent,
             'systemStatusCode' => $systemStatusCode,
-            'FAQSearch' => $FAQSearch,
-            'FAQContent' => $FAQContent,
-            'FAQList' => $FAQList,
+            // 'FAQSearch' => $FAQSearch,
+            // 'FAQContent' => $FAQContent,
+            // 'FAQList' => $FAQList,
         ]);  
     }
 

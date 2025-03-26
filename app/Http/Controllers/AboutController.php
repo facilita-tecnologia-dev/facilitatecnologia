@@ -11,14 +11,14 @@ class AboutController extends GeneralController
 
         $timeline = $pageSections['timeline'];
         $ourPartners = $pageSections['our-partners'];
-        $ourTeam = $pageSections['our-team'];
+        $ourBusiness = $pageSections['our-business'];
         $ourPurpose = $pageSections['our-purpose'];
 
         return view('about', [
             'companyInfos' => $this->companyInfos,
             'timeline' => $timeline,
             'ourPartners' => $ourPartners,
-            'ourTeam' => $ourTeam,
+            'ourBusiness' => $ourBusiness,
             'ourPurpose' => $ourPurpose,
         ]);
     }

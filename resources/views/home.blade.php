@@ -25,60 +25,53 @@
                 <x-illustrations.hero-illustration-desktop class="hidden md:block w-full max-w-[545px] group-hover:scale-105 transition duration-100" />
                 <x-illustrations.hero-illustration-mobile class="block md:hidden w-full" />
                 
+                @if(isset($heroSection['hover-item'][0]))
+                    <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute left-0 top-2.5 -translate-x-[40%] xl:-translate-x-[110%] pointer-events-none">
+                        <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                            {!! $heroSection['hover-item'][0]['value'] !!}
+                        </span>
+                    </div>
+                @endif
 
-                <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute left-0 top-2.5 -translate-x-[40%] xl:-translate-x-[110%] pointer-events-none">
-                
-                    <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
-                        Aumento de produtividade
-                        <i class="fa-solid fa-chart-line"></i>
-                    </span>
-                
-                </div>
+                @if(isset($heroSection['hover-item'][1]))
+                    <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute -left-8 top-1/2 -translate-y-1/2 -translate-x-[40%] xl:-translate-x-[110%] pointer-events-none">
+                        <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                            {!! $heroSection['hover-item'][1]['value'] !!}
+                        </span>
+                    </div>
+                @endif
 
-                <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute -left-8 top-1/2 -translate-y-1/2 -translate-x-[40%] xl:-translate-x-[110%] pointer-events-none">
-                
-                    <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
-                        Redução de custos
-                        <i class="fa-solid fa-dollar-sign"></i>
-                    </span>
-                
-                </div>
+                @if(isset($heroSection['hover-item'][2]))
+                    <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute left-0 bottom-2.5 -translate-x-[40%] xl:-translate-x-[110%] pointer-events-none">
+                        <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                            {!! $heroSection['hover-item'][2]['value'] !!}
+                        </span>
+                    </div>
+                @endif                
 
-                <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute left-0 bottom-2.5 -translate-x-[40%] xl:-translate-x-[110%] pointer-events-none">
-                
-                    <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
-                        Padronização de processos
-                        <i class="fa-solid fa-list-check"></i>
-                    </span>
-                
-                </div>
+                @if(isset($heroSection['hover-item'][3]))
+                    <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute right-0 top-2.5 translate-x-[40%] xl:translate-x-[110%] pointer-events-none">
+                        <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                            {!! $heroSection['hover-item'][3]['value'] !!}
+                        </span>
+                    </div>
+                @endif
 
-                <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute right-0 top-2.5 translate-x-[40%] xl:translate-x-[110%] pointer-events-none">
+                @if(isset($heroSection['hover-item'][4]))
+                    <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute -right-8 top-1/2 -translate-y-1/2 translate-x-[40%] xl:translate-x-[110%] pointer-events-none">
+                        <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                            {!! $heroSection['hover-item'][4]['value'] !!}
+                        </span>
+                    </div>
+                @endif
                 
-                    <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
-                        <i class="fa-solid fa-folder-closed"></i>
-                        Centralização das informações
-                    </span>
-                
-                </div>
-
-                <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute -right-8 top-1/2 -translate-y-1/2 translate-x-[40%] xl:translate-x-[110%] pointer-events-none">
-                
-                    <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
-                        <i class="fa-solid fa-lock"></i>
-                        Segurança jurídica
-                    </span>
-                
-                </div>
-
-                <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute right-0 bottom-2.5 translate-x-[40%] xl:translate-x-[110%] pointer-events-none">
-                
-                    <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
-                        <i class="fa-solid fa-users-gear"></i>
-                        Facilidade no controle
-                    </span>
-                
-                </div>
+                @if(isset($heroSection['hover-item'][5]))
+                    <div class="text-gray-100 bg-gray-800 shadow-md rounded-full px-5 py-2 opacity-0 hidden md:block group-hover:opacity-100 duration-100 absolute right-0 bottom-2.5 translate-x-[40%] xl:translate-x-[110%] pointer-events-none">
+                        <span class="text-xs lg:text-base font-medium text-left flex items-center gap-2">
+                            {!! $heroSection['hover-item'][5]['value'] !!}
+                        </span>
+                    </div>
+                @endif
 
             </div>
 
@@ -95,6 +88,23 @@
                     </x-action>
                 @endforeach
             </div>
+        </x-section>
+    @endif
+
+    @if($ourHistoryNumbers)
+        <x-section id="history-numbers" class="space-y-8">
+            <x-container width="1180">
+                <div class="w-full flex flex-wrap items-start gap-y-6 md:gap-y-8">
+                    @foreach ($ourHistoryNumbers['items'] as $item)                
+                        <div class="w-1/2 md:w-1/4 px-1 sm:px-2 lg:px-4 flex flex-col items-center gap-3">
+                            <span class="number-counter text-gray-500 text-4xl sm:text-5xl lg:text-6xl font-extrabold" data-target="{{ $item['number']['value'] }}">0</span>
+                            <x-text-content>
+                                <span class="leading-tighter font-semibold">{{ $item['text']['value'] }}</span>
+                            </x-text-content>
+                        </div>
+                    @endforeach
+                </div>
+            </x-container>
         </x-section>
     @endif
 
@@ -138,12 +148,12 @@
                     <x-heading>{{ $testimonials['title']->value }}</x-heading>
                     <div class="relative w-full sm:max-w-3/4 md:max-w-full flex flex-col md:flex-row items-center md:items-start gap-8 pb-8 md:pb-0">
                         <img src="{{ asset($testimonials['image']->value) }}" alt="" class="min-w-[300px] min-h-[275px] max-h-[350px] w-2/5 object-cover rounded-md">
-                        <div class="!static swiper flex-1 w-full h-auto">
+                        <div class="!static testimonials-swiper swiper flex-1 w-full h-auto">
                             <div class="swiper-wrapper">
                                 @foreach ($testimonials['items'] as $testimonial)
-                                    <div class="swiper-slide w-screen cursor-grab active:cursor-grabbing">
+                                    <div class="swiper-slide w-screen cursor-grab active:cursor-grabbing px-1">
                                         <div class="w-full h-full flex flex-col gap-6 items-center">
-                                            <div class="flex-1 overflow-auto max-h-[200px] md:max-h-[150px]">
+                                            <div class="flex-1 overflow-auto max-h-[200px] md:max-h-[150px] pr-2">
                                                 <x-text-content alignment="justify">"{{ $testimonial['text']['value'] }}"</x-text-content>
                                             </div>
                                             <div class="w-full text-left">

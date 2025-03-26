@@ -9,7 +9,7 @@
 
                     <x-heading>{{ $timeline['title']->value }}</x-heading>
 
-                    <div class="swiper flex-1 w-full h-[185px] !pb-14">
+                    <div class="timeline-swiper swiper flex-1 w-full h-[185px] !pb-14">
                         <div class="swiper-wrapper">
                             @foreach ($timeline['items'] as $item)
                                 <div class="swiper-slide w-screen h-full cursor-grab active:cursor-grabbing">
@@ -28,9 +28,11 @@
                                             <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-gray-400"></div>
                                             <div class="h-8 w-8 rounded-full bg-sky-500 relative border-8 border-gray-100 outline-2 outline-gray-400"></div>
                                         </div>
-                                        <div class="w-full max-w-[300px] space-y-3">
+                                        <div class="w-full max-w-[300px] flex flex-col items-center gap-3">
                                             <x-subtitle>{{ $item['title']['value'] }}</x-subtitle>
-                                            <x-text-content>{{ $item['description']['value'] }}</x-text-content>
+                                            @if(isset($item['description']))
+                                                <x-text-content>{{ $item['description']['value'] }}</x-text-content>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +62,7 @@
         </x-section>
     @endif
 
-    @if($ourTeam)
+    {{-- @if($ourTeam)
         <x-section class="gap-8 md:gap-10">
             <x-heading>{{ $ourTeam['title']->value }}</x-heading>
 
@@ -79,6 +81,19 @@
                     </div>
                 @endforeach
             </div>
+        </x-section>
+    @endif --}}
+
+    @if($ourBusiness)
+        <x-section>
+            <x-container width="1180">
+                <div class="flex flex-col gap-8 items-center">
+                    <x-heading>{{ $ourBusiness['title']->value }}</x-heading>
+                    <x-text-content>
+                        {!! $ourBusiness['text']->value !!}
+                    </x-text-content>
+                </div>
+            </x-container>
         </x-section>
     @endif
 

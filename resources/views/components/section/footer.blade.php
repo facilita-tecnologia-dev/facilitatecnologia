@@ -16,7 +16,7 @@
                     @endif
                 </a>
                 
-                <div class="grid grid-cols-1 gap-8 items-center sm:grid-cols-2 lg:grid-cols-4 lg:flex-1">
+                <div class="grid grid-cols-1 gap-8 items-start sm:grid-cols-2 lg:grid-cols-4 lg:flex-1">
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
                         <x-text-content>
@@ -31,7 +31,6 @@
                             <span class="uppercase text-gray-400 font-medium tracking-wider">Serviços</span>
                         </x-text-content>
                         <x-action href="{{ route('services') }}" variant="simple" alignment="left">Serviços</x-action>
-                        <x-action href="{{ route('services') }}?secao=planos" variant="simple" alignment="left">Planos</x-action>
                     </nav>
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
@@ -39,7 +38,7 @@
                             <span class="uppercase text-gray-400 font-medium tracking-wider">Suporte</span>
                         </x-text-content>
                         <x-action href="{{ route('contact') }}" variant="simple" alignment="left">Entrar em contato</x-action>
-                        <x-action href="{{ route('contact') }}?secao=faq" variant="simple" alignment="left">FAQ</x-action>
+                        <x-action href="{{ route('contact') }}?secao=status" variant="simple" alignment="left">Status do sistema</x-action>
                     </nav>
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
@@ -66,20 +65,23 @@
                 © 2025 Facilita Tecnologia. Todos os direitos reservados.
             </x-text-content>
 
-            <div class="flex justify-center gap-4">
+            <div class="flex flex-col items-center lg:flex-row justify-center gap-6">
+                    <div class="flex items-center gap-4">
+                        @if($companyInfos['facebook'][0]->value)
+                            <x-action variant="simple" href="{{ $companyInfos['facebook'][0]->value }}">
+                                <i class="fa-brands fa-square-facebook text-2xl text-gray-800"></i>
+                            </x-action>
+                        @endif
+                        @if($companyInfos['linkedin'][0]->value)
+                            <x-action variant="simple" href="{{ $companyInfos['linkedin'][0]->value }}">
+                                <i class="fa-brands fa-linkedin text-2xl text-gray-800"></i>
+                            </x-action>
+                        @endif
+                    </div>
 
-                    @if($companyInfos['facebook'][0]->value)
-                        <x-action variant="simple" href="{{ $companyInfos['facebook'][0]->value }}">
-                            <i class="fa-brands fa-square-facebook text-2xl text-gray-800"></i>
-                        </x-action>
-                    @endif
-
-                    @if($companyInfos['linkedin'][0]->value)
-                        <x-action variant="simple" href="{{ $companyInfos['linkedin'][0]->value }}">
-                            <i class="fa-brands fa-linkedin text-2xl text-gray-800"></i>
-                        </x-action>
-                    @endif
-
+                    <div>
+                        <img src="{{ asset('assets/aws-logo.png') }}" alt="" class="h-[25px] object-contain">
+                    </div>
             </div>
 
         </div>

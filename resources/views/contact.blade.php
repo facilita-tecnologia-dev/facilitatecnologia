@@ -68,7 +68,7 @@
             </x-container>
         </x-section>
     @endif
-
+{{-- 
     @if($FAQContent && $FAQList)
         <x-section id="faq">
             <x-container width="700">
@@ -127,7 +127,7 @@
 
             </x-container>
         </x-section>
-    @endif
+    @endif --}}
 
     <x-section.footer :companyInfos="$companyInfos"  />
     
