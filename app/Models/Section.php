@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Section extends Model
 {
+    public function getRouteKeyName()
+    {
+        return 'type';
+    }
+
     public function items(){
         return $this->hasMany(Item::class);
     }

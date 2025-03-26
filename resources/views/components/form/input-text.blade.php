@@ -3,11 +3,22 @@
     'id' => null,
     'placeholder' => '',
     'type' => 'text',
+    'value' => null,
+    'label' => null,
     
     'icon' => null,
 ])
 
 <div class="w-full">
+    @if($label)
+        <label
+            class="text-lg font-semibold mb-3"
+            for="{{ $id ? $id : $name }}"
+        >
+            {{ $label }}
+        </label>
+    @endif
+
     <div {{ $attributes->merge(['class' => 'w-full flex items-center gap-3 bg-gray-200 px-3 rounded-md text-base text-gray-800 placeholder:text-gray-500 border border-gray-300']) }}>
         
         @if($icon && $icon === 'search')
@@ -19,6 +30,7 @@
             name="{{ $name }}"
             id="{{ $id ? $id : $name }}"
             placeholder="{{ $placeholder }}"
+            value="{{ $value }}"
         >
 
     </div>

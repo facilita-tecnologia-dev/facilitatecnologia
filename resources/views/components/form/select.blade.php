@@ -1,14 +1,25 @@
 @props([
     'options' => [],
-    'label' => 'Selecione uma opção',
+    'placeholder' => 'Selecione uma opção',
     'name',
+    'label' => null,
+    'value' => null,
 ])
+
+@if($label)
+    <label
+        class="text-lg font-semibold mb-3"
+        for="{{ $name }}"
+    >
+        {{ $label }}
+    </label>
+@endif
 
 <div onclick="toggleSelect(event)" {{ $attributes->merge(['class' => 'select relative w-full flex items-center justify-between gap-3 cursor-pointer bg-gray-200 p-3 rounded-md h-[45px] text-base text-gray-800 placeholder:text-gray-500 border border-gray-300']) }}>
     
-    <input type="hidden" name="{{ $name }}" value="">
+    <input type="hidden" name="{{ $name }}" value="{{ $value }}">
     
-    <span>{{ $label }}</span>
+    <span>{{ $placeholder }}</span>
 
     <i class="fa-solid fa-chevron-down pointer-events-none"></i>
     

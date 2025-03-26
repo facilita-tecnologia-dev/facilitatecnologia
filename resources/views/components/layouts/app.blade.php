@@ -11,17 +11,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/d6c8bd95ac.js" crossorigin="anonymous"></script>
 
+    <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+
     <title>Facilita Tecnologia</title>
 
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100">
-
-
-    
     {{ $slot }}
-
-
-    
 </body>
 </html>
