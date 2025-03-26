@@ -32,10 +32,11 @@ function animateHistoryNumbers() {
     const duration = 2500;
 
     function formatNumber(value) {
-        if (value >= 1000000000) return Math.floor(value / 1000000000) + "bi";
-        if (value >= 1000000) return Math.floor(value / 1000000) + "mi";
-        if (value >= 1000) return Math.floor(value / 1000) + "mil";
-        return Math.floor(value).toString();
+        if (value >= 1000000000)
+            return "+" + Math.floor(value / 1000000000) + "bi";
+        if (value >= 1000000) return "+" + Math.floor(value / 1000000) + "mi";
+        if (value >= 1000) return "+" + Math.floor(value / 1000) + "mil";
+        return "+" + Math.floor(value).toString();
     }
     function animateCounter(counter) {
         const target = +counter.getAttribute("data-target");

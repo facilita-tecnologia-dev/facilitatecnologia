@@ -4,7 +4,7 @@
     'form' => ($tag ?? 'a') === 'button' ? '' : null, // Se for um botão, coloca o form pardrão como null
 
     'type' => ($tag ?? 'a') === 'button' ? 'submit' : null, // Se for um botão, coloca o type pardrão como submit
-    'href' => ($tag ?? 'a') === 'a' ? '#' : null, // Se for um link, coloca o href pardrão como todo
+    'href' => ($tag ?? 'a') === 'a' ? '#' : null, // Se for um link, coloca o href pardrão como #
 
     'variant' => 'solid',
     'size' => 'm',

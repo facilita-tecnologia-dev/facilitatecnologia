@@ -6,6 +6,16 @@ const menuMobile = document.querySelector("#menumobile");
 const menuMobileClose = document.querySelector("#menumobile-close");
 const menuMobileOverlay = document.querySelector("#menumobile-overlay");
 
+// Scroll into view
+const urlParams = new URLSearchParams(window.location.search);
+const urlSectionParam = urlParams.get("secao");
+
+// if (scrollTo) {
+//     FAQSection.scrollIntoView({
+//         behavior: "smooth",
+//     });
+// }
+
 document.addEventListener("DOMContentLoaded", () => {
     // Menumobile
     body.addEventListener("click", function (event) {
@@ -21,6 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
     menuMobileClose.addEventListener("click", function () {
         handleHideMenuMobile();
     });
+
+    if (urlSectionParam) {
+        const section = document.querySelector(`#${urlSectionParam}`);
+        if (section) {
+            section.scrollIntoView({
+                behavior: "smooth",
+            });
+        }
+    }
 });
 
 function handleShowMenuMobile() {

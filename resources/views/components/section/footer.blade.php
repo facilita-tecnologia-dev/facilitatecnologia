@@ -35,18 +35,17 @@
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
                         <x-text-content>
-                            <span class="uppercase text-gray-400 font-medium tracking-wider">Suporte</span>
+                            <span class="uppercase text-gray-400 font-medium tracking-wider">Contato</span>
                         </x-text-content>
                         <x-action href="{{ route('contact') }}" variant="simple" alignment="left">Entrar em contato</x-action>
-                        <x-action href="{{ route('contact') }}?secao=status" variant="simple" alignment="left">Status do sistema</x-action>
+
                     </nav>
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
                         <x-text-content>
-                            <span class="uppercase text-gray-400 font-medium tracking-wider">Políticas</span>
+                            <span class="uppercase text-gray-400 font-medium tracking-wider">Sistema</span>
                         </x-text-content>
-                        <x-action href="#" variant="simple" alignment="left">Política de Privacidade</x-action>
-                        <x-action href="#" variant="simple" alignment="left">Termos de uso</x-action>
+                        <x-action href="{{ route('contact') }}?secao=status" variant="simple" alignment="left">Status do sistema</x-action>
                     </nav>
 
                 </div>

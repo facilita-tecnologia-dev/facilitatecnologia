@@ -233,7 +233,7 @@ class HomeSeeder extends Seeder
             'section_id' => $historyNumbers,
             'item_id' => $HNitem1,
             'type' => 'number', 
-            'value' => '+1mi', 
+            'value' => '1000000', 
             'order' => 1, 
         ]);
 

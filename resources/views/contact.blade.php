@@ -40,7 +40,7 @@
     </x-section>
 
     @if($systemStatusCode)
-        <x-section>
+        <x-section id="status">
             <x-container width="700">
             
                 <div class="flex flex-col gap-8 items-center">

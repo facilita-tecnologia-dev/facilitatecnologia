@@ -42,6 +42,12 @@ class DatabaseSeeder extends Seeder
             'order' => 1,
         ]);
 
+        DB::table('company_infos')->insert([
+            'type' => 'whatsapp',
+            'value' => '5551989269827',
+            'order' => 1,
+        ]);
+
         $this->call([
             PageSeeder::class,
             HomeSeeder::class,

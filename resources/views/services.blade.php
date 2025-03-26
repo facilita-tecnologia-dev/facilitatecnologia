@@ -147,8 +147,10 @@
                         <x-text-content color="gray-100" alignment="left">
                             {{ $CTABanner['text']->value }}
                         </x-text-content>
-                        <x-action variant="simple" color="gray-100">Solicite uma demonstração</x-action>
-                        {{-- TODO: Link para whatsapp com mensagem pedindo demosntração --}}
+
+                        @if($companyInfos['whatsapp'][0]->value)
+                            <x-action href="https://wa.me/?phone={{ $companyInfos['whatsapp'][0]->value }}&text=Por%20favor,%20eu%20gostaria%20de%20uma%20demonstração%20do%20produto!" variant="simple" color="gray-100">Solicite uma demonstração</x-action>
+                        @endif
                     </div>
                 </div>
             </x-container>

@@ -20,7 +20,7 @@
 
             <div class="h-9 w-0.5 bg-gray-800"></div>
 
-            <x-action href="#" variant="solid" size="s">Login</x-action>
+            <x-action href="https://www.facilitarh.com.br/sistema" variant="solid" size="s">Login</x-action>
         </nav>
         
         <div id="menumobile-trigger" class="block lg:hidden cursor-pointer">
@@ -49,7 +49,7 @@
                 <x-action href="{{ route('about') }}" variant="simple">Sobre nós</x-action>
                 <x-action href="{{ route('services') }}" variant="simple">Serviços</x-action>
                 <x-action href="{{ route('contact') }}" variant="simple">Contato</x-action>
-                <x-action href="#" variant="solid" size="s">Login</x-action>
+                <x-action href="https://www.facilitarh.com.br/sistema" variant="solid" size="s">Login</x-action>
             </nav>
 
             <div class="space-y-4">
