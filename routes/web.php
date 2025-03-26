@@ -3,6 +3,10 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CMS\IndexController;
 use App\Http\Controllers\CMS\LoginController;
+use App\Http\Controllers\CMS\modules\ModulesListController;
+use App\Http\Controllers\CMS\plans\PlansListController;
+use App\Http\Controllers\CMS\Sections\ListController;
+use App\Http\Controllers\CMS\Sections\SectionsListController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ModuleController;
@@ -22,6 +26,9 @@ Route::get('/cms/login', LoginController::class)->name('cms.login');
 Route::post('/cms/login', [LoginController::class, 'handleLogin']);
 
 Route::get('/cms', IndexController::class)->name('cms.index');
+Route::get('/cms/secoes', SectionsListController::class)->name('cms.sections');
+Route::get('/cms/planos', PlansListController::class)->name('cms.plans');
+Route::get('/cms/modulos', ModulesListController::class)->name('cms.modules');
 
 Route::get('/components', function () {
     return view('dev.components');

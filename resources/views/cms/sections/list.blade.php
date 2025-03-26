@@ -14,9 +14,9 @@
                 </a>
                 
                 <nav class="hidden lg:flex items-center gap-6">
-                    <x-action href="{{ route('cms.sections') }}" variant="simple">Seções</x-action>
-                    <x-action href="{{ route('cms.plans') }}" variant="simple">Planos</x-action>
-                    <x-action href="{{ route('cms.modules') }}" variant="simple">Módulos</x-action>
+                    <x-action href="#" variant="simple">Seções</x-action>
+                    <x-action href="#" variant="simple">Planos</x-action>
+                    <x-action href="#" variant="simple">Módulos</x-action>
                     <x-action href="#" variant="simple">Infos. Empresa</x-action>
                 </nav>
                 
@@ -50,6 +50,38 @@
         </x-container>
     </header>
 
+    <div class="mt-8">
+        <x-container>
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Lista de seções</h2>
+
+            <div class="border border-gray-300 rounded-md overflow-hidden">
+                <div class="grid grid-cols-5 bg-gray-300 px-4 py-1.5">
+                    <div class="col-span-4">
+                        <x-text-content alignment="left">Nome da seção</x-text-content>
+                    </div>
+                    <div>
+                        <x-text-content alignment="left">Página</x-text-content>
+                    </div>
+                </div>
+                <div class="body">
+                    @foreach($sections as $section)
+                        <div class="grid grid-cols-5 px-4 py-1.5 border-b border-gray-300">
+                            <div class="col-span-4">{{ $section['type'] }}</div>
+                            <div>
+                                @foreach ($section->page as $page)
+                                {{ $page['title'] }}
+                                @endforeach
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="w-full mt-4">
+                {{ $sections->links() }}
+            </div>
+        </x-container>
+    </div>
 
     <script src="{{ asset('js/global.js') }}"></script>
 </x-layouts.app>

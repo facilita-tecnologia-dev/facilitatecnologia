@@ -3,7 +3,7 @@
     'placeholder' => '',
 ])
 
-<div>
+<div class="w-full">
     <div {{ $attributes->merge(['class' => 'w-full flex items-start gap-3 bg-gray-200 p-3 rounded-md  text-base text-gray-800 placeholder:text-gray-500 border border-gray-300']) }}>
     
         <textarea type="text"

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\CMS;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -13,7 +14,15 @@ class LoginController extends Controller
     }
 
     public function handleLogin(Request $request){
-        dd($request);
-        return to_route('cms.index');
+        $validatedData = $request->validate([
+            'username' => ['required'],
+            'password' => ['required'],
+        ]);
+
+        if(Auth::attempt($validatedData)){
+            return to_route('cms.index');
+        }
+
+        return back()->with('errorMessage', 'Credenciais incorretas!');
     }
 }

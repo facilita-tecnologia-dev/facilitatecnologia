@@ -6,6 +6,7 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -46,6 +47,11 @@ class DatabaseSeeder extends Seeder
             'type' => 'whatsapp',
             'value' => '5551989269827',
             'order' => 1,
+        ]);
+
+        DB::table('users')->insert([
+            'username' => 'facilita.code',
+            'password' => Hash::make('facilita3015'),
         ]);
 
         $this->call([
