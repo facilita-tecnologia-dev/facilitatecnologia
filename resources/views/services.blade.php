@@ -2,17 +2,44 @@
     
     <x-section.header :companyInfos="$companyInfos" />
 
-    @if($ourPlans)
+    @if($ourPlansContent && $ourPlansList)
         <x-section id="our-plans">
             <x-container width="1180">
                 <div class="flex flex-col gap-8 md:gap-12 items-center">
                     <div class="flex flex-col gap-3 items-center">
-                        <x-heading>{{ $ourPlans['title']->value }}</x-heading>
-                        <x-text-content>{{ $ourPlans['description']->value }}</x-text-content>
+                        <x-heading>{{ $ourPlansContent['title']->value }}</x-heading>
+                        <x-text-content>{{ $ourPlansContent['description']->value }}</x-text-content>
                     </div>
 
                     <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-3">
-                        <div class="plan relative h-fit bg-emerald-300 rounded-md p-4 cursor-pointer">
+                        @foreach ($ourPlansList as $i => $plan)
+                            <div class="plan relative h-fit {{ $ourPlansColors[$i % count($ourPlansColors)] }} rounded-md p-4 cursor-pointer">
+                                <img src="{{ asset('assets/wave-plan.svg') }}" class="absolute left-0 top-0 w-full" />
+
+                                <div class="flex items-center justify-between">
+                                    <x-subtitle>
+                                        <span class="text-gray-800">{{ $plan['name'] }}</span>
+                                    </x-subtitle>
+
+                                    <x-action href="{{ route('plan-detail', $plan) }}" variant="simple">Ver mais</x-action>
+                                </div>
+
+                                <div class="dropdown border-t border-gray-600 max-h-[300px] mt-4 pl-4 pt-4 overflow-hidden">
+                                    <ul class="list-disc space-y-2">
+                                        @foreach ($plan->modules as $module)
+                                            <li>
+                                                <x-text-content alignment="left">
+                                                   {{ $module['name'] }}
+                                                </x-text-content>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        @endforeach
+                        
+
+                        {{-- <div class="plan relative h-fit bg-emerald-300 rounded-md p-4 cursor-pointer">
                             <img src="{{ asset('assets/wave-plan.svg') }}" class="absolute left-0 top-0 w-full" />
 
                             <div class="flex items-center justify-between">
@@ -32,7 +59,6 @@
                                     </li>
                                 </ul>
                             </div>
-                        {{-- <div class="border-gray-600 mt-0 border-t-0 max-h-0 overflow-hidden"></div> --}}
                         </div>
 
                         <div class="plan relative h-fit bg-sky-300 rounded-md p-4 cursor-pointer">
@@ -82,7 +108,6 @@
                                     </li>
                                 </ul>
                             </div>
-                        {{-- <div class="border-gray-600 mt-0 border-t-0 max-h-0 overflow-hidden"></div> --}}
                         </div>
 
                         <div class="plan relative h-fit bg-purple-300 rounded-md p-4 cursor-pointer">
@@ -123,8 +148,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            {{-- <div class="border-gray-600 mt-0 border-t-0 max-h-0 overflow-hidden"></div> --}}
-                        </div>
+                        </div> --}}
                     </div>
                     
                 </div>
