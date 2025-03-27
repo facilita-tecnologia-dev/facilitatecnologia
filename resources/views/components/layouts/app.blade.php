@@ -13,6 +13,8 @@
 
     <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Facilita Tecnologia</title>
 
     @vite('resources/css/app.css')

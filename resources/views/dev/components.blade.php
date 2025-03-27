@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     
@@ -83,6 +83,12 @@
 
     </x-section>
 
+    <x-section>
+        <h2 class="text-2xl font-bold">Inputfile</h2>
+
+        <x-form.input-file name="image" />
+    </x-section>
+    
     <x-section></x-section>
     
 </body>

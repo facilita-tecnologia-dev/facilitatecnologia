@@ -5,6 +5,7 @@
     'type' => 'text',
     'value' => null,
     'label' => null,
+    'disabled' => null,
     
     'icon' => null,
 ])
@@ -31,13 +32,12 @@
             id="{{ $id ? $id : $name }}"
             placeholder="{{ $placeholder }}"
             value="{{ $value }}"
+            {{ $disabled ? 'disabled' : '' }}
         >
 
     </div>
 
     @error($name)
-        <div class="w-full">
-            <span class="text-xs text-rose-400">{{ $message }}</span>
-        </div>
+        <x-error-span text="{{ $message }}" />
     @enderror
 </div>

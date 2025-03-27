@@ -9,14 +9,12 @@
         <textarea type="text"
             class="w-full h-full focus:outline-0 min-h-[160px] max-h-[300px] resize-none"
             name="{{ $name }}"
-            placeholder="{{ $placeholder }}"
+            placeholder="{{ $placeholder }}"    
         ></textarea>
     
     </div>
     
     @error($name)
-        <div class="w-full">
-            <span class="text-xs text-rose-400">{{ $message }}</span>
-        </div>
+        <x-error-span text="{{ $message }}" />
     @enderror
 </div>

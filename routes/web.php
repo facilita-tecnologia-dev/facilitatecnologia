@@ -5,10 +5,13 @@ use App\Http\Controllers\CMS\contents\ContentDetailController;
 use App\Http\Controllers\CMS\contents\ContentsListController;
 use App\Http\Controllers\CMS\IndexController;
 use App\Http\Controllers\CMS\LoginController;
+use App\Http\Controllers\CMS\modules\ModuleDetailController;
 use App\Http\Controllers\CMS\modules\ModulesListController;
+use App\Http\Controllers\CMS\plans\PlanDetailController;
 use App\Http\Controllers\CMS\plans\PlansListController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ServicesController;
@@ -31,9 +34,14 @@ Route::get('/cms/conteudos', ContentsListController::class)->name('cms.contents'
 Route::get('/cms/conteudos/{content}', ContentDetailController::class)->name('cms.content-detail');
 Route::post('/cms/conteudos/{content}', [ContentDetailController::class, 'handleUpdateContent']);
 
+
 Route::get('/cms/planos', PlansListController::class)->name('cms.plans');
+Route::get('/cms/planos/{plan}', PlanDetailController::class)->name('cms.plan-detail');
+Route::post('/cms/planos/{plan}', [PlanDetailController::class, 'handleUpdatePlan']);
 
 Route::get('/cms/modulos', ModulesListController::class)->name('cms.modules');
+Route::get('/cms/modulos/{module}', ModuleDetailController::class)->name('cms.module-detail');
+Route::post('/cms/modulos/{module}', [ModuleDetailController::class, 'handleUpdateModule']);
 
 Route::get('/components', function () {
     return view('dev.components');

@@ -28,15 +28,15 @@ class ContactController extends GeneralController
             'message' => ['required'],
         ]);
 
-        dd($validatedMessage['message']);
+        // dd($validatedMessage['message']);
 
         // Numero real ->
 
         // Número de telefone (com código do país, sem + ou espaços)
-        $telefone = "5554997026820";
+        $telefone = "5551989269827";
         
         // Codifica a mensagem para URL
-        $mensagemCodificada = urlencode($validatedMessage->message);
+        $mensagemCodificada = urlencode($validatedMessage['message']);
         
         // Monta a URL do WhatsApp
         $url = "https://wa.me/{$telefone}?text={$mensagemCodificada}";

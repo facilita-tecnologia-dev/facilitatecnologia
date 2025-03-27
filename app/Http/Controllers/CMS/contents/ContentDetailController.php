@@ -2,35 +2,50 @@
 
 namespace App\Http\Controllers\CMS\contents;
 
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\GeneralController;
+use App\Http\Requests\ContentDetailUpdateRequest;
 use App\Models\Content;
-use App\Models\Page;
 use App\Models\Section;
-use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class ContentDetailController extends GeneralController
 {
     public function __invoke(Content $content){
         $sectionsToSelect = $this->getSectionsToSelect();
 
+        $contentType = '';
+        if(str_starts_with($content->value, '/storage')){
+            $contentType = 'file';
+        } else{
+            $contentType = 'text';
+        }
+
         return view('cms.contents.content-detail', [
             'companyInfos' => $this->companyInfos,
             'content' => $content,
             'sectionsToSelect' => $sectionsToSelect,
+            'contentType' => $contentType,
         ]);
     }
 
-    public function handleUpdateContent(Request $request, Content $content){
-        // dd($request->all());
-        $contentDB = Content::where('id', '=', $content->id)->first();
-        $contentDB->type = $request->type;
-        $contentDB->value = $request->value;
-        $contentDB->order = $request->order;
-        $contentDB->section_id = $request->section_id;
-        // dd($request->all(), $contentDB);
+    public function handleUpdateContent(ContentDetailUpdateRequest $request, Content $content){
+        $validatedData = $request->validated();
 
-        $contentDB->save();
+        $content->order = $validatedData['order'];
+        $content->section_id = $validatedData['section_id'];
+
+        if($validatedData['value'] instanceof UploadedFile){
+            $path = $validatedData['value']->store('images', 'public');
+            $url = Storage::url($path);
+
+            $content->value = $url;
+            
+        } else{
+            $content->value = $validatedData['value'];
+        }
+
+        $content->save();
 
         return back();
     }

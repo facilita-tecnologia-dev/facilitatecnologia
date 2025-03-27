@@ -7,15 +7,15 @@
             <x-container width="1180">
                 <div class="flex flex-col gap-8 items-center">
                     <div class="flex flex-col items-center gap-3">
-                        <x-heading>{{ $module['name'] }}</x-heading>
+                        <x-heading>{!! $module['name'] !!}</x-heading>
 
                         <x-text-content>
-                        {{ $module['description'] }}
+                        {!! $module['description'] !!}
                         </x-text-content>
                     </div>
 
                     <div class="w-full space-y-8">
-                        {{ $module['content'] }}
+                        {!! $module['content'] !!}
                     </div>
                 </div>
 
