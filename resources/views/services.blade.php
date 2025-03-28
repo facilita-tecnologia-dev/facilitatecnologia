@@ -29,7 +29,7 @@
                                         @foreach ($plan->modules as $module)
                                             <li>
                                                 <x-text-content alignment="left">
-                                                   {{ $module['name'] }}
+                                                   {!! $module['name'] !!}
                                                 </x-text-content>
                                             </li>
                                         @endforeach

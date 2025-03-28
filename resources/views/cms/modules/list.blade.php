@@ -37,12 +37,12 @@
                             <a href="{{ route('cms.module-detail', $module) }}" class="grid grid-cols-5 px-4 py-1.5 border-b border-gray-300 hover:bg-gray-200 transition">
                                 <div class="col-span-3 md:col-span-4">
                                     <span class="text-sm md:text-base">
-                                        {{ $module['name'] }}
+                                        {!! $module['name'] !!}
                                     </span>
                                 </div>
                                 <div class="col-span-2 md:col-span-1">
                                     <span class="text-sm md:text-base">
-                                        {{ $module['slug'] }}
+                                        {!! $module['slug'] !!}
                                     </span>
                                 </div>
                             </a>

@@ -19,13 +19,18 @@
 
                 </div>
                 
-                <x-form action="{{ route('contact') }}" method="POST" class="w-full flex flex-col gap-y-6 gap-x-2">
+                <a href="https://wa.me/{{ $companyInfos['whatsapp'][0]->value }}" class="group w-full flex items-center justify-between gap-4 border-2 border-gray-200 rounded-md p-4 hover:border-green-300 transition">
+                    <x-text-content alignment="left">Clique aqui para entrar em contato conosco!</x-text-content>
+
+                    <i class="fa-brands fa-whatsapp text-2xl text-gray-500 group-hover:text-green-400 transition"></i>
+                </a>
+                {{-- <x-form action="{{ route('contact') }}" method="POST" class="w-full flex flex-col gap-y-6 gap-x-2">
                     {{-- <x-form.input-text name="name" placeholder="Nome" class="col-span-8" />
 
                     <x-form.input-text name="email" placeholder="E-mail" class="col-span-8" />
                     
                     <x-form.select name="ddd" class="col-span-2" :options="[['option' => '+54', 'value' => 1], ['option' => '+22', 'value' => 2], ['option' => '+33', 'value' => 3], ['option' => '+44', 'value' => 4]]" label="DDD" />
-                    <x-form.input-text type="tel" name="outro" placeholder="Telefone" class="col-span-6"/> --}}
+                    <x-form.input-text type="tel" name="outro" placeholder="Telefone" class="col-span-6"/> 
 
                     <x-form.textarea name="message" placeholder="Mensagem" class="col-span-8"></x-form.textarea>
 
@@ -33,7 +38,7 @@
                         <x-action tag="button" form="">Enviar mensagem</x-action>
                     </div>
                     
-                </x-form>
+                </x-form> --}}
             </div>
         
         </x-container>

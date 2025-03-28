@@ -54,7 +54,7 @@ Route::prefix('cms')->group(function () {
         Route::post('/planos/criar', [CreatePlanController::class, 'handleCreatePlan']);
 
         Route::get('/planos/{plan}', UpdatePlanController::class)->name('cms.plan-detail');
-        Route::post('/planos/{plan}', [UpdatePlanController::class, 'handleUpdatePlan']);
+        Route::put('/planos/{plan}', [UpdatePlanController::class, 'handleUpdatePlan']);
         
         Route::get('/modulos/{plan}/deletar', DeletePlanController::class)->name('cms.plan-delete');
 
@@ -64,7 +64,7 @@ Route::prefix('cms')->group(function () {
         Route::post('/modulos/criar', [CreateModuleController::class, 'handleCreateModule']);
 
         Route::get('/modulos/{module}', UpdateModuleController::class)->name('cms.module-detail');
-        Route::post('/modulos/{module}', [UpdateModuleController::class, 'handleUpdateModule']);
+        Route::put('/modulos/{module}', [UpdateModuleController::class, 'handleUpdateModule']);
 
         Route::get('/modulos/{module}/deletar', DeleteModuleController::class)->name('cms.module-delete');
         

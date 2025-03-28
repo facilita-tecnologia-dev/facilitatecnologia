@@ -6,7 +6,7 @@
         <x-container>
             <h2 class="text-3xl font-semibold text-gray-800 mb-6">Plano / {!! $plan['name'] !!}</h2>
 
-            <x-form action="{{ route('cms.plan-detail', $plan) }}" method="POST" class="space-y-4">
+            <x-form action="{{ route('cms.plan-detail', $plan) }}" method="PUT" class="space-y-4">
                 <x-form.input-text name="name" value="{{ $plan['name'] }}" label="Nome" placeholder="Digite o nome do plano" />
 
                 <x-form.input-text name="slug" value="{{ $plan['slug'] }}" label="Slug" placeholder="Digite o slug do plano" />

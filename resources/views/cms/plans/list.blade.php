@@ -38,12 +38,12 @@
                             <a href="{{ route('cms.plan-detail', $plan) }}" class="grid grid-cols-5 px-3 md:px-4 py-1.5 border-b border-gray-300 hover:bg-gray-200 transition">
                                 <div class="col-span-3 md:col-span-4">
                                     <span class="text-sm md:text-base">
-                                        {{ $plan['name'] }}
+                                        {!! $plan['name'] !!}
                                     </span>
                                 </div>
                                 <div class="col-span-2 md:col-span-1">
                                     <span class="text-sm md:text-base">
-                                        {{ $plan['slug'] }}
+                                        {!! $plan['slug'] !!}
                                     </span>
                                 </div>
                             </a>

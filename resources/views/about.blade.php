@@ -103,7 +103,7 @@
             <div class="flex justify-center flex-wrap gap-x-6 lg:gap-12 gap-y-8">
                 @foreach($ourPartners["partner-logo"] as $partnerLogo)
                     <x-action href="#" variant="simple">
-                        <img src="{{ asset($partnerLogo['value']) }}" alt="" class="h-7 grayscale-0 md:grayscale-100 md:hover:grayscale-0 transition">
+                        <img src="{{ asset($partnerLogo['value']) }}" alt="" class="h-7 md:h-8 grayscale-0 md:grayscale-100 md:hover:grayscale-0 transition">
                     </x-action>
                 @endforeach
             </div>

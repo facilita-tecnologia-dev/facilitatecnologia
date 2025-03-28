@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" href="{{ asset('assets/favicon.ico/favicon.svg') }}" />
     <link rel="shortcut icon" href="{{ asset('assets/favicon.ico/favicon.ico') }}" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon.ico/apple-touch-icon.png') }}" />
-    <link rel="manifest" href="{{ asset('assets/favicon.ico/site.webmanifest') }}" />
+    <link rel="manifest" ytpe href="{{ asset('assets/favicon.ico/site.webmanifest') }}" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
