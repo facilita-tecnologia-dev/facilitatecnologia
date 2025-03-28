@@ -24,6 +24,7 @@
     {{ $form ? "form=$form" : '' /* Se houver form (se for botão) coloca o atributo form */}}
     {{ $type ? "type=$type" : '' /* Se houver type (se for botão) coloca o atributo type */}}
     {{ $href ? "href=$href" : '' /* Se houver href (se for link) coloca o atributo href */}}
+    {{ $attributes }}
     @class([
         'block w-fit rounded-md cursor-pointer font-medium transition duration-200 whitespace-nowrap',
 

@@ -4,7 +4,7 @@
 
     <div class="my-8 px-4">
         <x-container>
-            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Plano / {{ $plan['name'] }}</h2>
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Plano / {!! $plan['name'] !!}</h2>
 
             <x-form action="{{ route('cms.plan-detail', $plan) }}" method="POST" class="space-y-4">
                 <x-form.input-text name="name" value="{{ $plan['name'] }}" label="Nome" placeholder="Digite o nome do plano" />

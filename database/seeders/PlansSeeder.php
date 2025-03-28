@@ -105,14 +105,6 @@ class PlansSeeder extends Seeder
             'price' => '0',
         ]);
 
-        $treinamento = DB::table('modules')->insertGetId([
-            'name' => 'Treinamento',
-            'slug' => 'treinamento',
-            'description' => '',
-            'content' => '',
-            'price' => '0',
-        ]);
-
         $gestaoEPIModule = DB::table('modules')->insertGetId([
             'name' => 'Gestão de EPI\'s',
             'slug' => 'gestao-de-epis',
@@ -183,7 +175,7 @@ class PlansSeeder extends Seeder
 
         DB::table('plan_modules')->insert([
             'plan_id' => $gestaoRH,
-            'module_id' => $treinamento,
+            'module_id' => $treinamentoDesenvolvimento,
         ]);
 
         // -------------------------------------

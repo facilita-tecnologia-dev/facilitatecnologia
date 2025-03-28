@@ -26,6 +26,7 @@ class ModuleDetailUpdateRequest extends FormRequest
         return [
             'name' => ['required'],
             'slug' => ['required'],
+            'image' => ['nullable'],
             'description' => ['required'],
             'content' => ['required'],
             'price' => ['nullable'],

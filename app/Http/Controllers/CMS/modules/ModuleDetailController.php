@@ -18,13 +18,19 @@ class ModuleDetailController extends GeneralController
     public function handleUpdateModule(ModuleDetailUpdateRequest $request, Module $module){
         $validatedData = $request->validated();
 
+        // dd($validatedData);
         $module->name = $validatedData['name'];
         $module->slug = $validatedData['slug'];
         $module->description = $validatedData['description'];
         $module->content = $validatedData['content'];
 
+        if($validatedData['image']){
+            $path = $this->saveImageToStorage($validatedData['image']);
+            $module->image = $path;
+        }
+
         $module->save();
 
-        return back();
+        return to_route('cms.modules');
     }
 }

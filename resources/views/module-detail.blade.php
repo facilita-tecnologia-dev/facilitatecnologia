@@ -14,7 +14,7 @@
                         </x-text-content>
                     </div>
 
-                    <div class="w-full space-y-8">
+                    <div class="w-full space-y-8 wysiwyg-formatter">
                         {!! $module['content'] !!}
                     </div>
                 </div>

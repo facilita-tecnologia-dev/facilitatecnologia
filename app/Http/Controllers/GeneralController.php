@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Page;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class GeneralController extends Controller
 {
@@ -59,6 +60,13 @@ class GeneralController extends Controller
         }
 
         return $organizedSections;
+    }
+
+    protected function saveImageToStorage($image){
+        $path = $image->store('images', 'public');
+        $url = Storage::url($path);
+
+        return $url;
     }
 
 }

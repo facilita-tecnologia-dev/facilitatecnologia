@@ -15,7 +15,11 @@
                 <x-action href="{{ route('cms.contents') }}" variant="simple">Conteúdos</x-action>
                 <x-action href="{{ route('cms.plans') }}" variant="simple">Planos</x-action>
                 <x-action href="{{ route('cms.modules') }}" variant="simple">Módulos</x-action>
-                <x-action href="#" variant="simple">Infos. Empresa</x-action>
+                <x-action href="{{ route('cms.company-infos') }}" variant="simple">Infos. Empresa</x-action>
+
+                <div class="h-9 w-0.5 bg-gray-800"></div>
+                    
+                <x-action href="{{ route('cms.logout') }}" onclick="return confirm('Deseja mesmo fazer logout?')" size="s">Logout</x-action>
             </nav>
             
             <div id="menumobile-trigger" class="block lg:hidden cursor-pointer">
@@ -37,10 +41,10 @@
                 </a>
 
                 <nav class="flex flex-col items-center gap-5 py-12 flex-1">
-                    <x-action href="#" variant="simple">Seções</x-action>
-                    <x-action href="#" variant="simple">Planos</x-action>
-                    <x-action href="#" variant="simple">Módulos</x-action>
-                    <x-action href="#" variant="simple">Infos. Empresa</x-action>
+                    <x-action href="{{ route('cms.contents') }}" variant="simple">Conteúdos</x-action>
+                    <x-action href="{{ route('cms.plans') }}" variant="simple">Planos</x-action>
+                    <x-action href="{{ route('cms.modules') }}" variant="simple">Módulos</x-action>
+                    <x-action href="{{ route('cms.company-infos') }}" variant="simple">Infos. Empresa</x-action>
                 </nav>
             </div>
         </div>

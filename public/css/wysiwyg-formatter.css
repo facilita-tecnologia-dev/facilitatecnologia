@@ -1,0 +1,22 @@
+.wysiwyg-formatter h1,
+.wysiwyg-formatter h2,
+.wysiwyg-formatter h3,
+.wysiwyg-formatter h4,
+.wysiwyg-formatter h5,
+.wysiwyg-formatter h6,
+.wysiwyg-formatter p,
+.wysiwyg-formatter span {
+    margin-bottom: 0;
+}
+
+.wysiwyg-formatter li {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style-type: none;
+}
+
+.wysiwyg-formatter li::before {
+    content: "\02192";
+    display: block;
+}

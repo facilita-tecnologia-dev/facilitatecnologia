@@ -4,12 +4,20 @@
 
     <div class="my-8 px-4">
         <x-container>
-            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Módulo / {{ $module['name'] }}</h2>
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Módulo / {!! $module['name'] !!}</h2>
 
-            <x-form action="{{ route('cms.module-detail', $module) }}" method="POST" class="space-y-4">
+            <x-form action="{{ route('cms.module-detail', $module) }}" method="POST" class="space-y-4" enctype="multipart/form-data">
                 <x-form.input-text name="name" value="{{ $module['name'] }}" label="Nome" placeholder="Digite o nome do módulo" />
 
                 <x-form.input-text name="slug" value="{{ $module['slug'] }}" label="Slug" placeholder="Digite o slug do módulo" />
+
+                <div class="space-y-2">
+                    <h2 class="text-lg font-semibold">
+                        Imagem
+                    </h2>
+                    <x-form.input-file name="image" value="{{ $module['image'] }}" />
+                    <img src="{{ asset($module['image']) }}" alt="" class="h-[55px]">
+                </div>
 
                 <div>
                     <h2 class="text-lg font-semibold mb-3">

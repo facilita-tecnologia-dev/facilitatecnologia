@@ -47,7 +47,7 @@ class ContentDetailController extends GeneralController
 
         $content->save();
 
-        return back();
+        return to_route('cms.contents');
     }
 
     private function getSectionsToSelect(){

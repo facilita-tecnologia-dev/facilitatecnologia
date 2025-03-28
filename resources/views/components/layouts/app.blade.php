@@ -17,7 +17,9 @@
 
     <title>Facilita Tecnologia</title>
 
+    
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="{{ asset('css/wysiwyg-formatter.css') }}">
 </head>
 <body class="bg-gray-100">
     {{ $slot }}

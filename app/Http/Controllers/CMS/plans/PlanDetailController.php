@@ -39,10 +39,8 @@ class PlanDetailController extends GeneralController
         $plan->description = $validatedData['description'];
         $plan->price = $validatedData['price'];
 
-
-        
         $plan->save();
 
-        return back();
+        return to_route('cms.plans');
     }
 }

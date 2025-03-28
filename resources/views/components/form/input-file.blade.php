@@ -11,7 +11,7 @@
     
     <span class="filename whitespace-nowrap text-sm md:text-md truncate">{{ $value }}</span>
 
-    <input type="file" class="hidden" name="{{ $name }}" id="{{ $id ? $id : $name }}" accept=".jpg, .jpeg, .webp, .png, .svg" onchange="getFileName(event)">
+    <input type="file" class="hidden" name="{{ $name }}" id="{{ $id ? $id : $name }}" value="{{ $value }}" accept=".jpg, .jpeg, .webp, .png, .svg" onchange="getFileName(event)">
 </label>
 
 <script>

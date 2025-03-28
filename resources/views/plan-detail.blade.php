@@ -16,7 +16,10 @@
                     @if(count($planModules) > 0)
                         <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
                             @foreach ($planModules as $module)
-                                <a href="{{ route('module-detail', $module) }}" class="w-full bg-gray-400 rounded-md p-3 sm:p-4 space-y-1 md:grayscale-100 md:hover:grayscale-0 transition duration-100 bg-center bg-cover bg-blend-multiply" style="background-image: url('{{ asset('assets/testimonials.png') }}');">
+                                <a 
+                                    href="{{ route('module-detail', $module) }}" class="w-full bg-gray-600 rounded-md p-3 sm:p-4 space-y-1 md:grayscale-100 md:hover:grayscale-0 transition duration-100 bg-center bg-cover bg-blend-multiply"
+                                    style="background-image: url('{{ asset($module['image']) }}');"
+                                >
                                     <x-subtitle>
                                         <span class="text-gray-100">{!! $module['name'] !!}</span>
                                     </x-subtitle>
