@@ -40,7 +40,16 @@
                                 </div>
                                 <div class="col-span-2 md:col-span-1">
                                     <span class="text-sm md:text-base">
-                                        {{ $content->section['type'] }} ({{ $content->section->page[0]['title'] }})
+                                        {{ $content->section['type'] }}
+                                        
+                                        (
+                                            @foreach ($content->section->page as $page)
+                                                {{ $page['title'] }}
+                                                @if(!$loop->last)
+                                                    |
+                                                @endif
+                                            @endforeach
+                                        )
                                     </span>
                                 </div>
                             </a>

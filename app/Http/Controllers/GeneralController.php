@@ -16,27 +16,13 @@ class GeneralController extends Controller
     }
 
     protected function getPageSectionsWithContents(string $slug): array{
-        $page = Page::with([
-            'sections' => function($query) {
-                $query->orderBy('order', 'asc');
-            },
-            'sections.contents' => function($query) {
-                $query->whereNull('item_id')
-                ->orderBy('order', 'asc');
-            },
-            'sections.items' => function($query) {
-                $query->orderBy('order', 'asc');
-            },
-            'sections.items.contents' => function($query) {
-                $query->orderBy('order', 'asc');
-            },
-        ])->where('slug', $slug)->firstOrFail();
+        $page = Page::where('slug', '=', $slug)->first();
+        $pageSections = $page->sections()->with(['contents' => fn($query) => $query->whereNull('item_id'), 'items', 'items.contents'])->get();
 
         $organizedSections = [];
 
-        foreach ($page->sections as $section) {
+        foreach ($pageSections as $section) {
             $sectionContents = $section->contents->groupBy('type');
-
 
             foreach($sectionContents as $content){
                 if(count($content) < 2){
@@ -58,7 +44,7 @@ class GeneralController extends Controller
                 }
             } 
         }
-
+        
         return $organizedSections;
     }
 
