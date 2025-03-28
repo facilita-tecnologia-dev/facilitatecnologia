@@ -1,21 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\CMS\plans;
+namespace App\Http\Controllers\CMS\plans\planDetail;
 
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\GeneralController;
 use App\Http\Requests\PlanDetailUpdateRequest;
 use App\Models\Module;
 use App\Models\Plan;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class PlanDetailController extends GeneralController
+class UpdatePlanController extends GeneralController
 {
     public function __invoke(Plan $plan){
         $modules = Module::all();
 
-        return view('cms.plans.plan-detail', [
+        return view('cms.plans.plan-update', [
             'companyInfos' => $this->companyInfos,
             'plan' => $plan,
             'modules' => $modules,
@@ -25,7 +23,7 @@ class PlanDetailController extends GeneralController
     public function handleUpdatePlan(PlanDetailUpdateRequest $request, Plan $plan){
         $validatedData = $request->validated();
 
-        DB::table('plan_modules')->where('plan_id', '=', $plan->id)->delete();
+       DB::table('plan_modules')->where('plan_id', '=', $plan->id)->delete();
 
         foreach($validatedData['modules'] as $module){
             DB::table('plan_modules')->insert([
@@ -34,12 +32,9 @@ class PlanDetailController extends GeneralController
             ]);
         }
 
-        $plan->name = $validatedData['name'];
-        $plan->slug = $validatedData['slug'];
-        $plan->description = $validatedData['description'];
-        $plan->price = $validatedData['price'];
+        unset($validatedData['modules']);
 
-        $plan->save();
+        $plan->update($validatedData);
 
         return to_route('cms.plans');
     }

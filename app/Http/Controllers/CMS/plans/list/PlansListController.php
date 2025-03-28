@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\CMS\plans;
+namespace App\Http\Controllers\CMS\plans\list;
 
 use App\Http\Controllers\GeneralController;
 use App\Models\Plan;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\CMS\modules;
+namespace App\Http\Controllers\CMS\modules\list;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\GeneralController;

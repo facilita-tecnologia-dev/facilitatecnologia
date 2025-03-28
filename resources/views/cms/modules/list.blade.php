@@ -7,9 +7,15 @@
             <div class="flex flex-col gap-4">
                 <h2 class="text-3xl font-semibold text-gray-800">Lista de Módulos</h2>
 
-                <x-form method="GET">
-                    <x-form.input-text icon="search" name="search" placeholder="Procure por conteúdos" />
-                </x-form>
+                <div class="flex items-center gap-3">
+                    <x-form method="GET" class="w-full">
+                        <x-form.input-text icon="search" name="search" placeholder="Procure por conteúdos" />
+                    </x-form>
+
+                    <x-action href="{{ route('cms.module-create') }}" size="s">
+                        <i class="fa-solid fa-plus"></i>
+                    </x-action>
+                </div>
 
                 @if($search)
                     <span class="text-sm">

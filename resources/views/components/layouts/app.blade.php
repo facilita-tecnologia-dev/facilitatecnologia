@@ -13,6 +13,12 @@
 
     <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
 
+    <link rel="icon" type="image/png" href="{{ asset('assets/favicon.ico/favicon-96x96.png') }}" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="{{ asset('assets/favicon.ico/favicon.svg') }}" />
+    <link rel="shortcut icon" href="{{ asset('assets/favicon.ico/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon.ico/apple-touch-icon.png') }}" />
+    <link rel="manifest" href="{{ asset('assets/favicon.ico/site.webmanifest') }}" />
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Facilita Tecnologia</title>

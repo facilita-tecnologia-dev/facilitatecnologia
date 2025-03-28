@@ -7,13 +7,16 @@ use App\Http\Controllers\CMS\contents\ContentsListController;
 use App\Http\Controllers\CMS\IndexController;
 use App\Http\Controllers\CMS\LoginController;
 use App\Http\Controllers\CMS\LogoutController;
-use App\Http\Controllers\CMS\modules\ModuleDetailController;
-use App\Http\Controllers\CMS\modules\ModulesListController;
-use App\Http\Controllers\CMS\plans\PlanDetailController;
-use App\Http\Controllers\CMS\plans\PlansListController;
+use App\Http\Controllers\CMS\modules\list\ModulesListController;
+use App\Http\Controllers\CMS\modules\moduleDetail\CreateModuleController;
+use App\Http\Controllers\CMS\modules\moduleDetail\DeleteModuleController;
+use App\Http\Controllers\CMS\modules\moduleDetail\UpdateModuleController;
+use App\Http\Controllers\CMS\plans\list\PlansListController;
+use App\Http\Controllers\CMS\plans\planDetail\CreatePlanController;
+use App\Http\Controllers\CMS\plans\planDetail\DeletePlanController;
+use App\Http\Controllers\CMS\plans\planDetail\UpdatePlanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\PageNotFoundController;
 use App\Http\Controllers\PlanController;
@@ -47,12 +50,23 @@ Route::prefix('cms')->group(function () {
         Route::post('/conteudos/{content}', [ContentDetailController::class, 'handleUpdateContent']);
         
         Route::get('/planos', PlansListController::class)->name('cms.plans');
-        Route::get('/planos/{plan}', PlanDetailController::class)->name('cms.plan-detail');
-        Route::post('/planos/{plan}', [PlanDetailController::class, 'handleUpdatePlan']);
+        Route::get('/planos/criar', CreatePlanController::class)->name('cms.plan-create');
+        Route::post('/planos/criar', [CreatePlanController::class, 'handleCreatePlan']);
+
+        Route::get('/planos/{plan}', UpdatePlanController::class)->name('cms.plan-detail');
+        Route::post('/planos/{plan}', [UpdatePlanController::class, 'handleUpdatePlan']);
         
+        Route::get('/modulos/{plan}/deletar', DeletePlanController::class)->name('cms.plan-delete');
+
         Route::get('/modulos', ModulesListController::class)->name('cms.modules');
-        Route::get('/modulos/{module}', ModuleDetailController::class)->name('cms.module-detail');
-        Route::post('/modulos/{module}', [ModuleDetailController::class, 'handleUpdateModule']);
+
+        Route::get('/modulos/criar', CreateModuleController::class)->name('cms.module-create');
+        Route::post('/modulos/criar', [CreateModuleController::class, 'handleCreateModule']);
+
+        Route::get('/modulos/{module}', UpdateModuleController::class)->name('cms.module-detail');
+        Route::post('/modulos/{module}', [UpdateModuleController::class, 'handleUpdateModule']);
+
+        Route::get('/modulos/{module}/deletar', DeleteModuleController::class)->name('cms.module-delete');
         
         Route::get('/informacoes-empresa', CompanyInfoController::class)->name('cms.company-infos');
         Route::post('/informacoes-empresa', [CompanyInfoController::class, 'handleUpdateCompanyData']);

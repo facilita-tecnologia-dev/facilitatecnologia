@@ -62,6 +62,14 @@ class PlansSeeder extends Seeder
             'price' => '0',
         ]);
         
+        $treinamentos = DB::table('plans')->insertGetId([
+            'name' => 'Gestão de Treinamentos',
+            'slug' => 'gestao-de-treinamentos',
+            'description' => 'Sistema de Gestão de Treinamentos',
+            'content' => '',
+            'price' => '0',
+        ]);
+        
 
         // Modules
 
@@ -269,6 +277,20 @@ class PlansSeeder extends Seeder
             'module_id' => $gestaoEPIModule,
         ]);
 
-        
+        // Gestão RH
+        DB::table('plan_modules')->insert([
+            'plan_id' => $treinamentos,
+            'module_id' => $adminPessoal,
+        ]);
+
+        DB::table('plan_modules')->insert([
+            'plan_id' => $treinamentos,
+            'module_id' => $cargosSalarios,
+        ]);
+
+        DB::table('plan_modules')->insert([
+            'plan_id' => $treinamentos,
+            'module_id' => $treinamentoDesenvolvimento,
+        ]);
     }
 }

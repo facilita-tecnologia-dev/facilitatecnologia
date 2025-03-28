@@ -6,7 +6,7 @@
         <x-container>
             <h2 class="text-3xl font-semibold text-gray-800 mb-6">Módulo / {!! $module['name'] !!}</h2>
 
-            <x-form action="{{ route('cms.module-detail', $module) }}" method="POST" class="space-y-4" enctype="multipart/form-data">
+            <x-form action="{{ route('cms.module-detail', $module) }}" method="PUT" class="space-y-4" enctype="multipart/form-data">
                 <x-form.input-text name="name" value="{{ $module['name'] }}" label="Nome" placeholder="Digite o nome do módulo" />
 
                 <x-form.input-text name="slug" value="{{ $module['slug'] }}" label="Slug" placeholder="Digite o slug do módulo" />
@@ -42,7 +42,10 @@
 
                 <x-form.input-text name="price" value="{{ $module['price'] }}" label="Preço" placeholder="Digite o preço do módulo" />
 
-                <x-action tag="button">Salvar</x-action>
+                <div class="flex items-center w-full justify-between">
+                    <x-action tag="button">Salvar</x-action>
+                    <x-action href="{{ route('cms.module-delete', $module) }}" variant="outline" onclick="return confirm('Você deseja deletar o módulo?')">Deletar</x-action>
+                </div>
             </x-form>
         </x-container>
     </div>

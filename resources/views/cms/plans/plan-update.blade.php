@@ -42,7 +42,10 @@
                     @enderror
                 </div>
 
-                <x-action tag="button">Salvar</x-action>
+                <div class="flex items-center w-full justify-between">
+                    <x-action tag="button">Salvar</x-action>
+                    <x-action href="{{ route('cms.plan-delete', $plan) }}" variant="outline" onclick="return confirm('Você deseja deletar o plano?')">Deletar</x-action>
+                </div>
             </x-form>
         </x-container>
     </div>
