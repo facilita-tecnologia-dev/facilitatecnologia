@@ -2,7 +2,7 @@
 
     <header class="flex items-center justify-between p-4">
         
-        <a href="{{ route('home') }}">
+        <a href="{{ route('home') }}" aria-label="Ir para a Home">
             @if($companyInfos['logo-big'][0]->value)
                 <img src="{{ asset($companyInfos['logo-big'][0]->value) }}" alt="" class="h-[45px] lg:h-[55px] hover:scale-105 transition duration-100">
             @elseif($companyInfos['logo-small'][0]->value)
@@ -34,7 +34,7 @@
                 <img src="{{ asset('assets/icons/menu-hamburguer-close.svg') }}" alt="" class="h-[45px]">
             </div>
             
-            <a href="{{ route('home') }}">
+            <a href="{{ route('home') }}" aria-label="Ir para a Home">
                 @if($companyInfos['logo-big'][0]->value)
                     <img src="{{ asset($companyInfos['logo-big'][0]->value) }}" alt="" class="h-[45px] lg:h-[55px]">
                 @elseif($companyInfos['logo-small'][0]->value)

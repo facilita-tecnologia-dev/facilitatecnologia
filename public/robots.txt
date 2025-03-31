@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Disallow: /cms/
+Disallow: /teste/
+Disallow: /components/
+Allow: /
+
+sitemap: https://facilitatecnologia.com.br/sitemap.xml

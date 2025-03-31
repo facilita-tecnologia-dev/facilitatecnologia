@@ -6,7 +6,7 @@
 
             <div class="flex flex-col gap-8 lg:gap-16 items-center lg:flex-row lg:items-start">
 
-                <a href="{{ route('home') }}">
+                <a href="{{ route('home') }}" aria-label="Ir para a Home">
                     @if($companyInfos['logo-small'][0]->value)
                         <img src="{{ asset($companyInfos['logo-small'][0]->value) }}" alt="" class="h-[65px]">
                     @elseif($companyInfos['logo-big'][0]->value)
@@ -67,12 +67,12 @@
             <div class="flex flex-col items-center lg:flex-row justify-center gap-6">
                     <div class="flex items-center gap-4">
                         @if($companyInfos['facebook'][0]->value)
-                            <x-action variant="simple" href="{{ $companyInfos['facebook'][0]->value }}">
+                            <x-action variant="simple" href="{{ $companyInfos['facebook'][0]->value }}" aria-label="Visitar Facebook da Facilita">
                                 <i class="fa-brands fa-square-facebook text-2xl text-gray-800"></i>
                             </x-action>
                         @endif
                         @if($companyInfos['linkedin'][0]->value)
-                            <x-action variant="simple" href="{{ $companyInfos['linkedin'][0]->value }}">
+                            <x-action variant="simple" href="{{ $companyInfos['linkedin'][0]->value }}" aria-label="Visitar Linkedin da Facilita">
                                 <i class="fa-brands fa-linkedin text-2xl text-gray-800"></i>
                             </x-action>
                         @endif

@@ -9,7 +9,7 @@
                 
                 <div class="flex flex-col gap-3 items-center">    
         
-                    <x-heading>{{ $contactForm['title']->value }}</x-heading>
+                    <x-heading>{!! $contactForm['title']->value !!}</x-heading>
                     
                     <div class="flex flex-col items-center">
                         <x-text-content>
