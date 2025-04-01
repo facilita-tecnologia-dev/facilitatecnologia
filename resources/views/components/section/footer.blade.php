@@ -35,17 +35,25 @@
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
                         <x-text-content>
-                            <span class="uppercase text-gray-400 font-medium tracking-wider">Contato</span>
+                            <span class="uppercase text-gray-400 font-medium tracking-wider">Suporte</span>
                         </x-text-content>
                         <x-action href="{{ route('contact') }}" variant="simple" alignment="left">Entrar em contato</x-action>
-
+                        <x-action href="{{ route('contact') }}?secao=status" variant="simple" alignment="left">Status do sistema</x-action>
                     </nav>
 
                     <nav class="flex flex-col items-center lg:items-start gap-4">
                         <x-text-content>
-                            <span class="uppercase text-gray-400 font-medium tracking-wider">Sistema</span>
+                            <span class="uppercase text-gray-400 font-medium tracking-wider">Saúde Mental</span>
                         </x-text-content>
-                        <x-action href="{{ route('contact') }}?secao=status" variant="simple" alignment="left">Status do sistema</x-action>
+                        <div class="px-2 py-1.5 rounded-md" 
+                            style="
+                                background: rgb(201,255,249);
+                                background: linear-gradient(135deg, rgba(201,255,249,1) 0%, rgba(255,193,204,1) 50%, rgba(180,223,251,1) 100%);"
+                            >
+                            <x-action href="https://saudemental.facilitatecnologia.com.br" variant="simple">
+                                <span class="text-gray-800">Facilita Saúde Mental</span>
+                            </x-action>
+                        </div>
                     </nav>
 
                 </div>

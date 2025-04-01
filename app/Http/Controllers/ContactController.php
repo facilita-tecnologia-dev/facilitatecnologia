@@ -36,10 +36,10 @@ class ContactController extends GeneralController
         $telefone = "5551989269827";
         
         // Codifica a mensagem para URL
-        $mensagemCodificada = urlencode($validatedMessage['message']);
+        // $mensagemCodificada = urlencode($validatedMessage['message']);
         
         // Monta a URL do WhatsApp
-        $url = "https://wa.me/{$telefone}?text={$mensagemCodificada}";
+        $url = "https://wa.me/{$telefone}?text=Por%20favor,%20eu%20gostaria%20de%20uma%20demonstração%20do%20produto!";
         
         // Faz o redirect
         return redirect()->away($url);

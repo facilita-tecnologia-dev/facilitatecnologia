@@ -108,6 +108,32 @@
         </x-section>
     @endif
 
+
+    <x-section 
+        style="
+            background: rgb(201,255,249);
+            background: linear-gradient(135deg, #ADDED9 0%, #F3CFD6 50%, #C7DFEF 100%);
+        "
+    >
+        <x-container width="900">
+            <div class="flex items-center gap-8 md:gap-12 flex-col">
+                <div class="">
+                    <img src="{{ asset('assets/mockup.png') }}" class="w-full max-w-[550px] rounded-md" alt="">
+                </div>
+
+                <div class="flex-1 flex flex-col gap-4 items-center">
+                    <x-heading>
+                        Facilita Saúde Mental
+                    </x-heading>
+                    <x-text-content>Conheça o <span class="underline">Facilita Saúde Mental</span>, seu parceiro que facilita a gestão da saúde mental e de riscos psicossociais no trabalho.</x-text-content>
+                    <x-text-content><span class="text-sm">A NR-1 e a ISO 45003 são essenciais para a saúde mental no trabalho. Nosso sistema de avaliação do bem-estar dos trabalhadores ajuda empresas a cumprirem essas normas, promovendo um ambiente saudável e produtivo. Ao adotar nossa plataforma, você investe na saúde mental dos colaboradores, reduzindo afastamentos e aumentando a produtividade.</span></x-text-content>
+                    <x-action href="https://saudemental.facilitatecnologia.com.br" variant="outline">Acessar</x-action>
+                </div>
+            </div>
+        </x-container>
+    </x-section>
+
+
     @if($ourPurpose)
         <x-section class="bg-white flex flex-col gap-8 lg:gap-12">
             <div class="flex flex-col items-center gap-2">

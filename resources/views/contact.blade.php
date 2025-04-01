@@ -19,7 +19,7 @@
 
                 </div>
                 
-                <a href="https://wa.me/{{ $companyInfos['whatsapp'][0]->value }}" class="group w-full flex items-center justify-between gap-4 border-2 border-gray-200 rounded-md p-4 hover:border-green-300 transition">
+                <a href="https://wa.me/{{ $companyInfos['whatsapp'][0]->value }}?text=Por%20favor,%20eu%20gostaria%20de%20uma%20demonstração%20do%20produto!" class="group w-full flex items-center justify-between gap-4 border-2 border-gray-200 rounded-md p-4 hover:border-green-300 transition">
                     <x-text-content alignment="left">Clique aqui para entrar em contato conosco!</x-text-content>
 
                     <i class="fa-brands fa-whatsapp text-2xl text-gray-500 group-hover:text-green-400 transition"></i>

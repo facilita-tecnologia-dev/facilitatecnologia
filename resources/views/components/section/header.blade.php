@@ -13,6 +13,15 @@
         </a>
         
         <nav class="hidden lg:flex items-center gap-6">
+            <div class="px-2 py-1.5 rounded-md" 
+                style="
+                    background: rgb(201,255,249);
+                    background: linear-gradient(135deg, rgba(201,255,249,1) 0%, rgba(255,193,204,1) 50%, rgba(180,223,251,1) 100%);"
+                >
+                <x-action href="https://saudemental.facilitatecnologia.com.br" variant="simple">
+                    <span class="text-gray-800">Facilita Saúde Mental</span>
+                </x-action>
+            </div>
             <x-action href="{{ route('home') }}" variant="simple">Home</x-action>
             <x-action href="{{ route('about') }}" variant="simple">Sobre nós</x-action>
             <x-action href="{{ route('services') }}" variant="simple">Serviços</x-action>
@@ -45,6 +54,15 @@
             </a>
 
             <nav class="flex flex-col items-center gap-5 py-12 flex-1">
+                <div class="px-2 py-1.5 rounded-md" 
+                    style="
+                        background: rgb(201,255,249);
+                        background: linear-gradient(135deg, rgba(201,255,249,1) 0%, rgba(255,193,204,1) 50%, rgba(180,223,251,1) 100%);"
+                    >
+                    <x-action href="https://saudemental.facilitatecnologia.com.br" variant="simple">
+                        <span class="text-gray-800">Facilita Saúde Mental</span>
+                    </x-action>
+                </div>
                 <x-action href="{{ route('home') }}" variant="simple">Home</x-action>
                 <x-action href="{{ route('about') }}" variant="simple">Sobre nós</x-action>
                 <x-action href="{{ route('services') }}" variant="simple">Serviços</x-action>
