@@ -6,7 +6,7 @@
 @php
     $textAlign = $alignment === 'center' ? 'center' : $alignment;
     
-    $textColor = $color === 'gray-100' ? 'gray-100' : 'gray-800';
+    $textColor = $color === 'main-background' ? 'main-background' : 'main-text';
 @endphp
 
 <p 
@@ -18,8 +18,8 @@
         'text-right' => $textAlign === 'right', // Aplica os estilos caso o alinhamento for 'right'
         'text-justify' => $textAlign === 'justify', // Aplica os estilos caso o alinhamento for 'right'
 
-        'text-gray-800' => $textColor === 'gray-800', // Aplica os estilos caso a cor for 'gray-800'
-        'text-gray-100' => $textColor === 'gray-100', // Aplica os estilos caso a cor for 'gray-100'
+        'text-main-text' => $textColor === 'main-text', // Aplica os estilos caso a cor for 'main-text'
+        'text-main-background' => $textColor === 'main-background', // Aplica os estilos caso a cor for 'main-background'
     ])>
 
     {{ $slot }}

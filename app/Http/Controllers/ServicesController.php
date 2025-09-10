@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ServicesController extends GeneralController
 {
     public function __invoke(){
-        $pageSections = $this->getPageSectionsWithContents('servicos');
+        $pageSections = $this->getPageSectionsWithContents('solucoes');
 
         $ourPlansContent = $pageSections['our-plans'];
         $ourPlansList = $this->getPlans();
@@ -17,7 +17,7 @@ class ServicesController extends GeneralController
 
         $CTABanner = $pageSections['cta-banner'];
         
-        return view('services', [
+        return view('site.services', [
             'companyInfos' => $this->companyInfos,
             'ourPlansContent' => $ourPlansContent,
             'ourPlansList' => $ourPlansList,

@@ -4,7 +4,7 @@
 
     <div class="my-8 px-4">
         <x-container>
-            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Módulo / Criar</h2>
+            <h2 class="text-3xl font-semibold text-main-text mb-6">Módulo / Criar</h2>
 
             <x-form action="{{ route('cms.module-create') }}" method="POST" class="space-y-4" enctype="multipart/form-data">
                 <x-form.input-text name="name" label="Nome" placeholder="Digite o nome do módulo" />

@@ -26,8 +26,8 @@ class PageSeeder extends Seeder
         ]);
 
         DB::table('pages')->insert([
-            'slug' => 'servicos',
-            'title' => 'Serviços', 
+            'slug' => 'solucoes',
+            'title' => 'Soluções', 
         ]);
 
         DB::table('pages')->insert([

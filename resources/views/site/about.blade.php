@@ -26,7 +26,7 @@
                                             @endif
 
                                             <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-gray-400"></div>
-                                            <div class="h-8 w-8 rounded-full bg-sky-500 relative border-8 border-gray-100 outline-2 outline-gray-400"></div>
+                                            <div class="h-8 w-8 rounded-full bg-sky-500 relative border-8 border-main-background outline-2 outline-gray-400"></div>
                                         </div>
                                         <div class="w-full max-w-[300px] flex flex-col items-center gap-3">
                                             <x-subtitle>{!! $item['title']['value'] !!}</x-subtitle>
@@ -76,20 +76,20 @@
     @endif
 
     @if($ourPartners)
-        <x-section class="space-y-8">
-            <x-subtitle>{!! $ourPartners['title']->value !!}</x-subtitle>
-            <div class="flex justify-center flex-wrap gap-x-6 lg:gap-12 gap-y-8">
-                @foreach($ourPartners["partner-logo"] as $partnerLogo)
-                    <div>
-                        <img src="{{ asset($partnerLogo['value']) }}" alt="" class="h-7 md:h-8 grayscale-0 md:grayscale-100 md:hover:grayscale-0 transition">
-                    </div>
-                @endforeach
-            </div>
-        </x-section>
+        <x-container width="1180">
+            <x-section class="space-y-8">
+                <x-subtitle>{!! $ourPartners['title']->value !!}</x-subtitle>
+                <div class="flex justify-center flex-wrap gap-x-6 lg:gap-12 gap-y-8">
+                    @foreach($ourPartners["partner-logo"] as $partnerLogo)
+                        <div>
+                            <img src="{{ asset($partnerLogo['value']) }}" alt="" class="h-7 md:h-8 grayscale-0 md:grayscale-100 md:hover:grayscale-0 transition">
+                        </div>
+                    @endforeach
+                </div>
+            </x-section>
+        </x-container>
     @endif
 
     <x-section.footer :companyInfos="$companyInfos"  />
     
-    <script src="{{ asset('js/global.js') }}"></script>
-    <script src="{{ asset('js/about.js') }}" type="module"></script>
 </x-layouts.app>

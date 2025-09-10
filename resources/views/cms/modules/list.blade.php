@@ -5,7 +5,7 @@
     <div class="my-8 px-4">
         <x-container>
             <div class="flex flex-col gap-4">
-                <h2 class="text-3xl font-semibold text-gray-800">Lista de Módulos</h2>
+                <h2 class="text-3xl font-semibold text-main-text">Lista de Módulos</h2>
 
                 <div class="flex items-center gap-3">
                     <x-form method="GET" class="w-full">
@@ -23,8 +23,8 @@
                     </span>
                 @endif
 
-                <div class="border border-gray-300 rounded-md overflow-hidden">
-                    <div class="grid grid-cols-5 bg-gray-300 px-4 py-1.5">
+                <div class="border border-borders rounded-md overflow-hidden">
+                    <div class="grid grid-cols-5 bg-borders px-4 py-1.5">
                         <div class="col-span-3 md:col-span-4">
                             <x-text-content alignment="left">Nome do módulo</x-text-content>
                         </div>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="body">
                         @foreach($modules as $module)
-                            <a href="{{ route('cms.module-detail', $module) }}" class="grid grid-cols-5 px-4 py-1.5 border-b border-gray-300 hover:bg-gray-200 transition">
+                            <a href="{{ route('cms.module-detail', $module) }}" class="grid grid-cols-5 px-4 py-1.5 border-b border-borders hover:bg-secondary-background transition">
                                 <div class="col-span-3 md:col-span-4">
                                     <span class="text-sm md:text-base">
                                         {!! $module['name'] !!}

@@ -4,7 +4,7 @@
 
     <div class="my-8 px-4">
         <x-container>
-            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Plano / Criar</h2>
+            <h2 class="text-3xl font-semibold text-main-text mb-6">Plano / Criar</h2>
 
             <x-form action="{{ route('cms.plan-create') }}" method="POST" class="space-y-4">
                 <x-form.input-text name="name" label="Nome" placeholder="Digite o nome do plano" />
@@ -29,7 +29,7 @@
                     </h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         @foreach ($modules as $module)
-                            <label class="flex items-center gap-3 px-4 py-2.5 bg-gray-300 rounded-md">
+                            <label class="flex items-center gap-3 px-4 py-2.5 bg-borders rounded-md">
                                 <input type="checkbox" name="modules[]" value="{{ $module->id }}"> {{ $module->name }}
                             </label>
                         @endforeach

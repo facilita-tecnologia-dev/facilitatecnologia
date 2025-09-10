@@ -4,7 +4,7 @@
 
     <div class="my-8 px-4">
         <x-container>
-            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Informações da empresa</h2>
+            <h2 class="text-3xl font-semibold text-main-text mb-6">Informações da empresa</h2>
 
             <x-form action="{{ route('cms.company-infos') }}" method="POST" class="space-y-4" enctype="multipart/form-data">
 

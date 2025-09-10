@@ -15,7 +15,7 @@ class ContactController extends GeneralController
         $systemStatusContent = $pageSections['system-status'];
         $systemStatusCode = $this->getSystemStatusCode();
 
-        return view('contact', [
+        return view('site.contact', [
             'companyInfos' => $this->companyInfos,
             'contactForm' => $contactForm,
             'systemStatusContent' => $systemStatusContent,

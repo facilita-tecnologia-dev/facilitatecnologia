@@ -27,12 +27,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/sobre-nos', AboutController::class)->name('about');
-Route::get('/servicos', ServicesController::class)->name('services');
+Route::get('/solucoes', ServicesController::class)->name('services');
 Route::get('/plano/{plan}', PlanController::class)->name('plan-detail');
 Route::get('/modulo/{module}', ModuleController::class)->name('module-detail');
 Route::get('/contato', ContactController::class)->name('contact');
-Route::post('/contato', [ContactController::class, 'handleContactSubmit']);
-
+Route::view('/politica-de-privacidade', 'site.privacy-policy.index')->name('privacy-policy');
+Route::view('/termos-de-uso', 'site.terms-of-use.index')->name('terms-of-use');
 
 Route::prefix('cms')->group(function () {
     Route::middleware(GuestMiddleware::class)->group(function(){

@@ -8,6 +8,10 @@
         padding: 0;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body,
     input,
     textarea,
@@ -58,6 +62,22 @@
 }
 
 @theme {
+    --font-heading: "DM Sans", sans-serif;
+    --font-text: "Geist", sans-serif;
+
+    --color-main-background: oklch(0.9851 0 0);
+    --color-secondary-background: oklch(0.9702 0 0);
+    --color-borders: oklch(0.9067 0 0);
+
+    --color-primary-solid: oklch(0.648 0.1782 259.6);
+
+    --color-main-text: oklch(0.2393 0 0);
+    --color-secondary-text: oklch(0.4979 0.0094 253.91);
+
+    --color-success: oklch(0.7303 0.1944 147.44);
+    --color-alert: oklch(0.8849 0.1805 94.78);
+    --color-danger: oklch(0.6633 0.2236 28.29);
+
     --animate-movement: movement 3s ease-in-out infinite;
     --animate-movement-2: movement2 4s ease-in-out infinite;
     --animate-movement-3: movement3 5s ease-in-out infinite;
@@ -137,5 +157,34 @@
         75% {
             transform: translate(10px, 0px);
         }
+    }
+}
+
+@layer utilities {
+    .w-container {
+        width: var(--container-width);
+        max-width: var(--container-max-width);
+        margin-left: var(--container-margin);
+        margin-right: var(--container-margin);
+    }
+
+    .psychosocial-risk-management-gradient {
+        background-image: linear-gradient(45deg, #a1e9e1, #5ec8bc);
+    }
+
+    .report-channel-gradient {
+        background-image: linear-gradient(45deg, #9cc6ff, #5c9cff);
+    }
+
+    .ppe-management-gradient {
+        background-image: linear-gradient(45deg, #ffd199, #f79e4f);
+    }
+
+    .training-management-gradient {
+        background-image: linear-gradient(45deg, #d0b8f9, #9a7de4);
+    }
+
+    .hr-management-gradient {
+        background-image: linear-gradient(45deg, #b4f2a8, #6bcf58);
     }
 }

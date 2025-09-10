@@ -4,7 +4,7 @@
 
     <div class="my-8 px-4">
         <x-container>
-            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Módulo / {!! $module['name'] !!}</h2>
+            <h2 class="text-3xl font-semibold text-main-text mb-6">Módulo / {!! $module['name'] !!}</h2>
 
             <x-form action="{{ route('cms.module-detail', $module) }}" method="PUT" class="space-y-4" enctype="multipart/form-data">
                 <x-form.input-text name="name" value="{{ $module['name'] }}" label="Nome" placeholder="Digite o nome do módulo" />

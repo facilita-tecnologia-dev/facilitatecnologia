@@ -4,7 +4,7 @@
 
     <div class="my-8 px-4">
         <x-container>
-            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Conteúdo / {{ $content['type'] }}</h2>
+            <h2 class="text-3xl font-semibold text-main-text mb-6">Conteúdo / {{ $content['type'] }}</h2>
 
             <x-form action="{{ route('cms.content-detail', $content) }}" method="POST" class="space-y-4" enctype="multipart/form-data">
                 <x-form.input-text class="opacity-75" disabled name="type" value="{{ $content['type'] }}" label="Identificador" placeholder="Digite o identificador da seção (exemplo-identificador)" />
@@ -14,9 +14,9 @@
                         Conteúdo
                     </h2>
                     <div class="flex flex-col gap-2">
-                        <div class="w-fit bg-gray-200 rounded-md border border-gray-200 px-1 py-1 flex gap-1">
-                            <div onclick="toggleInput('text')" class="trigger-text py-1 px-3 cursor-pointer {{ $contentType == 'text' ? 'bg-gray-300' : '' }} hover:bg-gray-300 transition rounded-sm">Texto</div>
-                            <div onclick="toggleInput('file')" class="trigger-file py-1 px-3 cursor-pointer {{ $contentType == 'file' ? 'bg-gray-300' : '' }} hover:bg-gray-300 transition rounded-sm">Imagem</div>
+                        <div class="w-fit bg-secondary-background rounded-md border border-secondary-background px-1 py-1 flex gap-1">
+                            <div onclick="toggleInput('text')" class="trigger-text py-1 px-3 cursor-pointer {{ $contentType == 'text' ? 'bg-borders' : '' }} hover:bg-borders transition rounded-sm">Texto</div>
+                            <div onclick="toggleInput('file')" class="trigger-file py-1 px-3 cursor-pointer {{ $contentType == 'file' ? 'bg-borders' : '' }} hover:bg-borders transition rounded-sm">Imagem</div>
                         </div>
                     
                         <div id="text" class="{{ $contentType === 'text' ? 'block' : 'hidden' }}">

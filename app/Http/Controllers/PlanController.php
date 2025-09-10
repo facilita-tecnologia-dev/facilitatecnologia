@@ -11,7 +11,7 @@ class PlanController extends GeneralController
     {
         $planModules = $plan->modules()->get();
         
-        return view('plan-detail', [
+        return view('site.plan-detail', [
             'companyInfos' => $this->companyInfos,
             'plan' => $plan,
             'planModules' => $planModules,

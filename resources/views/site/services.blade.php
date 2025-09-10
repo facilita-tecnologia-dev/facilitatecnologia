@@ -18,7 +18,7 @@
 
                                 <div class="flex items-center justify-between">
                                     <x-subtitle>
-                                        <span class="text-gray-800">{!! $plan['name'] !!}</span>
+                                        <span class="text-main-text">{!! $plan['name'] !!}</span>
                                     </x-subtitle>
 
                                     <x-action href="{{ route('plan-detail', $plan) }}" variant="simple">Ver mais</x-action>
@@ -55,13 +55,13 @@
                 >
                     <div class="w-full h-full absolute left-0 top-0 bg-black/40"></div>
                     <div class="relative w-full max-w-[600px] flex flex-col gap-4">
-                        <x-heading color="gray-100" alignment="left">{!! $CTABanner['title']->value !!}</x-heading>
-                        <x-text-content color="gray-100" alignment="left">
+                        <x-heading color="main-background" alignment="left">{!! $CTABanner['title']->value !!}</x-heading>
+                        <x-text-content color="main-background" alignment="left">
                             {!! $CTABanner['text']->value !!}
                         </x-text-content>
 
                         @if($companyInfos['whatsapp'][0]->value)
-                            <x-action href="https://wa.me/?phone={{ $companyInfos['whatsapp'][0]->value }}&text=Por%20favor,%20eu%20gostaria%20de%20uma%20demonstração%20do%20produto!" variant="simple" color="gray-100">Solicite uma demonstração</x-action>
+                            <x-action href="https://wa.me/?phone={{ $companyInfos['whatsapp'][0]->value }}&text=Por%20favor,%20eu%20gostaria%20de%20uma%20demonstração%20do%20produto!" variant="simple" color="main-background">Solicite uma demonstração</x-action>
                         @endif
                     </div>
                 </div>

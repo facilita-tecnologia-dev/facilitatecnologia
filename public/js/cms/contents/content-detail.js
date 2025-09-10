@@ -37,19 +37,19 @@ function toggleInput(inputType) {
 
     if (inputType === "text") {
         text.style.display = "block";
-        triggerText.classList.add("bg-gray-300");
+        triggerText.classList.add("bg-borders");
         editor.edit.on();
 
         file.style.display = "none";
         file.querySelector("input").setAttribute("disabled", "");
-        triggerFile.classList.remove("bg-gray-300");
+        triggerFile.classList.remove("bg-borders");
     } else if (inputType === "file") {
         text.style.display = "none";
-        triggerText.classList.remove("bg-gray-300");
+        triggerText.classList.remove("bg-borders");
         editor.edit.off();
 
         file.style.display = "flex";
-        triggerFile.classList.add("bg-gray-300");
+        triggerFile.classList.add("bg-borders");
         file.querySelector("input").removeAttribute("disabled");
     }
 }

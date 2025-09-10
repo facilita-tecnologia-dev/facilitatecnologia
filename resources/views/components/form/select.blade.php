@@ -15,7 +15,7 @@
     </label>
 @endif
 
-<div onclick="toggleSelect(event)" {{ $attributes->merge(['class' => 'select relative w-full flex items-center justify-between gap-3 cursor-pointer bg-gray-200 p-3 rounded-md h-[45px] text-base text-gray-800 placeholder:text-gray-500 border border-gray-300']) }}>
+<div onclick="toggleSelect(event)" {{ $attributes->merge(['class' => 'select relative w-full flex items-center justify-between gap-3 cursor-pointer bg-secondary-background p-3 rounded-md h-[45px] text-base text-main-text placeholder:text-gray-500 border border-borders']) }}>
     
     <input type="hidden" name="{{ $name }}" value="{{ $value }}">
     
@@ -23,7 +23,7 @@
 
     <i class="fa-solid fa-chevron-down pointer-events-none"></i>
     
-    <div class="dropdown absolute hidden top-[110%] left-0 w-full bg-gray-200  p-3 rounded-md border border-gray-300 space-y-0.5">
+    <div class="dropdown absolute hidden top-[110%] left-0 w-full bg-secondary-background  p-3 rounded-md border border-borders space-y-0.5">
         @foreach ($options as $option)
             @php
                 $optionText = isset($option['option']) ? $option['option'] : $option;
@@ -41,15 +41,15 @@
             @endphp
 
             <div 
-                class="bg-transparent p-1.5 hover:bg-gray-300 transition duration-100 rounded-md text-base text-gray-800" 
+                class="bg-transparent p-1.5 hover:bg-borders transition duration-100 rounded-md text-base text-main-text" 
                 onclick="handleOptionSelect('{{ $value }}')"
             >
                 {{ $optionText }}
             </div>        
 
         @endforeach
-        {{-- <div class="bg-transparent p-1.5 hover:bg-gray-300 transition duration-100 rounded-md text-base text-gray-800" onclick="handleOptionSelect('2')">Opção 2</div>
-        <div class="bg-transparent p-1.5 hover:bg-gray-300 transition duration-100 rounded-md text-base text-gray-800" onclick="handleOptionSelect('3')">Opção 3</div> --}}
+        {{-- <div class="bg-transparent p-1.5 hover:bg-borders transition duration-100 rounded-md text-base text-main-text" onclick="handleOptionSelect('2')">Opção 2</div>
+        <div class="bg-transparent p-1.5 hover:bg-borders transition duration-100 rounded-md text-base text-main-text" onclick="handleOptionSelect('3')">Opção 3</div> --}}
     </div>
 </div>
 

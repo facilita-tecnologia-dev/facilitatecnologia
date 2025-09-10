@@ -16,7 +16,7 @@
     @vite('resources/css/app.css')
 </head>
 <body class="p-5 space-y-5">
-    <x-section class="space-y-5 bg-gray-100">
+    <x-section class="space-y-5 bg-main-background">
 
         <h2 class="text-2xl font-bold">Actions</h2>
         
@@ -30,27 +30,27 @@
 
     </x-section>
 
-    <x-section class="space-y-5 bg-gray-100">
+    <x-section class="space-y-5 bg-main-background">
         <h2 class="text-2xl font-bold">Headings</h2>
 
         <x-heading tag="h1" color="red-100">Heading</x-heading>
         <x-heading tag="h2">Heading</x-heading>
     </x-section>
 
-    <x-section class="space-y-5 bg-gray-100">
+    <x-section class="space-y-5 bg-main-background">
         <h2 class="text-2xl font-bold">Subtitles</h2>
 
         <x-subtitle>Subtitle</x-subtitle>
     </x-section>
 
-    <x-section class="space-y-5 bg-gray-100">
+    <x-section class="space-y-5 bg-main-background">
         <h2 class="text-2xl font-bold">TextContent</h2>
 
         <x-text-content>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque ipsa ratione alias, vitae ad modi molestias perspiciatis, ea dignissimos corrupti consectetur delectus eius minus aspernatur, recusandae sed. Velit, quos possimus!</x-text-content>
     </x-section>
 
 
-    <x-section class="space-y-5 bg-gray-100">
+    <x-section class="space-y-5 bg-main-background">
         <h2 class="text-2xl font-bold">Text Inputs</h2>
 
         <x-form.input-text name="nome" />
@@ -65,7 +65,7 @@
     
     </x-section>
 
-    <x-section class="space-y-5 bg-gray-100">
+    <x-section class="space-y-5 bg-main-background">
         <h2 class="text-2xl font-bold">Textareas</h2>
 
         <x-form.textarea name="nome" />
@@ -76,7 +76,7 @@
     
     </x-section>
 
-    <x-section class="space-y-5 bg-gray-100">
+    <x-section class="space-y-5 bg-main-background">
         <h2 class="text-2xl font-bold">Textareas</h2>
 
         <x-form.select name="ddd" :options="[['option' => '+54', 'value' => 1], ['option' => '+22', 'value' => 2], ['option' => '+33', 'value' => 3], ['option' => '+44', 'value' => 4]]" label="DDD" />

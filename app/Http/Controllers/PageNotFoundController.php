@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PageNotFoundController extends GeneralController
 {
     public function __invoke(){
-        return view('404', [
+        return view('errors.404', [
             'companyInfos' => $this->companyInfos,
         ]);
     }

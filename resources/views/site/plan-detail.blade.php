@@ -21,10 +21,10 @@
                                     style="background-image: url('{{ asset($module['image']) }}');"
                                 >
                                     <x-subtitle>
-                                        <span class="text-gray-100">{!! $module['name'] !!}</span>
+                                        <span class="text-main-background">{!! $module['name'] !!}</span>
                                     </x-subtitle>
 
-                                    <x-text-content alignment="left" color="gray-100">
+                                    <x-text-content alignment="left" color="main-background">
                                         <span class="text-sm font-normal">
                                             Clique para ver mais
                                         </span>
