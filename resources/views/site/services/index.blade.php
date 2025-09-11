@@ -2,6 +2,8 @@
     
     <x-section.header :companyInfos="$companyInfos" />
 
+    nova seção
+{{-- 
     @if($ourPlansContent && $ourPlansList)
         <x-section id="our-plans">
             <x-container width="1180">
@@ -67,10 +69,7 @@
                 </div>
             </x-container>
         </x-section>
-    @endif
+    @endif --}}
 
     <x-section.footer :companyInfos="$companyInfos"  />
-
-    <script src="{{ asset('js/global.js') }}"></script>
-    <script src="{{ asset('js/services.js') }}" type="module"></script>
 </x-layouts.app>

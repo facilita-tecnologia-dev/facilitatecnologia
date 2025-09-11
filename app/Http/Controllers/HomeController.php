@@ -17,7 +17,7 @@ class HomeController extends GeneralController
         $CTABanner = $pageSections['cta-banner'];
         $testimonials = $pageSections['testimonials'];
 
-        return view('site.home', [
+        return view('site.home.index', [
             'companyInfos' => $this->companyInfos,
             'heroSection' => $heroSection,
             'ourPartners' => $ourPartners,

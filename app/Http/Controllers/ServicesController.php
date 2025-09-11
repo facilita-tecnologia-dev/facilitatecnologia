@@ -17,7 +17,7 @@ class ServicesController extends GeneralController
 
         $CTABanner = $pageSections['cta-banner'];
         
-        return view('site.services', [
+        return view('site.services.index', [
             'companyInfos' => $this->companyInfos,
             'ourPlansContent' => $ourPlansContent,
             'ourPlansList' => $ourPlansList,
