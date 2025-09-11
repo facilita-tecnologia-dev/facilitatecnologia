@@ -14,7 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollToSection();
 
     // Home
-    animateTypedStrings();
+    console.log(document.getElementById("animated-title"));
+    animateString("animated-title", [
+        `Tecnologia que <span class="text-sky-500">conecta</span>.`,
+        `Tecnologia que <span class="text-sky-500">evolui</span>.`,
+        `Tecnologia que <span class="text-sky-500">adapta</span>.`,
+        `Tecnologia que <span class="text-sky-500">facilita</span>.`,
+    ]);
+
     animateHistoryNumbers();
     swiperTestimonials();
 
@@ -66,19 +73,12 @@ function menuMobile() {
 }
 
 // Home
-function animateTypedStrings() {
-    const titleToAnimate = document.getElementById("animate-title-typing");
+function animateString(id, strings = []) {
+    const string = document.getElementById(id);
 
-    if (titleToAnimate) {
-        const typedStrings = [
-            `Tecnologia que <span class="text-sky-500">conecta</span>.`,
-            `Tecnologia que <span class="text-sky-500">evolui</span>.`,
-            `Tecnologia que <span class="text-sky-500">adapta</span>.`,
-            `Tecnologia que <span class="text-sky-500">facilita</span>.`,
-        ];
-
-        new Typed(titleToAnimate, {
-            strings: typedStrings,
+    if (string) {
+        new Typed(string, {
+            strings: strings,
             typeSpeed: 50,
             backSpeed: 50,
         });

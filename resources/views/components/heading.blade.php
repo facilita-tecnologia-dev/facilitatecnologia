@@ -20,7 +20,7 @@
         'w-fit text-center tracking-tight',
 
         'text-5xl md:text-6xl lg:text-7xl font-bold leading-14' => $headingTag == 'h1', // Aplica os estilos caso a tag for 'h1'
-        'text-4xl md:text-5xl lg:text-[3.5rem] font-semibold leading-12' => $headingTag == 'h2', // Aplica os estilos caso a tag for 'h1'
+        'text-3xl md:text-4xl lg:text-5xl font-semibold leading-12' => $headingTag == 'h2', // Aplica os estilos caso a tag for 'h1'
 
         'text-main-text' => $textColor === 'main-text', // Aplica os estilos caso a cor for 'main-text'
         'text-main-background' => $textColor === 'main-background', // Aplica os estilos caso a cor for 'main-background'
