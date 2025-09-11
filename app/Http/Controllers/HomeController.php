@@ -8,8 +8,7 @@ class HomeController extends GeneralController
 {
     public function __invoke(){
         $pageSections = $this->getPageSectionsWithContents('home');
-
-        // dump($pageSections);
+        
         $heroSection = $pageSections['hero-section'];
         $ourPartners = $pageSections['our-partners'];
         $ourHistoryNumbers = $pageSections['history-numbers'];
