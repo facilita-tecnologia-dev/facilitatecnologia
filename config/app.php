@@ -123,4 +123,12 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'facilita-contact-email' => env('FACILITA_CONTACT_EMAIL'),
+    'facilita-contact-landline' => env('FACILITA_CONTACT_LANDLINE'),
+    'facilita-whatsapp-phone-1' => env('FACILITA_WHATSAPP_PHONE_1'),
+    'facilita-whatsapp-phone-1_url' => env('FACILITA_WHATSAPP_PHONE_1_URL'),
+    'facilita-whatsapp-phone-2' => env('FACILITA_WHATSAPP_PHONE_2'),
+    'facilita-whatsapp-phone-2_url' => env('FACILITA_WHATSAPP_PHONE_2_URL'),
+    'riscos-psicossociais-url' => env('RISCOS_PSICOSSOCIAIS_URL'),
+    'canal-denuncias-url' => env('CANAL_DENUNCIAS_URL'),
 ];

@@ -18,14 +18,14 @@
                             'name' => 'Riscos Psicossociais',
                             'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
                             'color' => 'psychosocial-primary-solid',
-                            'pageUrl' => env('RISCOS_PSICOSSOCIAIS_URL')
+                            'pageUrl' => config('app.riscos-psicossociais-url')
                         ])
                         @include('site.services.service-card.index', [
                             'active' => true,
                             'name' => 'Canal de Denúncias',
                             'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
                             'color' => 'psychosocial-primary-solid',
-                            'pageUrl' => env('CANAL_DENUNCIAS_URL')
+                            'pageUrl' => config('app.canal-denuncias-url')
                         ])
                         @include('site.services.service-card.index', [
                             'active' => true,

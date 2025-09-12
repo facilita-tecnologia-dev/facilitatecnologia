@@ -64,7 +64,7 @@
                             </div>
                         </li>
                     </ul>
-                    <a href="{{ env('RISCOS_PSICOSSOCIAIS_URL') }}" target="_blank" rel="noreferrer nofollow noopener" class="w-full rounded-sm px-4 py-3 flex items-center justify-center gap-2 bg-psychosocial-primary-solid hover:brightness-95 transition">
+                    <a href="{{ config('app.riscos-psicossociais-url') }}" target="_blank" rel="noreferrer nofollow noopener" class="w-full rounded-sm px-4 py-3 flex items-center justify-center gap-2 bg-psychosocial-primary-solid hover:brightness-95 transition">
                         <span class="text-center text-main-background font-semibold text-base">Acessar</span>
                         <x-icon icon="cloud-lightning" class="w-4.5 h-4.5 object-scale-down text-main-background" />
                     </a>
@@ -129,7 +129,7 @@
                             </div>
                         </li>
                     </ul>
-                    <a href="{{ env('CANAL_DENUNCIAS_URL') }}" target="_blank" rel="noreferrer nofollow noopener" class="w-full rounded-sm px-4 py-3 flex items-center justify-center gap-2 bg-report-channel-primary-solid hover:brightness-95 transition">
+                    <a href="{{ config('app.canal-denuncias-url') }}" target="_blank" rel="noreferrer nofollow noopener" class="w-full rounded-sm px-4 py-3 flex items-center justify-center gap-2 bg-report-channel-primary-solid hover:brightness-95 transition">
                         <span class="text-center text-main-background font-semibold text-base">Acessar</span>
                         <x-icon icon="message-warning" class="w-4.5 h-4.5 object-scale-down text-main-background" />
                     </a>

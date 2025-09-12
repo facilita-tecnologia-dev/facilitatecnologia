@@ -36,10 +36,10 @@
                     <nav class="flex flex-col items-start gap-4">
                         <span class="uppercase text-gray-400 font-medium tracking-wider text-base md:text-lg">Entre em contato</span>
                         
-                        <x-action href="mailto:{{ env('FACILITA_CONTACT_EMAIL') }}" variant="simple" alignment="left">{{ env('FACILITA_CONTACT_EMAIL') }}</x-action>
-                        <x-action href="{{ route('contact') }}" variant="simple" alignment="left">{{ env('FACILITA_CONTACT_LANDLINE') }}</x-action>
-                        <x-action href="{{ env('FACILITA_WHATSAPP_PHONE_1_URL') }}" variant="simple" alignment="left">{{ env('FACILITA_WHATSAPP_PHONE_1') }}</x-action>
-                        <x-action href="{{ env('FACILITA_WHATSAPP_PHONE_2_URL') }}" variant="simple" alignment="left">{{ env('FACILITA_WHATSAPP_PHONE_2') }}</x-action>
+                        <x-action href="mailto:{{ config('app.facilita-contact-email') }}" variant="simple" alignment="left">{{ config('app.facilita-contact-email') }}</x-action>
+                        <x-action href="{{ route('contact') }}" variant="simple" alignment="left">{{ config('app.facilita-contact-landline') }}</x-action>
+                        <x-action href="{{ config('app.facilita-whatsapp-phone-1_url') }}" variant="simple" alignment="left">{{ config('app.facilita-whatsapp-phone-1') }}</x-action>
+                        <x-action href="{{ config('app.facilita-whatsapp-phone-2_url') }}" variant="simple" alignment="left">{{ config('app.facilita-whatsapp-phone-2') }}</x-action>
                     </nav>
                 </div>
             </div>
