@@ -2,74 +2,97 @@
     
     <x-section.header :companyInfos="$companyInfos" />
 
-    nova seção
-{{-- 
+    {{-- nova seção --}}
+
     @if($ourPlansContent && $ourPlansList)
         <x-section id="our-plans">
             <x-container width="1180">
                 <div class="flex flex-col gap-8 md:gap-12 items-center">
                     <div class="flex flex-col gap-3 items-center">
-                        <x-heading>{!! $ourPlansContent['title']->value !!}</x-heading>
-                        <x-text-content>{!! $ourPlansContent['description']->value !!}</x-text-content>
+                        <x-heading>Nossas Soluções</x-heading>
                     </div>
 
-                    <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-3">
-                        @foreach ($ourPlansList as $i => $plan)
-                            <div class="plan relative h-fit {{ $ourPlansColors[$i % count($ourPlansColors)] }} rounded-md p-4 cursor-pointer">
-                                <img src="{{ asset('assets/wave-plan.svg') }}" class="absolute left-0 top-0 w-full" />
-
-                                <div class="flex items-center justify-between">
-                                    <x-subtitle>
-                                        <span class="text-main-text">{!! $plan['name'] !!}</span>
-                                    </x-subtitle>
-
-                                    <x-action href="{{ route('plan-detail', $plan) }}" variant="simple">Ver mais</x-action>
-                                </div>
-
-                                <div class="dropdown border-t border-gray-600 max-h-[300px] mt-4 pl-4 pt-4 overflow-hidden">
-                                    <ul class="list-disc space-y-2">
-                                        @foreach ($plan->modules as $module)
-                                            <li>
-                                                <x-text-content alignment="left">
-                                                   {!! $module['name'] !!}
-                                                </x-text-content>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            </div>
-                        @endforeach
+                    <div class="grid grid-cols-3 gap-6 items-start">
+                        @include('site.services.service-card.index', [
+                            'active' => true,
+                            'name' => 'Riscos Psicossociais',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                            'pageUrl' => env('RISCOS_PSICOSSOCIAIS_URL')
+                        ])
+                        @include('site.services.service-card.index', [
+                            'active' => true,
+                            'name' => 'Canal de Denúncias',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                            'pageUrl' => env('CANAL_DENUNCIAS_URL')
+                        ])
+                        @include('site.services.service-card.index', [
+                            'active' => true,
+                            'name' => 'Gestão de EPI\'s',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                        ])
+                        @include('site.services.service-card.index', [
+                            'active' => true,
+                            'name' => 'Recrutamento & Seleção',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                        ])
+                        @include('site.services.service-card.index', [
+                            'active' => true,
+                            'name' => 'Gestão de Treinamentos',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                        ])
+                        @include('site.services.service-card.index', [
+                            'active' => true,
+                            'name' => 'Intranet',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                        ])
+                        @include('site.services.service-card.index', [
+                            'active' => true,
+                            'name' => 'Gestão de Terceiros',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                        ])
+                        @include('site.services.service-card.index', [
+                            'active' => true,
+                            'name' => 'Gestão de Desempenho',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                        ])
+                        @include('site.services.service-card.index', [
+                            'active' => true,
+                            'name' => 'Gestão de Cargos & Salários',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                        ])
+                        @include('site.services.service-card.index', [
+                            'active' => true,
+                            'name' => 'Gestão NR20',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                        ])              
+                        @include('site.services.service-card.index', [
+                            'active' => false,
+                            'name' => 'Gestão de Segurança',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                        ])
+                        @include('site.services.service-card.index', [
+                            'active' => false,
+                            'name' => 'Gestão de Manutenção',
+                            'description' => 'A metodologia da Facilita, aliada a perguntas direcionadas sobre discriminação, assédio e outras formas de violência no trabalho, oferece uma abordagem completa e prática para a gestão de riscos psicossociais.',
+                            'color' => 'psychosocial-primary-solid',
+                        ])
                     </div>
-                    
                 </div>
-
             </x-container>
 
         </x-section>
     @endif
-
-    @if($CTABanner)
-        <x-section class="max-md:!p-0">
-            <x-container width="1180">
-                <div 
-                    style="background-image: url('{{ asset($CTABanner['background-image']->value) }}');" 
-                    class="bg-no-repeat bg-cover relative md:rounded-md overflow-hidden px-4 py-12 lg:p-20 flex justify-end"
-                >
-                    <div class="w-full h-full absolute left-0 top-0 bg-black/40"></div>
-                    <div class="relative w-full max-w-[600px] flex flex-col gap-4">
-                        <x-heading color="main-background" alignment="left">{!! $CTABanner['title']->value !!}</x-heading>
-                        <x-text-content color="main-background" alignment="left">
-                            {!! $CTABanner['text']->value !!}
-                        </x-text-content>
-
-                        @if($companyInfos['whatsapp'][0]->value)
-                            <x-action href="https://wa.me/?phone={{ $companyInfos['whatsapp'][0]->value }}&text=Por%20favor,%20eu%20gostaria%20de%20uma%20demonstração%20do%20produto!" variant="simple" color="main-background">Solicite uma demonstração</x-action>
-                        @endif
-                    </div>
-                </div>
-            </x-container>
-        </x-section>
-    @endif --}}
 
     <x-section.footer :companyInfos="$companyInfos"  />
 </x-layouts.app>

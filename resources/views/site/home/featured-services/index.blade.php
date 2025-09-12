@@ -1,10 +1,10 @@
 <x-section>
     <x-container width="1180">
         <div class="flex flex-col items-center gap-6 md:gap-8 lg:gap-12">
-            <x-heading>Atenda às Exigências da NR-1 com Segurança</x-heading>
+            <x-heading>Nossos destaques</x-heading>
             
             <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
-                <div class="rounded-lg bg-main-background border-2 shadow-sm px-5 py-7 md:px-6 md:py-8 flex flex-col gap-6 border-borders hover:scale-[102%] transition">
+                <div class="rounded-lg psychosocial-risk-management-section-gradient border-2 shadow-sm px-5 py-7 md:px-6 md:py-8 flex flex-col gap-6 border-borders hover:scale-[102%] transition">
                     <header class="w-full flex items-center justify-between">
                         <h3 class="text-2xl font-semibold text-left text-psychosocial-primary-solid">Riscos Psicossociais</h3>
                         <x-icon icon="cloud-lightning" class="w-7 h-7 object-scale-down text-psychosocial-primary-solid" />
@@ -69,7 +69,7 @@
                         <x-icon icon="cloud-lightning" class="w-4.5 h-4.5 object-scale-down text-main-background" />
                     </a>
                 </div>
-                <div class="rounded-lg bg-main-background border-2 shadow-sm px-5 py-7 md:px-6 md:py-8 flex flex-col gap-6 border-borders hover:scale-[102%] transition">
+                <div class="rounded-lg report-channel-section-gradient border-2 shadow-sm px-5 py-7 md:px-6 md:py-8 flex flex-col gap-6 border-borders hover:scale-[102%] transition">
                     <header class="w-full flex items-center justify-between">
                         <h3 class="text-2xl font-semibold text-left text-report-channel-primary-solid">Canal de Denúncias</h3>
                         <x-icon icon="message-warning" class="w-7 h-7 object-scale-down text-report-channel-primary-solid" />
