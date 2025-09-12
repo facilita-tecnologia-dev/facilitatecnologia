@@ -29,10 +29,13 @@ Route::get('/', HomeController::class)->name('home');
 Route::get('/sobre-nos', AboutController::class)->name('about');
 Route::get('/solucoes', ServicesController::class)->name('services');
 Route::get('/contato', ContactController::class)->name('contact');
+
+Route::view('/solucoes/gestao-de-treinamento', 'site.service-detail.pages.training-management.index')->name('services.training-management');
+Route::view('/solucoes/gestao-de-epis', 'site.service-detail.pages.epi-management.index')->name('services.epi-management');
+Route::view('/solucoes/recrutamento-e-selecao', 'site.service-detail.pages.rh-management.index')->name('services.rh-management');
+
 Route::view('/politica-de-privacidade', 'site.privacy-policy.index')->name('privacy-policy');
 Route::view('/termos-de-uso', 'site.terms-of-use.index')->name('terms-of-use');
-// Route::get('/plano/{plan}', PlanController::class)->name('plan-detail');
-// Route::get('/modulo/{module}', ModuleController::class)->name('module-detail');
 
 Route::prefix('cms')->group(function () {
     Route::middleware(GuestMiddleware::class)->group(function(){

@@ -1,8 +1,8 @@
-<x-layouts.app>
+<x-layouts.site>
     
-    <x-section.header :companyInfos="$companyInfos" />
+    <x-structure.header :companyInfos="$companyInfos" />
 
     termos
 
-    <x-section.footer :companyInfos="$companyInfos"  />
-</x-layouts.app>
+    <x-structure.footer :companyInfos="$companyInfos"  />
+</x-layouts.site>

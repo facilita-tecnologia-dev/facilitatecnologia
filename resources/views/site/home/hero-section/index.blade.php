@@ -3,7 +3,7 @@
         <div class="flex flex-col items-center gap-2">
             <x-subtitle>{!! $heroSection['subtitle']->value !!}</x-subtitle>
             <x-heading tag="h1">
-                <span id="animated-title">&nbsp;</span>
+                <span id="home-animated-title">&nbsp;</span>
             </x-heading>
         </div>
         

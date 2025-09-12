@@ -1,6 +1,6 @@
-<x-layouts.app>
+<x-layouts.site>
 
-    <x-section.cms-header :companyInfos="$companyInfos"/>
+    <x-structure.cms-header :companyInfos="$companyInfos"/>
 
     <div class="px-4 my-8 flex flex-col gap-4">
         <div class="w-full rounded-md bg-borders px-4 py-6">
@@ -29,4 +29,4 @@
 
 
     <script src="{{ asset('js/global.js') }}"></script>
-</x-layouts.app>
+</x-layouts.site>

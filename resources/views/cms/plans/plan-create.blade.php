@@ -1,6 +1,6 @@
-<x-layouts.app>
+<x-layouts.site>
 
-    <x-section.cms-header :companyInfos="$companyInfos"/>
+    <x-structure.cms-header :companyInfos="$companyInfos"/>
 
     <div class="my-8 px-4">
         <x-container>
@@ -47,4 +47,4 @@
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js'></script>
     <script src="{{ asset('js/global.js') }}"></script>
     <script src="{{ asset('js/cms/plans/plan-detail.js') }}"></script>
-</x-layouts.app>
+</x-layouts.site>

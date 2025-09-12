@@ -1,6 +1,6 @@
-<x-layouts.app>
+<x-layouts.site>
 
-    <x-section.header :companyInfos="$companyInfos" />
+    <x-structure.header :companyInfos="$companyInfos" />
 
     @if($timeline)
         @include('site.about.timeline.index', compact('timeline'))
@@ -18,5 +18,5 @@
        @include('site.home.our-partners.index', compact('ourPartners'))
     @endif
 
-    <x-section.footer :companyInfos="$companyInfos"  />
-</x-layouts.app>
+    <x-structure.footer :companyInfos="$companyInfos"  />
+</x-layouts.site>

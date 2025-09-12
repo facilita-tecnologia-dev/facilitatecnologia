@@ -60,6 +60,18 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #1f293780;
     }
+
+    .service-training-management {
+        --color-primary-solid: var(--color-training-management-primary-solid);
+    }
+
+    .service-epi-management {
+        --color-primary-solid: var(--color-epi-management-primary-solid);
+    }
+
+    .service-rh-management {
+        --color-primary-solid: var(--color-rh-management-primary-solid);
+    }
 }
 
 @theme {

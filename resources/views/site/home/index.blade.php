@@ -1,5 +1,5 @@
-<x-layouts.app>
-    <x-section.header :companyInfos="$companyInfos" />
+<x-layouts.site>
+    <x-structure.header :companyInfos="$companyInfos" />
 
     @if($heroSection)
         @include('site.home.hero-section.index', compact('heroSection'))
@@ -29,5 +29,5 @@
         @include('site.home.testimonials.index', compact('testimonials'))
     @endif
 
-    <x-section.footer :companyInfos="$companyInfos"  />
-</x-layouts.app>
+    <x-structure.footer :companyInfos="$companyInfos"  />
+</x-layouts.site>

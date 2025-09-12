@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-layouts.site>
     <div class="w-screen h-screen flex items-center justify-center">
         <div class="bg-main-background rounded-lg shadow-lg border border-main-text/50 w-full max-w-[500px] p-6 flex flex-col items-center gap-6">
             <img src="{{ asset('assets/logo-facilita.svg') }}" alt="" class="h-[55px]">
@@ -17,4 +17,4 @@
             </x-form>
         </div>
     </div>
-</x-layouts.app>
+</x-layouts.site>

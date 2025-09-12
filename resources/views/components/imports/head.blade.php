@@ -1,0 +1,28 @@
+ <meta charset="utf-8">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {{-- Velha --}}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    {{-- Nova --}}
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&display=swap" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/d6c8bd95ac.js" crossorigin="anonymous"></script>
+
+    <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+
+    <link rel="shortcut icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon">
+
+    <meta name="description" content="Simplifique a gestão de RH e SST com uma plataforma completa, intuitiva e automatizada. Reduza burocracias e aumente a eficiência.">
+    <meta name="keywords" content="rh, segurança do trabalho, sst, plataforma rh, normas regulatórias, nr 20, nr 18, nr 1">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Facilita Tecnologia">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
+    <link rel="stylesheet" href="{{ asset('css/wysiwyg-formatter.css') }}">

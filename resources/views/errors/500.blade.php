@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-layouts.site>
     
     <x-section>
         <x-container width="1180">
@@ -22,4 +22,4 @@
         </x-container>
     </x-section>
 
-</x-layouts.app>
+</x-layouts.site>

@@ -58,7 +58,6 @@
         
         if(event.target.classList.contains('select')){
             const dropdown = event.target.querySelector('.dropdown');
-            console.log(dropdown)
             
             if(dropdown.classList.contains('hidden')){
                 dropdown.classList.replace('hidden', 'block');

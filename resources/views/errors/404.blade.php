@@ -1,6 +1,6 @@
-<x-layouts.app>
+<x-layouts.site>
     
-    <x-section.header :companyInfos="$companyInfos" />
+    <x-structure.header :companyInfos="$companyInfos" />
 
     <x-section>
 
@@ -30,6 +30,6 @@
 
     </x-section>
 
-    <x-section.footer :companyInfos="$companyInfos"  />
+    <x-structure.footer :companyInfos="$companyInfos"  />
 
-</x-layouts.app>
+</x-layouts.site>

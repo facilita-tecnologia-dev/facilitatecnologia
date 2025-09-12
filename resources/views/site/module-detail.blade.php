@@ -1,6 +1,6 @@
-<x-layouts.app>
+<x-layouts.site>
     
-    <x-section.header :companyInfos="$companyInfos" />
+    <x-structure.header :companyInfos="$companyInfos" />
 
     @if($module)
         <x-section>
@@ -27,7 +27,7 @@
         </x-section>
     @endif
 
-    <x-section.footer :companyInfos="$companyInfos"  />
+    <x-structure.footer :companyInfos="$companyInfos"  />
 
     <script src="{{ asset('js/global.js') }}"></script>
-</x-layouts.app>
+</x-layouts.site>
