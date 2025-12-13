@@ -12,7 +12,7 @@
     </div>
 
     {{-- Videos --}}
-    <div class="relative flex w-full max-w-[650px] flex-col items-center gap-2">
+    {{-- <div class="relative flex w-full max-w-[650px] flex-col items-center gap-2">
         <div class="swiper hero-section-swiper w-[320px] sm:w-[450px] md:w-[530px]">
             <div class="swiper-wrapper">
                 @foreach ($swiperVideos as $video)
@@ -36,7 +36,9 @@
                 <x-icon icon="double-chevron-right" class="text-secondary-text h-6 w-6 object-scale-down" />
             </button>
         </div>
-    </div>
+    </div> --}}
+    <livewire:site.hero-section-videos-component :swiperVideos="$swiperVideos" />
+
 
     {{-- Regulations --}}
     <div class="relative flex w-full max-w-[650px] justify-center gap-4">

@@ -230,62 +230,143 @@ function scrollToY(event, id, offset = 0) {
 }
 
 // Services
-function heroSectionSwiper() {
-    const sliderContainer = document.querySelector(".hero-section-swiper");
-    if (sliderContainer) {
-        const videoPlayer = document.getElementById(
-            "hero-section-video-canvas"
-        );
-        const slides = sliderContainer.querySelectorAll(".swiper-slide");
+// function heroSectionSwiper() {
+//     const sliderContainer = document.querySelector(".hero-section-swiper");
+//     if (sliderContainer) {
+//         const videoPlayer = document.getElementById(
+//             "hero-section-video-canvas"
+//         );
+//         const slides = sliderContainer.querySelectorAll(".swiper-slide");
 
-        const swiper = new Swiper(sliderContainer, {
-            modules: [Navigation],
-            slidesPerView: "auto",
-            spaceBetween: 8,
-            loop: true,
-            allowTouchMove: window.innerWidth < 640,
-            navigation: {
-                nextEl: ".custom-next",
-                prevEl: ".custom-prev",
-            },
+//         const swiper = new Swiper(sliderContainer, {
+//             modules: [Navigation],
+//             slidesPerView: "auto",
+//             spaceBetween: 8,
+//             loop: true,
+//             allowTouchMove: window.innerWidth < 640,
+//             navigation: {
+//                 nextEl: ".custom-next",
+//                 prevEl: ".custom-prev",
+//             },
+//         });
+
+//         function setActiveVideo(videoSrc, activeSlide) {
+//             videoPlayer.src = videoSrc;
+
+//             slides.forEach((slide) => {
+//                 const btn = slide.querySelector("button");
+//                 const span = slide.querySelector("span");
+//                 btn.classList.remove("!bg-primary-solid");
+//                 span.classList.remove("!text-main-background");
+//             });
+
+//             const activeBtn = activeSlide.querySelector("button");
+//             const activeSpan = activeSlide.querySelector("span");
+
+//             activeBtn.classList.add("!bg-primary-solid");
+//             activeSpan.classList.add("!text-main-background");
+//         }
+
+//         // Inicializa o primeiro GIF
+//         setActiveVideo(slides[0].dataset.video, slides[0]);
+
+//         // Clique nos slides
+//         slides.forEach((slide, index) => {
+//             slide.addEventListener("click", () => {
+//                 swiper.slideToLoop(index);
+//                 setActiveVideo(slide.dataset.video, slide);
+//             });
+//         });
+
+//         // Atualiza o vídeo ao mudar o slide via navegação
+//         swiper.on("slideChange", () => {
+//             const activeSlide = slides[swiper.realIndex];
+//             setActiveVideo(activeSlide.dataset.video, activeSlide);
+//         });
+
+//         window.addEventListener("resize", () => {
+//             swiper.allowTouchMove = window.innerWidth < 640;
+//         });
+//     }
+// }
+
+function heroSectionSwiper(){
+     const sliderContainer = document.querySelector(".hero-section-swiper");
+    if (!sliderContainer) return;
+
+    const videoPlayer = document.getElementById(
+        "hero-section-video-canvas"
+    );
+
+    const videoClickArea = document.getElementById(
+        "hero-video-click"
+    );
+
+    const slides = sliderContainer.querySelectorAll(".swiper-slide");
+
+    const swiper = new Swiper(sliderContainer, {
+        modules: [Navigation],
+        slidesPerView: "auto",
+        spaceBetween: 8,
+        loop: true,
+        allowTouchMove: window.innerWidth < 640,
+        navigation: {
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+        },
+    });
+
+    function setActiveVideo(videoSrc, activeSlide) {
+        videoPlayer.src = videoSrc;
+
+        slides.forEach((slide) => {
+            const btn = slide.querySelector("button");
+            const span = slide.querySelector("span");
+
+            btn.classList.remove("!bg-primary-solid");
+            span.classList.remove("!text-main-background");
         });
 
-        function setActiveVideo(videoSrc, activeSlide) {
-            videoPlayer.src = videoSrc;
+        const activeBtn = activeSlide.querySelector("button");
+        const activeSpan = activeSlide.querySelector("span");
 
-            slides.forEach((slide) => {
-                const btn = slide.querySelector("button");
-                const span = slide.querySelector("span");
-                btn.classList.remove("!bg-primary-solid");
-                span.classList.remove("!text-main-background");
-            });
+        activeBtn.classList.add("!bg-primary-solid");
+        activeSpan.classList.add("!text-main-background");
+    }
 
-            const activeBtn = activeSlide.querySelector("button");
-            const activeSpan = activeSlide.querySelector("span");
-
-            activeBtn.classList.add("!bg-primary-solid");
-            activeSpan.classList.add("!text-main-background");
-        }
-
-        // Inicializa o primeiro GIF
+    // Inicializa o primeiro vídeo
+    if (slides.length > 0) {
         setActiveVideo(slides[0].dataset.video, slides[0]);
+    }
 
-        // Clique nos slides
-        slides.forEach((slide, index) => {
-            slide.addEventListener("click", () => {
-                swiper.slideToLoop(index);
-                setActiveVideo(slide.dataset.video, slide);
-            });
+    // Clique nos slides
+    slides.forEach((slide, index) => {
+        slide.addEventListener("click", () => {
+            swiper.slideToLoop(index);
+            setActiveVideo(slide.dataset.video, slide);
         });
+    });
 
-        // Atualiza o vídeo ao mudar o slide via navegação
-        swiper.on("slideChange", () => {
-            const activeSlide = slides[swiper.realIndex];
+    // Atualiza o vídeo ao mudar o slide via navegação
+    swiper.on("slideChange", () => {
+        const activeSlide = slides[swiper.realIndex];
+        if (activeSlide) {
             setActiveVideo(activeSlide.dataset.video, activeSlide);
-        });
+        }
+    });
 
-        window.addEventListener("resize", () => {
-            swiper.allowTouchMove = window.innerWidth < 640;
+    // 👉 Clique no vídeo abre modal Livewire
+    if (videoClickArea) {
+        videoClickArea.addEventListener("click", () => {
+            if (!videoPlayer.src) return;
+
+            Livewire.dispatch("openHeroVideoModal", {
+                video: videoPlayer.src,
+            });
         });
     }
+
+    window.addEventListener("resize", () => {
+        swiper.allowTouchMove = window.innerWidth < 640;
+    });
 }
